@@ -12,5 +12,17 @@
     "institutional_partners": {"current": 0, "target": 3},
     "policy_users": {"current": 0, "target": 2}
   },
-  "note": "Infrastructure, applications, workshop preparation, drafts, or internal tests do not increment impact metrics. Only evidence-backed completed outcomes count."
+  "operations": {
+    "application_route_live": true,
+    "application_route_tested": true,
+    "priority_roles_published": 5,
+    "workshop_001_scheduled": true,
+    "workshop_001_materials_public": true,
+    "release_001_candidate_selected": true,
+    "release_001_rights_audit_documented": true,
+    "release_001_independent_review_complete": false,
+    "external_reviewers_confirmed": 0,
+    "outreach_drafts_saved_unsent": 3
+  },
+  "note": "Operating infrastructure is reported separately. Setup, internal tests, registrations, drafts, or founder-only validation do not increment impact metrics. Only evidence-backed completed outcomes count."
 }
