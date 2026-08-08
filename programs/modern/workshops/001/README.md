@@ -32,6 +32,9 @@ Participants should leave able to:
 6. reproduce another person's output from a clean environment
 7. record provenance and limitations rather than hiding them
 
+## Registration and meeting link
+RSVPs are collected by email through `REGISTER.md`. The meeting link is sent only to confirmed participants and is not published in the repository.
+
 ## Completion evidence
 Workshop 001 counts toward MODERN impact metrics only after:
 - registration route is public
