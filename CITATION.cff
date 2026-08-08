@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the archived release corresponding to the version used."
+title: "MENA Economic Narrative and Market Stress Observatory"
+type: dataset
+authors:
+  - family-names: Oraidi
+    given-names: Layan
+version: 0.2.0
+date-released: 2026-08-08
+repository-code: "https://github.com/layan985/mena-open-evidence-lab"
