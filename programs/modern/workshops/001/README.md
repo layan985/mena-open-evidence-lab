@@ -1,6 +1,10 @@
 # MODERN Workshop 001 — Reproduce an Economics Result from Raw Data
 
-**Format:** 90 minutes  
+**Date:** Sunday, 23 August 2026  
+**Time:** 18:00–19:30 Asia/Amman (UTC+3)  
+**Format:** Online  
+**Registration:** see [`REGISTER.md`](REGISTER.md)
+
 **Level:** undergraduate / early graduate / research assistant  
 **Prerequisites:** basic Python or willingness to follow a script  
 **Output:** every participant produces a clean table, regression result, figure, and reproducibility check from the same raw file.
@@ -12,10 +16,11 @@ The exercise uses a **synthetic teaching dataset** created for MODERN. It contai
 
 ## Files
 - `data/panel.csv` — raw synthetic region-year panel
-- `analysis.py` — reference analysis using only Python standard library + numpy/pandas/statsmodels if available
+- `analysis.py` — reference analysis
 - `exercise.md` — participant tasks
 - `answer_key.md` — expected reasoning and checks
 - `instructor_guide.md` — 90-minute facilitation plan
+- `REGISTER.md` — public RSVP route
 
 ## Learning objectives
 Participants should leave able to:
@@ -29,8 +34,9 @@ Participants should leave able to:
 
 ## Completion evidence
 Workshop 001 counts toward MODERN impact metrics only after:
-- registration link is public
+- registration route is public
 - materials are public
+- the live workshop is actually delivered
 - attendance is archived
 - at least one participant other than the instructor completes the reproduction check
 
