@@ -1,0 +1,19 @@
+{
+  "release_id": "MODE-DATA-0001",
+  "version": "0.2.0",
+  "release_date": "2026-08-08",
+  "rows": 24,
+  "numeric_observations": 24,
+  "geography_release_rows": 8,
+  "official_institutions": 5,
+  "composite_scores": 0,
+  "sha256": "94d558c971b690b3cfb34cd353385a7511cd86b1db42da4f2b3ab53d4242e41e",
+  "audit_status": "Founder/source-checked pilot; independent audit pending.",
+  "sources": [
+    {"institution":"Jordan Department of Statistics","url":"https://dosweb.dos.gov.jo/cpi_072026/","language":"en","release_date":"2026-07-23"},
+    {"institution":"General Authority for Statistics (Saudi Arabia)","url":"https://www.stats.gov.sa/documents/20117/2435267/CPI%2BJun%2B2026-EN%2B%281%29.pdf/06a48d85-4368-1e92-dfcb-8a092010e724?t=1783941888045","language":"en","release_date":"2026-07-15"},
+    {"institution":"Haut-Commissariat au Plan (Morocco)","url":"https://www.hcp.ma/L-Indice-des-prix-a-la-consommation-IPC-du-mois-de-Juin-2026_a4339.html","language":"fr","release_date":"2026-07-22"},
+    {"institution":"National Institute of Statistics (Tunisia)","url":"https://www.ins.tn/en/statistiques/90","language":"en","release_date":"2026-08-05"},
+    {"institution":"Palestinian Central Bureau of Statistics","url":"https://www.pcbs.gov.ps/en/post-details/?postId=26333","language":"en","release_date":"2026-07-14"}
+  ]
+}
