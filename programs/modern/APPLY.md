@@ -41,6 +41,8 @@ Include:
 
 Do not send passports, national IDs, health information, bank information, or other unnecessary sensitive data.
 
+Incoming cohort applications are routed into a dedicated private mailbox label for review; applicant details are not committed to the public repository.
+
 ## Mini reproducibility task
 
 Choose one **small public dataset or table relevant to the MENA region** and create a public GitHub repository containing:
