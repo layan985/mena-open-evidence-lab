@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-08-08",
+  "counting_rule": "Intentions, applications, conversations and unmerged work do not count.",
+  "metrics": [
+    {"id":"external_contributors","label":"External contributors","value":0,"proof":[]},
+    {"id":"universities_represented","label":"Universities represented","value":0,"proof":[]},
+    {"id":"validated_releases","label":"Validated releases","value":0,"proof":[]},
+    {"id":"independent_reproductions","label":"Independent reproductions","value":0,"proof":[]},
+    {"id":"api_users","label":"API users","value":0,"proof":[]},
+    {"id":"institutional_partners","label":"Institutional partners","value":0,"proof":[]},
+    {"id":"policy_uses","label":"Policy uses","value":0,"proof":[]},
+    {"id":"citations","label":"Citations","value":0,"proof":[]},
+    {"id":"workshop_graduates","label":"Workshop graduates","value":0,"proof":[]}
+  ]
+}
