@@ -11,5 +11,6 @@
     "fellows_trained": {"current": 0, "target": 11},
     "institutional_partners": {"current": 0, "target": 3},
     "policy_users": {"current": 0, "target": 2}
-  }
+  },
+  "note": "Infrastructure, applications, workshop preparation, drafts, or internal tests do not increment impact metrics. Only evidence-backed completed outcomes count."
 }
