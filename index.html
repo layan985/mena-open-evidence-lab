@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MENA Open Data & Evidence Lab — institution, MODERN contributor network, and MENA Evidence Terminal research infrastructure." />
+  <title>MENA Open Data & Evidence Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="MENA Open Data and Evidence Lab home">
+      <span class="brand-mark">M</span>
+      <span><strong>MENA Open Data & Evidence Lab</strong><small>open research infrastructure</small></span>
+    </a>
+    <nav>
+      <a href="#terminal">Terminal</a>
+      <a href="#modern">MODERN</a>
+      <a href="#releases">Releases</a>
+      <a href="#scoreboard">Scoreboard</a>
+      <a href="https://github.com/layan985/mena-open-evidence-lab">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="eyebrow">MENA / OPEN DATA / REPRODUCIBILITY</div>
+      <h1>Evidence you can trace<br/>all the way back.</h1>
+      <p class="hero-copy">The Lab is the institution. <strong>MODERN</strong> is the human research network. The <strong>MENA Evidence Terminal</strong> is the infrastructure they build.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#terminal">Open the Terminal</a>
+        <a class="button" href="#modern">Apply to MODERN Cohort 01</a>
+      </div>
+      <div class="architecture" aria-label="Brand architecture">
+        <article><span>01 / INSTITUTION</span><h2>Lab</h2><p>Governance, standards, publication, partnerships and research direction.</p></article>
+        <article><span>02 / HUMANS</span><h2>MODERN</h2><p>Selective contributor network and fellowship organized into seven research pods.</p></article>
+        <article><span>03 / PRODUCT</span><h2>Terminal</h2><p>Searchable evidence infrastructure with provenance, revisions, APIs and research workflows.</p></article>
+      </div>
+    </section>
+
+    <section id="terminal" class="terminal-section">
+      <div class="wrap">
+        <div class="section-kicker">MENA Evidence Terminal / Prototype</div>
+        <div class="terminal-shell">
+          <div class="terminal-head">
+            <div>
+              <span class="status-dot"></span>
+              <strong>Evidence Terminal</strong>
+              <span class="prototype-badge">schema prototype</span>
+            </div>
+            <span class="mono">v0.1 / public</span>
+          </div>
+          <div class="search-row">
+            <label class="sr-only" for="evidence-search">Search the evidence terminal</label>
+            <input id="evidence-search" autocomplete="off" placeholder="Search Jordan unemployment, Egypt AI adoption, Palestine trade, company name…" />
+            <button id="search-button">Search</button>
+          </div>
+          <div class="query-chips" aria-label="Example searches">
+            <button data-query="Jordan unemployment">Jordan unemployment</button>
+            <button data-query="Egypt AI adoption">Egypt AI adoption</button>
+            <button data-query="Palestine trade">Palestine trade</button>
+            <button data-query="Jordan corporate lineage">Jordan corporate lineage</button>
+          </div>
+          <div id="terminal-result" class="terminal-result" aria-live="polite">
+            <div class="empty-state">
+              <span class="mono">QUERY READY</span>
+              <h3>Search a series, event, document or entity.</h3>
+              <p>The first public catalog is being built. Prototype entries never masquerade as validated data.</p>
+            </div>
+          </div>
+          <div class="workflow-bar">
+            <button class="workflow" data-action="dataset"><span>+</span> Build research dataset</button>
+            <button class="workflow" data-action="event"><span>↗</span> Run event study</button>
+            <button class="workflow" data-action="audit"><span>✓</span> Audit provenance</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="releases" class="wrap section">
+      <div class="section-heading">
+        <div><div class="section-kicker">Anchor objects</div><h2>Three releases before eighteen.</h2></div>
+        <p>Each anchor is designed to become a DOI-backed research object with an API, methodology paper, provenance graph and reproducibility package.</p>
+      </div>
+      <div class="release-grid">
+        <article class="release-card">
+          <div class="release-meta"><span>J-CLIMA</span><span class="status planned">planned</span></div>
+          <h3>Jordan Corporate Lineage</h3>
+          <p>Resolve company identity changes across names, registrations, tickers, mergers and documents to make longitudinal firm panels auditable.</p>
+          <div class="tags"><span>entity resolution</span><span>corporate history</span><span>provenance</span></div>
+        </article>
+        <article class="release-card">
+          <div class="release-meta"><span>MPS-EVENTS</span><span class="status planned">planned</span></div>
+          <h3>MENA Policy Shock & Event Database</h3>
+          <p>Machine-readable policy events with dates, jurisdictions, source documents, event windows, coding decisions and revision histories.</p>
+          <div class="tags"><span>event studies</span><span>policy</span><span>causal inference</span></div>
+        </article>
+        <article class="release-card">
+          <div class="release-meta"><span>NARRATIVE-MENA</span><span class="status planned">planned</span></div>
+          <h3>MENA Economic Narrative Corpus</h3>
+          <p>Link IMF, World Bank, central-bank and government language to economic series with document-level provenance and reproducible text transformations.</p>
+          <div class="tags"><span>text-as-data</span><span>institutions</span><span>macro</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="modern" class="modern-section">
+      <div class="wrap section">
+        <div class="section-heading">
+          <div><div class="section-kicker">MODERN Cohort 01</div><h2>Not a membership. A production standard.</h2></div>
+          <p>Eleven fellows. Seven pods. Credit only for shipped, reviewable work. Attendance alone earns nothing.</p>
+        </div>
+        <div class="modern-grid">
+          <article class="fellowship-card">
+            <span class="mono">COMPLETION STANDARD / 4 OF 4</span>
+            <ol>
+              <li><strong>Workshops</strong><span>Complete at least 5 of 6 core workshops.</span></li>
+              <li><strong>Public contribution</strong><span>Ship one substantive contribution to a validated public release.</span></li>
+              <li><strong>Independent audit</strong><span>Reproduce or audit another team’s work.</span></li>
+              <li><strong>Research memo</strong><span>Document methods, contribution, limitations and lessons.</span></li>
+            </ol>
+          </article>
+          <article class="calendar-card">
+            <span class="mono">COHORT 01 / 2026</span>
+            <div class="date-row"><strong>10 AUG</strong><span>Public announcement</span></div>
+            <div class="date-row"><strong>11–22 AUG</strong><span>Applications + technical task</span></div>
+            <div class="date-row"><strong>23–25 AUG</strong><span>Shortlist review</span></div>
+            <div class="date-row"><strong>27 AUG</strong><span>Founding cohort announced</span></div>
+            <div class="date-row"><strong>29 AUG</strong><span>Orientation</span></div>
+            <div class="date-row"><strong>01 SEP</strong><span>First production sprint</span></div>
+          </article>
+        </div>
+        <div class="pods">
+          <span>Labor Markets</span><span>Firms + AI</span><span>Trade + Industrial Policy</span><span>Water + Climate</span><span>Public Finance</span><span>Financial Markets</span><span>Narratives + Institutions</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="scoreboard" class="wrap section">
+      <div class="section-heading">
+        <div><div class="section-kicker">Public scoreboard</div><h2>Zero until proven otherwise.</h2></div>
+        <p>Targets are not achievements. Each nonzero number must link to evidence in the public registry.</p>
+      </div>
+      <div class="scoreboard" id="scoreboard-grid"></div>
+      <p class="score-note mono">COUNTING RULE: intentions, applications, conversations and unmerged work do not count.</p>
+    </section>
+
+    <section class="wrap section publishing">
+      <div class="section-heading">
+        <div><div class="section-kicker">Publishing machine</div><h2>Artifacts earn distribution.</h2></div>
+        <p>No generic “we are excited to announce” content. Every publication begins with a useful object and ends with a path to reproduce it.</p>
+      </div>
+      <div class="publishing-grid">
+        <article><span>WEEKLY</span><h3>MENA Data Drop</h3><p>One finding, one chart, exact source, downloadable data, four sentences.</p></article>
+        <article><span>MONTHLY</span><h3>Replication Audit</h3><p>Can a public result be reproduced? What breaks? What changes?</p></article>
+        <article><span>QUARTERLY</span><h3>State of MENA Evidence</h3><p>New data, revisions, broken datasets and high-value evidence gaps.</p></article>
+      </div>
+    </section>
+
+    <section class="objective">
+      <div class="wrap">
+        <div class="section-kicker">12-month objective / by August 2027</div>
+        <h2>Build something that can survive its founder.</h2>
+        <p>Targets: 7 universities; 25–40 validated contributors; 12–18 serious DOI-backed releases; 100k+ standardized observations; 10 independent reproducibility audits; 6 workshops; 3 faculty advisers; 3 institutional collaborations; 2 documented policy/research uses; one external code maintainer; one conference presentation; one methods/data paper; and a public API with outside users.</p>
+        <small>These are targets, not current claims.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <div><strong>MENA Open Data & Evidence Lab</strong><p>Open, reproducible research infrastructure for the Middle East and North Africa.</p></div>
+    <div class="footer-links"><a href="programs/modern/GOVERNANCE.md">Governance</a><a href="programs/modern/DATASET_STANDARD.md">Dataset standard</a><a href="programs/modern/IMPACT_METRICS.md">Counting rules</a><a href="https://github.com/layan985/mena-open-evidence-lab">Source</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
