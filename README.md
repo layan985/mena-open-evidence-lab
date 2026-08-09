@@ -2,6 +2,8 @@
 
 Open, reproducible research infrastructure for economic and social evidence across the Middle East and North Africa.
 
+**Founder & Research Director:** **Layan Oraidi** (also appearing in some award and academic records as **Layan Aloreidi**) — applied economics researcher working on causal inference, AI and labor markets, financial markets, research software, and reproducible empirical methods. ORCID: https://orcid.org/0009-0005-0202-2582
+
 > **Every number should have a source. Every transformation should be inspectable. Every result should be reproducible.**
 
 ## MODERN
@@ -59,3 +61,7 @@ See [`programs/modern/`](programs/modern/) for:
 The first MODERN release candidate is the **MENA Economic Narrative and Market Stress Observatory: Pilot Release v0.2**. Its source-rights audit is complete. It will not be counted as MODERN Release 001 until a person other than the founder independently reruns it and an external reviewer signs off on provenance/comparability.
 
 Candidate repository: https://github.com/layan985/mena-economic-narrative-stress-observatory
+
+## Research identity
+
+See [`AUTHOR.md`](AUTHOR.md) for the canonical researcher identity and the Oraidi / Aloreidi name bridge used across public research records.
