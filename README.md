@@ -1,5 +1,7 @@
 # MENA Open Data & Evidence Lab
 
+> **Research portfolio:** [layanaloreidi.online](https://layanaloreidi.online)
+
 Open, reproducible research infrastructure for economic and social evidence across the Middle East and North Africa.
 
 **Founder & Research Director:** **Layan Oraidi** (also appearing in some award and academic records as **Layan Aloreidi**) — applied economics researcher working on causal inference, AI and labor markets, financial markets, research software, and reproducible empirical methods. ORCID: https://orcid.org/0009-0005-0202-2582
