@@ -49,7 +49,7 @@ def observations(country: str | None = None, indicator: str | None = None, geogr
     if geography:
         df = df[df["geography"].str.casefold() == geography.casefold()]
     clean = df.astype(object).where(pd.notnull(df), None)
-    return {"count": int(len(clean)), "records": clean.to_dict(orient="records")}
+    return {"count": len(clean), "records": clean.to_dict(orient="records")}
 
 
 @app.get("/sources")

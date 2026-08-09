@@ -29,7 +29,7 @@ def validate_csv(path: str | Path) -> dict:
     missing_institutions = int(df["source_institution"].isna().sum()) if "source_institution" in df else None
     valid = not missing and duplicate_ids == 0 and missing_sources == 0 and missing_institutions == 0
     return {
-        "rows": int(len(df)),
+        "rows": len(df),
         "numeric_observations": int(df["value"].notna().sum()) if "value" in df else None,
         "missing_required_columns": missing,
         "duplicate_observation_ids": duplicate_ids,
