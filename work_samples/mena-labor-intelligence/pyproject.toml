@@ -1,0 +1,9 @@
+[project]
+name = "mena-labor-intelligence-work-sample"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2", "streamlit>=1.35"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
