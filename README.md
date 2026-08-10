@@ -1,8 +1,8 @@
 # MENA Open Data & Evidence Lab
 
-Many MENA economic series are available only as separate releases, PDFs, or tables whose definitions change over time. This repository is where I am testing a simple way for students and early-career researchers to collect one of those sources, document the transformation, and have another person check it.
+Many MENA economic series are available only as separate releases, PDFs, or tables whose definitions change over time. The Lab is a public research-infrastructure project for turning those sources into traceable datasets, reproducible analysis objects, and methods training without hiding revisions, comparability breaks, or uncertainty.
 
-The project is at the setup stage. It is not yet a research network with completed cohorts, partners, or policy users.
+The **operating infrastructure is now live in this repository**: contributor intake, selection/QA rules, workshop materials, tracking registries, a real-data labor analytics work sample, and the first MENA Evidence Terminal prototype are committed on `main`. The Lab is not yet a completed external research network: contributor, partner, workshop-delivery, reviewer, and policy-use counts remain evidence-gated.
 
 ## Current status
 
@@ -10,44 +10,51 @@ As of 10 August 2026:
 
 | Item | Count or status |
 | --- | --- |
-| Accepted contributors | 0 |
-| Universities represented | 0 |
-| Released datasets | 0 |
+| Public Lab/Terminal prototype | Shipped on `main` |
+| Contributor application route | Open infrastructure shipped |
+| Workshop 001 materials | Complete; live delivery pending |
+| Real-data author work sample | Shipped |
+| Observatory v0.2 founder-produced pilot | Complete in its dedicated repo; external validation pending |
+| Accepted external contributors | 0 |
+| Universities represented by validated contributors | 0 |
+| Independently validated Lab releases | 0 |
 | Workshops delivered | 0 |
 | Institutional partners | 0 |
 | Documented policy uses | 0 |
 | Confirmed outside reviewers | 0 |
-| Outreach drafts | 3, all unsent |
 
-The application route and first workshop materials exist. That means the setup can be inspected; it does not mean a cohort or workshop has happened.
+The zeros are deliberate. Infrastructure, applications, conversations, or founder-authored work do not become external impact merely because they are public.
 
-## First work item
+## Three layers
 
-The first candidate is the [MENA Economic Narrative and Market Stress Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory), currently an eight-row price-data pilot. It has not been independently rerun and is not counted as a Lab release.
+- **MENA Open Data & Evidence Lab** — standards, governance, publication and research direction.
+- **MODERN** — contributor intake, research pods, reproducibility training and review workflow.
+- **MENA Evidence Terminal** — the searchable product layer for series, entities, events, documents, releases and provenance.
 
-The immediate test is modest: can another person reproduce the file, identify a source or comparability error, and leave a correction that becomes part of the repository history?
+The product contract is in [`TERMINAL_SPEC.md`](TERMINAL_SPEC.md). The static prototype is implemented by [`index.html`](index.html), [`app.js`](app.js), and [`styles.css`](styles.css). Missing empirical fields remain missing rather than being filled with placeholder statistics.
+
+## First canonical pilot
+
+The [MENA Economic Narrative and Market Stress Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory) now has a frozen **complete v0.2 founder-produced pilot**: eight release/geography rows, 24 populated numeric observations, five official statistical institutions, methodology, provenance, rights notes and automated validation. It is intentionally not counted as an independently validated Lab release until a non-author rerun and provenance review exist.
 
 ## Author work sample: MENA Labor Intelligence
 
 [`work_samples/mena-labor-intelligence/`](work_samples/mena-labor-intelligence/) is a compact real-public-data analytics example built from the World Bank HCI+ country-year panel. It includes the provenance-preserving extract, a data dictionary, quality checks, SQL, a Streamlit view, derived change tables and a dedicated CI workflow.
 
-It is useful as an inspectable example of the standard I want the Lab to use. **It is not counted in the release table above:** it is founder-authored, has not been independently rerun, and has no outside reviewer yet.
+It demonstrates the expected technical standard but does not count as an externally validated release because it is founder-authored and has not been independently rerun.
 
-## Contributing
+## MODERN contributor intake
 
-[programs/modern/APPLY.md](programs/modern/APPLY.md) describes the small entry task. Applicants are not called contributors until a specific piece of work is accepted.
+[`programs/modern/APPLY.md`](programs/modern/APPLY.md) contains the application route and reproducibility task. Applicant status alone does not create contributor credit. A person enters the public contributor count only after a substantive, traceable contribution is accepted.
 
-Useful contributions at this stage are:
+The operating files under [`programs/modern/`](programs/modern/) include onboarding, selection, QA, reviewer materials, tracking registries and Workshop 001.
 
-- checking one published number against its source page;
-- documenting a changed definition or reporting period;
-- fixing a data-cleaning or validation error;
-- testing the first workshop exercise and reporting what was unclear.
+## What counts as finished
 
-The detailed dataset checklist and workshop files remain under [programs/modern/](programs/modern/). Current counts come from the empty or completed rows in [programs/modern/tracking/](programs/modern/tracking/), not from planned targets.
+A software/tooling artifact can be versioned and complete while data coverage continues. A founder-produced pilot can be complete while external validation remains pending. A workshop can have complete materials while the delivered-workshop count remains zero until it is actually taught. The repository keeps those states separate so progress is visible without turning plans into claims.
 
 ## What I am not claiming
 
-No university, government office, policy organization, or researcher is a partner because their name appears in a draft contact list. No workshop is complete because slides or exercises exist. No release is independently checked because the producing repository's own tests pass.
+No university, government office, policy organization, researcher, workshop attendee, reviewer or contributor is counted without evidence of the relevant completed action. No dataset is called independently validated because its producer's own tests pass. No API user or policy use is inferred from page views, downloads, or outreach.
 
-[notes/2026-08-10-zero-state.md](notes/2026-08-10-zero-state.md) explains why I am leaving the zeros visible.
+[notes/2026-08-10-zero-state.md](notes/2026-08-10-zero-state.md) records the zero-state counting rule.
