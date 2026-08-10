@@ -1,0 +1,6 @@
+check,value,interpretation
+rows,16,selected public country-year observations
+countries,8,selected MENA sample
+duplicate country-year,0,must be 0
+"rate values outside [0,1]",0,must be 0
+missing HCI+ total,0,preserved from source
