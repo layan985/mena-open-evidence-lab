@@ -30,5 +30,5 @@ Each pod is responsible for two public dataset releases. The central team is res
 | Institutional partners | 3 | Documented collaboration with a defined deliverable |
 | Policy users | 2 | Documented organizational use in analysis, briefing, dashboard, memo, or report |
 
-## Evidence-first reporting
+## Reporting what happened
 No target may be reported as achieved from intention, informal conversation, or draft work. Every number on the public scoreboard must point to evidence in the registry.
