@@ -1,0 +1,25 @@
+name: mena-labor-work-sample
+
+on:
+  push:
+    paths:
+      - "work_samples/mena-labor-intelligence/**"
+      - ".github/workflows/mena-labor-work-sample.yml"
+  pull_request:
+    paths:
+      - "work_samples/mena-labor-intelligence/**"
+      - ".github/workflows/mena-labor-work-sample.yml"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: work_samples/mena-labor-intelligence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r requirements.txt
+      - run: pytest -q

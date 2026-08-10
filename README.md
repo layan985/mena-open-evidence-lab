@@ -27,6 +27,12 @@ The first candidate is the [MENA Economic Narrative and Market Stress Observator
 
 The immediate test is modest: can another person reproduce the file, identify a source or comparability error, and leave a correction that becomes part of the repository history?
 
+## Author work sample: MENA Labor Intelligence
+
+[`work_samples/mena-labor-intelligence/`](work_samples/mena-labor-intelligence/) is a compact real-public-data analytics example built from the World Bank HCI+ country-year panel. It includes the provenance-preserving extract, a data dictionary, quality checks, SQL, a Streamlit view, derived change tables and a dedicated CI workflow.
+
+It is useful as an inspectable example of the standard I want the Lab to use. **It is not counted in the release table above:** it is founder-authored, has not been independently rerun, and has no outside reviewer yet.
+
 ## Contributing
 
 [programs/modern/APPLY.md](programs/modern/APPLY.md) describes the small entry task. Applicants are not called contributors until a specific piece of work is accepted.
