@@ -28,11 +28,13 @@ Still external/ongoing: independent rerun, external provenance review, audited Z
 
 Repository: `layan985/mena-firm-ai-labor-adjustment`
 
-**Canonical status:** completed engineering/data-collection alpha, GitHub release `v0.2.0a1`; empirical freeze remains open.
+**Canonical status:** audited collection/provenance alpha, GitHub release `v0.2.0a2`; empirical freeze remains open.
 
-Shipped: 50-firm × 2018–2025 target frame; 124 numeric employment firm-years across 27 firms; 113 archive/hash-complete employment observations; 62 AI-evidence firm-years across 31 firms; 71 labeled passages; frozen 15-passage blind validation sample; source archive; fail-closed freeze/validation machinery; OECD exposure and GDELT large-data pipelines.
+Shipped: 50-firm × 2018–2025 target frame; **148 numeric employment firm-years across 31 firms**; **140/148 SHA-256-bound numeric employment observations**; 114 exact observations; 17 explicitly rounded observations; 17 scope/comparability-warning observations; zero unresolved value conflicts; 62 AI-evidence firm-years across 31 firms; 71 labeled passages; frozen 15-passage blind validation sample; fail-closed freeze/validation machinery; incremental immutable source binding; OECD exposure and GDELT large-data pipelines.
 
-Still empirical/external: 276 firm-years require real collection/classification, remaining provenance failures must be resolved or classified, full AI search must finish, and a non-author human must complete the blind second-coding exercise before agreement statistics and preferred causal estimates are released.
+The v0.2.0a2 collection pass added first-party employment evidence for Almarai, Air Arabia, Qatar Islamic Bank, Milaha, Dubai Financial Market and Tabreed. Milaha now has complete 2018–2025 numeric coverage. Dynamic source URLs cannot silently replace earlier research-row hashes.
+
+Still empirical/external: **252 firm-years** require real collection or explicit missingness/access classification; eight numeric observations remain hash-pending; the full AI search must finish; and a non-author human must complete the blind second-coding exercise before agreement statistics and preferred causal estimates are released.
 
 ## 4. MENA Open Data & Evidence Lab / MODERN / Evidence Terminal
 
@@ -43,6 +45,8 @@ Repository: `layan985/mena-open-evidence-lab`
 Shipped: public static Lab/Evidence Terminal prototype, product specification, contributor application path, selection/QA rules, tracking registries, Workshop 001 materials and a real-public-data labor analytics work sample.
 
 Still external/ongoing: accepted contributors, independently validated Lab releases, delivered workshops, outside reviewers, institutional partners and policy users. Those counts remain zero until the corresponding events actually occur.
+
+The static site files are publication-ready in the repository. GitHub Pages creation is currently blocked by repository/integration permissions, and the connected Vercel account does not expose a safe create-project action for a new dedicated Lab deployment; no unrelated live project is overwritten to work around that limitation.
 
 ## Counting rule
 
