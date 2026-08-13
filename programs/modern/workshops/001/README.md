@@ -1,5 +1,6 @@
 # MODERN Workshop 001 — Reproduce an Economics Result from Raw Data
 
+**Status:** Scheduled — not yet delivered
 **Date:** Sunday, 23 August 2026  
 **Time:** 18:00–19:30 Asia/Amman (UTC+3)  
 **Format:** Online  
@@ -17,10 +18,25 @@ The exercise uses a **synthetic teaching dataset** created for MODERN. It contai
 ## Files
 - `data/panel.csv` — raw synthetic region-year panel
 - `analysis.py` — reference analysis
+- `workshop_001.ipynb` — participant notebook with the same validation and estimand
+- `Workshop_001_Slides.pptx` — participant-facing slide deck with speaker notes
 - `exercise.md` — participant tasks
 - `answer_key.md` — expected reasoning and checks
 - `instructor_guide.md` — 90-minute facilitation plan
 - `REGISTER.md` — public RSVP route
+- `outputs/` — machine-generated reference table, result file, and figure
+- `DELIVERY_RECORD.md` — truthful post-event evidence record; blank until delivery
+- `reproduction_log.csv` — discrepancy log for the blind handoff
+
+## Run the reference package
+
+From this folder:
+
+```bash
+python analysis.py
+```
+
+The command validates the 56-row data contract, calculates the four means, solves the saturated 2×2 regression, verifies the **2.6679167** percentage-point interaction, and rewrites the three files in `outputs/`.
 
 ## Learning objectives
 Participants should leave able to:
@@ -42,6 +58,8 @@ Workshop 001 counts toward MODERN impact metrics only after:
 - the live workshop is actually delivered
 - attendance is archived
 - at least one participant other than the instructor completes the reproduction check
+
+Until those conditions are documented in `DELIVERY_RECORD.md`, the Lab describes Workshop 001 only as **scheduled**, never as delivered.
 
 ## Integrity boundary
 The dataset is synthetic and the workshop is pedagogical. No result from this exercise should be presented as evidence about a real MENA policy or labor market.

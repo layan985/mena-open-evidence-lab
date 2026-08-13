@@ -1,0 +1,22 @@
+{
+  "status": "reference_solution",
+  "data_contract": {
+    "rows": 56,
+    "unique_region_year_keys": 56
+  },
+  "group_means": {
+    "treated_pre": 59.690625,
+    "treated_post": 64.261667,
+    "control_pre": 62.561875,
+    "control_post": 64.465
+  },
+  "simple_difference_in_differences": 2.6679167,
+  "ols": {
+    "formula": "employment_rate ~ treated + post + treated:post",
+    "intercept": 62.561875,
+    "treated": -2.87125,
+    "post": 1.903125,
+    "treated_post": 2.6679167
+  },
+  "claim_boundary": "Synthetic teaching result; no claim about a real policy."
+}

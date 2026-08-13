@@ -2,19 +2,20 @@
 
 Many MENA economic series are available only as separate releases, PDFs, or tables whose definitions change over time. The Lab is a public research-infrastructure project for turning those sources into traceable datasets, reproducible analysis objects, and methods training without hiding revisions, comparability breaks, or uncertainty.
 
-The **operating infrastructure is now live in this repository**: contributor intake, selection/QA rules, workshop materials, tracking registries, a real-data labor analytics work sample, and the first MENA Evidence Terminal prototype are committed on `main`. The Lab is not yet a completed external research network: contributor, partner, workshop-delivery, reviewer, and policy-use counts remain evidence-gated.
+The Lab is now operating around two flagships and one scheduled workshop. Contributor intake, selection/QA rules, workshop materials, tracking registries, and the MENA Evidence Terminal prototype remain public, but new project starts are frozen while the flagship release and independent-review gates are completed.
 
 ## Current status
 
-As of 10 August 2026:
+As of 13 August 2026:
 
 | Item | Count or status |
 | --- | --- |
 | Public Lab/Terminal prototype | Shipped on `main` |
 | Contributor application route | Open infrastructure shipped |
-| Workshop 001 materials | Complete; live delivery pending |
+| Workshop 001 materials | Complete; scheduled 23 August 2026; live delivery pending |
 | Real-data author work sample | Shipped |
-| Observatory v0.2 founder-produced pilot | Complete in its dedicated repo; external validation pending |
+| Observatory v0.3.0-rc1 | 48 rows; automated validation passing; independent audit/DOI pending |
+| AI × Labor v0.2.0a2 | 176/400 numeric firm-years; 168 source hashes; second coder pending |
 | Accepted external contributors | 0 |
 | Universities represented by validated contributors | 0 |
 | Independently validated Lab releases | 0 |
@@ -33,9 +34,15 @@ The zeros are deliberate. Infrastructure, applications, conversations, or founde
 
 The product contract is in [`TERMINAL_SPEC.md`](TERMINAL_SPEC.md). The static prototype is implemented by [`index.html`](index.html), [`app.js`](app.js), and [`styles.css`](styles.css). Missing empirical fields remain missing rather than being filled with placeholder statistics.
 
-## First canonical pilot
+The Terminal is a secondary publication interface during the flagship freeze. It is not a third active research-output stream.
 
-The [MENA Economic Narrative and Market Stress Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory) now has a frozen **complete v0.2 founder-produced pilot**: eight release/geography rows, 24 populated numeric observations, five official statistical institutions, methodology, provenance, rights notes and automated validation. It is intentionally not counted as an independently validated Lab release until a non-author rerun and provenance review exist.
+## Flagship 1 — Official Price Release Observatory
+
+The [MENA Economic Narrative and Market Stress Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory) has a **v0.3.0-rc1 founder-produced release candidate**: 48 January–June 2026 geography-month rows, 30 primary institution-month records, 18 Palestinian regional supplements, 195 populated numeric observations, 30 official release URLs, methodology, provenance ledger, and automated validation. Independent source audit, source-byte hashing, and DOI publication remain pending.
+
+## Flagship 2 — AI × Labor 50-Firm Panel
+
+The [MENA Firm AI Adoption and Labor Adjustment project](https://github.com/layan985/mena-firm-ai-labor-adjustment) is a **v0.2.0a2 collection/provenance alpha**. Its current machine-audited coverage is 176/400 numeric employment firm-years across 38/50 firms, with 168/176 numeric rows source-hash bound. A frozen 16-passage second-coder sample and public audit handoff exist; the non-author coding and reproduction gates remain pending. No preferred causal estimate has been inspected.
 
 ## Author work sample: MENA Labor Intelligence
 
@@ -48,6 +55,8 @@ It demonstrates the expected technical standard but does not count as an externa
 [`programs/modern/APPLY.md`](programs/modern/APPLY.md) contains the application route and reproducibility task. Applicant status alone does not create contributor credit. A person enters the public contributor count only after a substantive, traceable contribution is accepted.
 
 The operating files under [`programs/modern/`](programs/modern/) include onboarding, selection, QA, reviewer materials, tracking registries and Workshop 001.
+
+Public identity, contributor status, and role openings are recorded in [`PEOPLE.md`](PEOPLE.md). Governance, versioning, licensing, corrections, conflict disclosure, and error reporting are summarized in [`TRANSPARENCY.md`](TRANSPARENCY.md).
 
 ## What counts as finished
 
