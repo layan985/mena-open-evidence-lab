@@ -10,6 +10,7 @@ The Lab is an independent project founded and maintained by [Layan Oraidi](https
 
 | Project | What is available | Next step |
 | --- | --- | --- |
+| [MENA Funding & Procurement Intelligence](intelligence.html) | 32 open opportunities, 38 pipeline notices, 140 recent procurement plans and 11,799 normalized MENA contract-award records from official World Bank sources | Add independently normalized UNGM, EU and GIZ coverage without mixing it into the current World Bank counts |
 | [Official Price Release Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory) | Release candidate covering January–June 2026: 48 geography-month rows, 195 numeric observations and 30 official release links | Independent source audit, source-file hashes and DOI |
 | [MENA Firm AI Adoption and Labor Adjustment](https://github.com/layan985/mena-firm-ai-labor-adjustment) | Collection alpha for a 50-firm, 2018–2025 panel: 176 numeric employment firm-years, 168 linked to a saved source hash | Finish collection and complete the independent second-coding exercise |
 | Workshop 001 | A 90-minute workshop on reproducing an economics paper from raw data; slides, notebook, exercise and answer key are ready | Live delivery on 23 August 2026 |
@@ -19,6 +20,7 @@ These are works in progress. Automated checks are useful, but a release is descr
 ## Start here
 
 - Explore the two research projects above.
+- Use the [procurement-intelligence desk](intelligence.html) to qualify opportunities, inspect disclosed awards, compare benchmark ranges and search forward procurement plans.
 - Run the [MENA Labor Intelligence work sample](work_samples/mena-labor-intelligence/) for a compact example using World Bank HCI+ data, SQL, tests and a Streamlit view.
 - Browse the [Evidence Terminal prototype](index.html) and its [technical specification](TERMINAL_SPEC.md).
 - Read the materials for [MODERN](programs/modern/), the Lab's contributor and methods-training programme.
@@ -43,6 +45,10 @@ The practical sequence is source capture, scripted processing, validation, indep
 | [programs/modern/](programs/modern/) | Workshops, contributor guidance and review materials |
 | [work_samples/](work_samples/) | Small examples that can be run independently |
 | [index.html](index.html) | Static Evidence Terminal prototype |
+| [intelligence.html](intelligence.html) | Interactive procurement-intelligence product |
+| `data/manifest.json` + `data/procurement-*.part` | Browser-ready normalized official-source snapshot used by the product |
+| [scripts/fetch-procurement-data.mjs](scripts/fetch-procurement-data.mjs) | Reproducible World Bank refresh pipeline |
+| [scripts/prepare-procurement-parts.mjs](scripts/prepare-procurement-parts.mjs) | Deterministic browser-data packaging step |
 | [PEOPLE.md](PEOPLE.md) | Maintainers, contributors and open roles |
 | [TRANSPARENCY.md](TRANSPARENCY.md) | Versioning, corrections, credit and conflicts of interest |
 
@@ -53,5 +59,3 @@ The most useful contributions are bounded and checkable: verify a source against
 ## License
 
 Original code and documentation in this repository are released under the [MIT License](LICENSE). Source data retain the terms set by their publishers; redistribution details are documented in the relevant project.
-
-
