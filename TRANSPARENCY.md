@@ -1,56 +1,31 @@
-# Transparency Statement
+# Research practice
 
-## Institutional identity
+The MENA Open Data & Evidence Lab is an independent research project. This page explains how its data, code and reviews are handled.
 
-The MENA Open Data & Evidence Lab is an independent research initiative. Research priorities and methodological standards are overseen by the Founder & Research Director, with contributions from independent researchers and collaborators. Outputs are developed under principles of transparency, reproducibility, documented correction, and open research.
+## Sources and provenance
 
-The Lab is not a university department, government body, consultancy, or employer of a large staff. Institutional status is demonstrated through public research objects, governance, contribution records, external checks, and use—not by implied scale.
+Published observations should retain the source institution, document or table, retrieval date, relevant definition and any transformation applied. When a source changes over time, the project records the vintage used rather than silently replacing it.
 
-## Leadership and credit
+## Review
 
-- **Founder & Research Director:** Layan Oraidi
-- **Accepted external contributors:** 0 as of 13 August 2026
-- **Publicly confirmed research collaborators:** 0 as of 13 August 2026
+Automated tests catch formatting, schema and consistency errors; they are not a substitute for another person checking the source and rerunning the code. A release is labelled independently reviewed only when that work has been completed and recorded.
 
-Names are added only after substantive, attributable work exists. Credit follows the actual role performed: dataset lead, data contributor, methods contributor, reproducibility reviewer, workshop facilitator, or release reviewer.
+## Versions and corrections
 
-## Versioning and corrections
+Stable releases are kept as fixed snapshots. Material corrections produce a new version and a changelog entry explaining what changed and whether published results are affected. Errors can be reported through an issue in the relevant project repository.
 
-- Stable releases are immutable snapshots.
-- Material data, method, or documentation corrections create a new version and changelog entry.
-- A discrepancy remains visible after repair through an audit, issue, pull request, or correction record.
-- Withdrawals and retractions identify the affected release and reason.
+## Credit
 
-## Data and code licensing
-
-Repository code and original Lab materials use the repository's MIT License unless a file says otherwise. Third-party source data retain their original terms. A repository code license does not grant rights to redistribute source documents or data that the source does not permit.
+Credit follows the work performed. Roles may include data collection, methods, software, source review, reproduction or workshop facilitation. Contributor names are added with their agreement after the contribution is accepted.
 
 ## Conflicts of interest
 
-Producers, reviewers, and collaborators disclose financial, supervisory, organizational, or close personal relationships that could reasonably affect source selection, interpretation, review, or release decisions. A compensated audit is labeled as such. A producing analyst cannot certify their own work as independently reproduced.
+Authors and reviewers should disclose financial, supervisory, organisational or close personal relationships that could reasonably affect the work. A person who produced a dataset cannot be its independent reviewer.
 
-## Error reporting
+## Licensing
 
-An error report should identify:
+Original code and documentation use the repository's MIT License unless a file states otherwise. Third-party data and documents remain subject to the publisher's terms; a code license does not override those terms.
 
-1. repository and exact release or commit;
-2. stable record ID or affected file;
-3. observed and expected value or behavior;
-4. primary-source evidence; and
-5. whether the issue affects data, method, provenance, documentation, or interpretation.
+## Contact
 
-Use the public issue route in the relevant repository. Sensitive disclosures may use the contact route on the Lab website; the public correction record should follow once disclosure is safe.
-
-## Public-claim rules
-
-- **Scheduled** is not **delivered**.
-- **Founder-produced** is not **independently reproduced**.
-- **Application in progress** is not **membership**.
-- Membership in a network does not imply endorsement of Lab research.
-- A reply or introduction is not a partnership.
-- Page views and downloads are not documented research use.
-- “Leading,” “premier,” and “first” are not used without auditable comparative evidence.
-
-## Current network status
-
-The Lab's FORM membership application is in progress. The Lab does not claim FORM membership, research review, partnership, or endorsement unless and until those facts are formally documented.
+For an ordinary error or reproducibility problem, open an issue in the relevant repository and include the release or commit, affected record or file, expected result and supporting source. Sensitive matters can be sent to the contact address listed in [APPLY.md](APPLY.md).
