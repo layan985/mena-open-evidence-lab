@@ -27,3 +27,4 @@ jobs:
             --target "$GITHUB_SHA" \
             --title 'v0.1.0 — Lab, MODERN and Evidence Terminal operating infrastructure' \
             --notes 'First versioned operating-infrastructure release for the MENA Open Data & Evidence Lab. Includes the static Lab/Evidence Terminal prototype and specification, contributor intake and selection/QA materials, tracking registries, Workshop 001 materials, and the founder-authored MENA Labor Intelligence real-data work sample. This release does not claim completed cohorts, independently validated Lab datasets, delivered workshops, institutional partners, outside reviewers or policy users; those remain evidence-gated external outcomes.'
+

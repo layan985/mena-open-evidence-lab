@@ -65,3 +65,4 @@ Fellows must complete the requirements in `programs/modern/FELLOWSHIP.md`; atten
 ## Privacy
 
 Applicant records and review decisions are kept private. Only aggregate application statistics may be published after the cycle closes. Do not send passport numbers, national IDs, medical information, or other unnecessary sensitive data.
+

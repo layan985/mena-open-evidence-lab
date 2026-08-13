@@ -19,3 +19,4 @@ The current projects would benefit most from:
 - a participant willing to reproduce Workshop 001 from a clean environment.
 
 Each task is small enough to review and credit clearly. Details are in [CONTRIBUTION_TASKS.md](programs/modern/CONTRIBUTION_TASKS.md).
+

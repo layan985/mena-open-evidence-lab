@@ -86,3 +86,4 @@ The API is a target until implemented and publicly deployed. Outside API users c
 ## Distribution rule
 
 Every published artifact should have a stable landing page that supports citation, download, machine access and reproduction. Social posts distribute artifacts; they do not substitute for them.
+
