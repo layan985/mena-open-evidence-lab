@@ -1,27 +1,21 @@
 # People
 
-Last updated: 13 August 2026.
+_Last updated: 13 August 2026_
 
-## Founder & Research Director
+The MENA Open Data & Evidence Lab is currently maintained by **Layan Oraidi**, Founder and Research Director.
 
-**Layan Oraidi** — research direction, dataset architecture, methods, initial data production, release maintenance, and Workshop 001 facilitation. ORCID: `0009-0005-0202-2582`.
-
-Founder-produced work is labeled as such. Founder tests, source checks, and release approval do not count as independent reproduction.
+Layan leads the research agenda, dataset design, initial data collection, methods, release maintenance and Workshop 001. [ORCID 0009-0005-0202-2582](https://orcid.org/0009-0005-0202-2582)
 
 ## Contributors
 
-**None publicly confirmed yet.** A person is listed only after an accepted, attributable contribution exists in a repository, audit record, released dataset, or workshop artifact.
+No external contributor is listed yet. Names and roles will be added when an accepted contribution can be linked to a dataset, code change, review or workshop artifact.
 
-## Research collaborators
+## Open tasks
 
-**None publicly confirmed yet.** Outreach, replies, introductions, review requests, and planned conversations do not create collaborator status.
+The current projects would benefit most from:
 
-## Open contribution roles
+- an independent source check of the Observatory release candidate;
+- a second coder for the 16-passage AI × Labor validation sample; and
+- a participant willing to reproduce Workshop 001 from a clean environment.
 
-The Lab is currently seeking real contributions to bounded work, not honorary titles:
-
-- independent v0.3 Observatory source auditor;
-- blinded second coder for the AI × Labor 16-passage sample;
-- Workshop 001 reproduction participant or co-facilitator.
-
-Acceptance criteria and credit rules are in [`programs/modern/CONTRIBUTION_TASKS.md`](programs/modern/CONTRIBUTION_TASKS.md).
+Each task is small enough to review and credit clearly. Details are in [CONTRIBUTION_TASKS.md](programs/modern/CONTRIBUTION_TASKS.md).
