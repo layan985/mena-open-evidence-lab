@@ -1,0 +1,5 @@
+group,period,mean_employment_rate
+treated,pre,59.690625
+treated,post,64.261667
+control,pre,62.561875
+control,post,64.465000
