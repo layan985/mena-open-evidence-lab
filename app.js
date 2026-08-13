@@ -146,3 +146,4 @@ document.querySelectorAll('.workflow').forEach(btn=>btn.addEventListener('click'
 
 document.querySelector('#scoreboard-grid').innerHTML=scoreboard.map(([name,value,rule])=>`<article class="score"><strong>${value}</strong><h3>${name}</h3><p>${rule}</p></article>`).join('');
 
+
