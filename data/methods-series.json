@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "methods_notes":[
+    {"id":"MEL-MN-2026-001","title":"Reconstructing Statistical Vintages","status":"planned"},
+    {"id":"MEL-MN-2026-002","title":"Provenance Standards for PDF-Origin Economic Data","status":"planned"},
+    {"id":"MEL-MN-2026-003","title":"Independent Second Coding for Corporate Disclosure Panels","status":"planned"},
+    {"id":"MEL-MN-2026-004","title":"Revision-Aware Macroeconomic Research","status":"planned"},
+    {"id":"MEL-MN-2026-005","title":"Auditing Procurement Databases Across Heterogeneous Sources","status":"planned"}
+  ],
+  "replication_series":{
+    "prefix":"MEL-REP",
+    "required_fields":["original_claim","original_dataset","original_specification","reproduction_result","required_deviations","robustness_checks","updated_sample_if_applicable","limitations","code","environment","results_hash"],
+    "editorial_rule":"Replication records are methodical research objects, not attack pieces."
+  }
+}
