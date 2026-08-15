@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[],
+  "required_fields":["id","funder_or_client_class","amount_or_band","currency","purpose","period","research_control","publication_rights","conflict_status","public_disclosure_level"],
+  "rule":"No funding source, client or grant is inferred from conversations, applications or prospective work. Public disclosure follows contractual and confidentiality limits while preserving research-independence information."
+}

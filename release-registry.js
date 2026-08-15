@@ -1,5 +1,21 @@
 (()=>{
+  function addNavLinks(){
+    const links=[
+      ['Programs','programs.html'],
+      ['Country rooms','countries.html'],
+      ['Methods','methods.html']
+    ];
+    document.querySelectorAll('.home-nav nav,.footer-nav').forEach(nav=>{
+      links.forEach(([label,href])=>{
+        if(![...nav.querySelectorAll('a')].some(a=>a.getAttribute('href')===href)){
+          const a=document.createElement('a');a.href=href;a.textContent=label;nav.insertBefore(a,nav.firstChild);
+        }
+      });
+    });
+  }
+
   function enhanceHomepage(){
+    addNavLinks();
     const heroActions=document.querySelector('.hero-cta');
     if(heroActions&&!heroActions.querySelector('[data-commission-engagement]')){
       const a=document.createElement('a');

@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[],
+  "required_fields":["id","output_id","reproducer","date","environment","starting_materials","commit_or_release","success","elapsed_time","differences","unresolved_issues","evidence"],
+  "counting_rule":"INDEPENDENT REPRODUCTION is permitted only when an external person independently executes the published reproduction path and leaves a reviewable record."
+}

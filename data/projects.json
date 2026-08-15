@@ -1,0 +1,13 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[
+    {"id":"price-observatory","program_id":"macro-official-statistics","title":"Official Price Release Observatory","status":"release-candidate","latest_release":"v0.3.0-rc1","evidence_registry_id":"price-observatory"},
+    {"id":"procurement-intelligence","program_id":"public-finance-procurement","title":"MENA Funding & Procurement Intelligence","status":"live","latest_release":"public-preview","evidence_registry_id":"procurement-intelligence"},
+    {"id":"ai-labor","program_id":"firms-labor-technology","title":"MENA Firm AI Adoption and Labor Adjustment","status":"collection-in-progress","latest_release":"collection-alpha","evidence_registry_id":"ai-labor"},
+    {"id":"workshop-001","program_id":"methods-reproducibility","title":"Workshop 001 — Reproducing an Economics Paper from Raw Data","status":"scheduled","latest_release":"001","evidence_registry_id":"workshop-001"},
+    {"id":"evidence-terminal","program_id":null,"title":"MENA Evidence Terminal","status":"specification","latest_release":null,"evidence_registry_id":null}
+  ],
+  "page_required_fields":["research_question","current_status","latest_release","coverage","headline_findings","evidence_labels","data","methodology","sources","code","qa","limitations","review_status","external_use","citation","corrections","downloads"]
+}

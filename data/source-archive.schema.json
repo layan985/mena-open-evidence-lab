@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"MENA Evidence Lab source archive record",
+  "type":"object",
+  "required":["id","publisher","retrieval_timestamp","sha256","original_filename","release_date","mime_type","source_url","license_access_notes","redistribution_status"],
+  "properties":{
+    "id":{"type":"string"},
+    "publisher":{"type":"string"},
+    "retrieval_timestamp":{"type":"string"},
+    "sha256":{"type":"string"},
+    "original_filename":{"type":"string"},
+    "release_date":{"type":["string","null"]},
+    "mime_type":{"type":"string"},
+    "source_url":{"type":"string"},
+    "license_access_notes":{"type":"string"},
+    "redistribution_status":{"enum":["file-and-metadata","metadata-and-hash-only","restricted"]},
+    "archived_path":{"type":["string","null"]}
+  }
+}

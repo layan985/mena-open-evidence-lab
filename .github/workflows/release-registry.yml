@@ -2,30 +2,18 @@ name: Validate institutional state
 on:
   push:
     paths:
-      - data/releases.json
-      - data/publications.json
-      - data/validation.json
-      - data/external-use.json
-      - data/programs.json
-      - data/engagements.json
-      - programs/modern/workshops/001/DELIVERY_RECORD.md
-      - scripts/validate-release-registry.mjs
-      - scripts/validate-institutional-state.mjs
-      - .github/workflows/release-registry.yml
-      - .gitignore
+      - 'data/*.json'
+      - 'scripts/validate-*.mjs'
+      - 'programs/modern/workshops/001/DELIVERY_RECORD.md'
+      - '.github/workflows/release-registry.yml'
+      - '.gitignore'
   pull_request:
     paths:
-      - data/releases.json
-      - data/publications.json
-      - data/validation.json
-      - data/external-use.json
-      - data/programs.json
-      - data/engagements.json
-      - programs/modern/workshops/001/DELIVERY_RECORD.md
-      - scripts/validate-release-registry.mjs
-      - scripts/validate-institutional-state.mjs
-      - .github/workflows/release-registry.yml
-      - .gitignore
+      - 'data/*.json'
+      - 'scripts/validate-*.mjs'
+      - 'programs/modern/workshops/001/DELIVERY_RECORD.md'
+      - '.github/workflows/release-registry.yml'
+      - '.gitignore'
 jobs:
   validate:
     runs-on: ubuntu-latest

@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[],
+  "required_fields":["id","output_id","reviewer","date","scope","sample_examined","method","issues_found","severity","lab_response","corrections","attribution_permission","version_reviewed"],
+  "counting_rule":"EXTERNAL REVIEW is permitted only when a completed review record exists and the reviewer is outside the producing team."
+}
