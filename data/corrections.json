@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[],
+  "required_fields":["id","output_id","version_affected","date_reported","date_resolved","severity","description","impact","correction","superseding_version","reporter_attribution"],
+  "rule":"Corrections remain visible after resolution. A corrected release does not erase the record of the superseded result."
+}
