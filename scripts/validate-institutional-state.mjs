@@ -109,4 +109,13 @@ for (const e of engagements.records) {
 for (const forbidden of ['data/clients.json','data/crm.json','private']) if (fs.existsSync(path.join(root, forbidden))) fail(`Restricted operating state found in public repository: ${forbidden}`);
 for (const file of ['data/release-package.schema.json','data/source-archive.schema.json']) readJson(file);
 
+const homepage = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+for (const release of releases.records) {
+  if (!homepage.includes(`data-release-id="${release.id}"`)) fail(`homepage lacks registry binding for ${release.id}`);
+}
+for (const staleLiteral of ['v0.3.0-rc1','11,799','176 / 400','195 numeric observations','23 Aug 2026']) {
+  if (homepage.includes(staleLiteral)) fail(`homepage contains hand-maintained release claim: ${staleLiteral}`);
+}
+if (!homepage.includes('release-registry.js')) fail('homepage must load release registry renderer');
+
 console.log(`Institutional graph OK: ${releaseIds.size} releases, ${programIds.size} programs, ${projectIds.size} projects, ${countries.records.length} country rooms, ${reviews.records.length} reviews, ${reproductions.records.length} reproductions`);
