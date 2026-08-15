@@ -38,26 +38,65 @@
     else grid.style.gridTemplateColumns=grid.querySelector('[data-engagement-status]')?'1.2fr repeat(5,1fr)':'1.2fr repeat(4,1fr)';
   }
 
+  function humanDate(value){
+    if(!value)return '';
+    const d=new Date(`${value}T00:00:00Z`);
+    if(Number.isNaN(d.getTime()))return value;
+    return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(d);
+  }
+
+  function releaseField(rec,field){
+    const fields={
+      'row-value':()=>rec.row_metric?.value,
+      'row-label':()=>rec.row_metric?.label,
+      'version':()=>rec.version,
+      'status':()=>rec.status,
+      'numeric-observations':()=>rec.numeric_observations,
+      'source-links':()=>rec.official_release_links,
+      'source-hash-linked':()=>rec.source_hash_linked,
+      'target-firm-years':()=>rec.target_firm_years,
+      'release-date':()=>humanDate(rec.release_date),
+      'coverage-note':()=>rec.coverage_note,
+      'reviewers':()=>rec.reviewers,
+      'validation-level':()=>Array.isArray(rec.validation_level)?rec.validation_level.join(' · '):''
+    };
+    return fields[field]?.();
+  }
+
+  function setReleaseElements(byId){
+    document.querySelectorAll('[data-release-id]').forEach(el=>{
+      const rec=byId.get(el.dataset.releaseId);
+      if(!rec)return;
+      const field=el.dataset.releaseField||'row-value';
+      const value=releaseField(rec,field);
+      if(value!==undefined&&value!==null&&value!==''){
+        el.textContent=typeof value==='number'?value.toLocaleString():value;
+      }
+    });
+
+    document.querySelectorAll('[data-release-status-class]').forEach(el=>{
+      const rec=byId.get(el.dataset.releaseStatusClass);
+      if(!rec)return;
+      const pending=['release-candidate','collection-in-progress','scheduled'].includes(rec.status);
+      el.classList.toggle('open',pending);
+    });
+  }
+
   async function loadReleases(){
     try{
       const r=await fetch('/data/releases.json',{cache:'no-store'});
-      if(!r.ok)return;
+      if(!r.ok)throw new Error(`HTTP ${r.status}`);
       const j=await r.json();
       const byId=new Map(j.records.map(x=>[x.id,x]));
+      setReleaseElements(byId);
+      document.documentElement.dataset.releaseRegistry='loaded';
+    }catch(e){
+      console.warn('Release registry unavailable',e);
+      document.documentElement.dataset.releaseRegistry='unavailable';
       document.querySelectorAll('[data-release-id]').forEach(el=>{
-        const rec=byId.get(el.dataset.releaseId);
-        if(!rec)return;
-        const field=el.dataset.releaseField||'row-value';
-        let value='';
-        if(field==='row-value')value=rec.row_metric?.value;
-        if(field==='version')value=rec.version;
-        if(field==='status')value=rec.status;
-        if(field==='numeric-observations')value=rec.numeric_observations;
-        if(field==='source-links')value=rec.official_release_links;
-        if(field==='source-hash-linked')value=rec.source_hash_linked;
-        if(value!==undefined&&value!==null)el.textContent=typeof value==='number'?value.toLocaleString():value;
+        if(el.textContent.trim()==='…')el.textContent='registry unavailable';
       });
-    }catch(e){console.warn('Release registry unavailable',e)}
+    }
   }
 
   async function loadEngagements(){
