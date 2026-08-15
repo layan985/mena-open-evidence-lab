@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "canonical": true,
+  "last_updated": "2026-08-16",
+  "series": [
+    {"code":"MEL-WP","name":"Working Paper","pattern":"MEL-WP-YYYY-NNN"},
+    {"code":"MEL-EB","name":"Evidence Brief","pattern":"MEL-EB-YYYY-NNN"},
+    {"code":"MEL-DATA","name":"Data Release","pattern":"MEL-DATA-YYYY-NNN"},
+    {"code":"MEL-MN","name":"Methods Note","pattern":"MEL-MN-YYYY-NNN"},
+    {"code":"MEL-REP","name":"Replication","pattern":"MEL-REP-YYYY-NNN"},
+    {"code":"MEL-PQ","name":"Procurement Quarterly","pattern":"MEL-PQ-YYYY-QN"},
+    {"code":"MEL-CB","name":"Country Brief","pattern":"MEL-CB-CCC-YYYY-NNN"},
+    {"code":"MEL-ENG","name":"Engagement Record","pattern":"MEL-ENG-NNN"}
+  ],
+  "rule":"Identifiers are assigned from the canonical registry and are never reused or silently rewritten."
+}
