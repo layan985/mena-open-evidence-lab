@@ -1,15 +1,23 @@
 (()=>{
   function addNavLinks(){
     const links=[
-      ['Programs','programs.html'],
-      ['Country rooms','countries.html'],
-      ['Methods','methods.html']
+      ['Research','research.html'],
+      ['Data','data.html'],
+      ['Intelligence','intelligence.html'],
+      ['Publications','publications.html'],
+      ['Client Work','client-work.html'],
+      ['Methods','methods.html'],
+      ['Validation','validation.html'],
+      ['People','people.html'],
+      ['Governance','governance.html'],
+      ['Funding','funding.html'],
+      ['Work With Us','work-with-us.html'],
+      ['Contribute','contribute.html']
     ];
     document.querySelectorAll('.home-nav nav,.footer-nav').forEach(nav=>{
+      nav.innerHTML='';
       links.forEach(([label,href])=>{
-        if(![...nav.querySelectorAll('a')].some(a=>a.getAttribute('href')===href)){
-          const a=document.createElement('a');a.href=href;a.textContent=label;nav.insertBefore(a,nav.firstChild);
-        }
+        const a=document.createElement('a');a.href=href;a.textContent=label;nav.appendChild(a);
       });
     });
   }
