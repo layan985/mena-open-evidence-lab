@@ -1,0 +1,16 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "objects":{
+    "opportunity":["id","buyer_id","country","sector","deadline","value","currency","funding_source_id","procurement_method","source_url","retrieval_timestamp","source_hash"],
+    "pipeline":["id","buyer_id","project","country","sector","expected_timing","funding_source_id","source_url","retrieval_timestamp","source_hash"],
+    "award":["id","buyer_id","supplier_id","amount","currency","award_date","country","sector","funding_source_id","procurement_method","source_url","retrieval_timestamp","source_hash"],
+    "organization":["id","canonical_name","aliases","organization_type","country"],
+    "funding_source":["id","name","type"],
+    "sector":["id","label","parent_id"],
+    "geography":["id","country","subregion"]
+  },
+  "research_questions":["supplier concentration","sector flows","country concentration","buyer recurrence","evidence/MEL/data procurement demand"],
+  "commercial_output_rule":"Client opportunity matching is generated against explicit capability criteria and must not be represented as award probability."
+}
