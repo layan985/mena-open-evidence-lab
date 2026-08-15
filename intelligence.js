@@ -1,4 +1,4 @@
-const CONTACT_URL = "https://www.layanaloreidi.online/#contact";
+const CONTACT_URL = "/work-with-us";
 const AWARD_PAGE_SIZE = 18;
 
 const COUNTRY_LABELS = {
@@ -140,7 +140,7 @@ function opportunityCard(row) {
     <div class="opportunity-body"><div><p class="eyebrow">${escapeHtml(row.category || row.noticeType)}</p><h3>${escapeHtml(row.title)}</h3><p class="project-name">${escapeHtml(row.projectName)}</p></div><div class="signal-donut" style="--score:${signal.score * 3.6}deg"><span>${signal.score}</span></div></div>
     <div class="signal-explainer"><strong>${signal.label}</strong><span>${escapeHtml(signal.matches.length ? signal.matches.slice(0, 4).join(" · ") : "No evidence-service keywords")}</span></div>
     <dl class="opportunity-meta"><div><dt>Deadline</dt><dd>${formatDate(row.deadlineDate)}</dd></div><div><dt>Buyer</dt><dd>${escapeHtml(row.buyer || "See official notice")}</dd></div><div><dt>Method</dt><dd>${escapeHtml(row.method || row.noticeType)}</dd></div><div><dt>Reference</dt><dd>${escapeHtml(reference)}</dd></div></dl>
-    <div class="card-actions"><a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">Official notice ↗</a>${projectLink}<a href="${CONTACT_URL}" target="_blank" rel="noreferrer">Commission dossier →</a></div>
+    <div class="card-actions"><a href="${escapeHtml(row.sourceUrl)}" target="_blank" rel="noreferrer">Official notice ↗</a>${projectLink}<a href="${CONTACT_URL}">Commission dossier →</a></div>
   </article>`;
 }
 
