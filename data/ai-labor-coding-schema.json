@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "target_coverage":{"firms":"50-100 major regional firms","years":"2018-2026"},
+  "observed_fields":["firm_id","year","employment","revenue","capex","technology_disclosures","ai_disclosures","automation_language","restructuring","layoffs","hiring","skill_composition","geography","sector","ownership","source_url","source_hash"],
+  "variable_classes":{
+    "observed_disclosure":"Directly reported or source-extracted evidence.",
+    "coded_ai_adoption_event":"Human-coded event derived under the published coding protocol.",
+    "inferred_treatment_variable":"Analytical variable constructed from observed/coded inputs and explicitly labelled as inferred."
+  },
+  "validation":{"second_coding_required":true,"blind_to_primary_labels":true,"agreement_statistics_required":true,"disagreement_log_required":true},
+  "causal_boundary":"Panel structure alone does not establish causal identification."
+}
