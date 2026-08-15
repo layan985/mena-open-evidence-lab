@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "product_id": "procurement-intelligence",
+  "qa_scope": "public-preview",
+  "snapshot_retrieved_at": "2026-08-13T17:50:32.912Z",
+  "checks": {
+    "part_manifest_parse": "passing",
+    "part_manifest_byte_count": "passing",
+    "notice_id_uniqueness_shipped_snapshot": "passing",
+    "plan_id_uniqueness_shipped_snapshot": "passing",
+    "public_contact_email_removed": "passing",
+    "award_amount_domain_shipped_explorer": "passing",
+    "canonical_matching_award_count_alignment": "passing",
+    "full_award_corpus_released": "pending",
+    "full_award_corpus_exact_duplicate_test": "pending",
+    "full_award_corpus_key_collision_report": "pending",
+    "full_award_corpus_missingness_report": "pending",
+    "full_release_checksum_manifest": "pending",
+    "clean_environment_regeneration": "pending"
+  },
+  "counts": {
+    "matching_award_corpus": 11799,
+    "award_rows_shipped_in_explorer": 1800,
+    "award_rows_not_shipped_as_release_rows": 9999,
+    "source_families": 3
+  },
+  "interpretation": "Passing preview checks establish integrity of the shipped browser snapshot and its canonical headline count. They do not establish full-corpus release QA because only the explorer slice of normalized awards is distributed in the current artifact.",
+  "promotion_eligible": false
+}
