@@ -17,6 +17,8 @@ The Lab is an independent project founded and maintained by [Layan Oraidi](https
 
 Automated checks, founder reruns and source links are not independent review. A release becomes externally reviewed or independently reproduced only when outside evidence exists.
 
+The canonical machine-readable release state is [`data/releases.json`](data/releases.json). Website counts and maturity labels should resolve to that registry rather than hand-maintained parallel status claims.
+
 ## Research Library
 
 The [Research Library](RESEARCH_LIBRARY.md) organizes publication-quality outputs around the evidence that already exists. It includes the MENA Procurement Intelligence Quarterly, MENA Price Release Monitor, MENA AI & Labor Evidence Brief, Jordan Evidence Brief, Regional Macro Data Quality Report, Official Statistics Revision Tracker, Procurement Market Map, Institutional Source Reliability Report, MENA Data Availability Index, Methods Notes, Replication Notes and an Evidence Sprint sample deliverable.
@@ -33,11 +35,14 @@ Every headline number must expose its source, date/window, denominator, filter, 
 
 ## Start here
 
-- Open the [Research Library](RESEARCH_LIBRARY.md).
-- Read the [Evidence Room](EVIDENCE_ROOM.md) and [Proof Ledger](PROOF_LEDGER.md).
+- Browse the institutional [website](index.html) and [Publications](publications.html).
+- Check the [Validation Dashboard](validation.html) before interpreting maturity or review claims.
+- Read [Research Governance](governance.html), [Funding & Independence](funding-independence.html) and [Institutional Policies](policies.html).
+- Use [Review & Contribute](contribute.html) for independent reproduction, source audit, second-coding and bounded contribution routes.
+- Inspect the [External-use Ledger](external-use.html); only attributable, reviewable use is counted.
 - Use the [procurement-intelligence desk](intelligence.html) to inspect opportunities, disclosed awards, benchmark ranges and forward plans.
+- Open the [Research Library](RESEARCH_LIBRARY.md), [Evidence Room](EVIDENCE_ROOM.md) and [Proof Ledger](PROOF_LEDGER.md).
 - Run the [MENA Labor Intelligence work sample](work_samples/mena-labor-intelligence/) for a compact public-data example using World Bank HCI+ data, SQL, tests and a Streamlit view.
-- Browse the [Evidence Terminal prototype](index.html) and [technical specification](TERMINAL_SPEC.md).
 - Read [Transparency](TRANSPARENCY.md) before interpreting any maturity or impact claim.
 - Browse [MODERN](programs/modern/), the Lab's contributor and methods-training programme.
 
@@ -64,13 +69,18 @@ The practical sequence is source capture, scripted processing, validation, clean
 
 | Path | Contents |
 | --- | --- |
+| [publications.html](publications.html) + [`data/publications.json`](data/publications.json) | Canonical publication records |
+| [`data/releases.json`](data/releases.json) | Canonical release registry |
+| [validation.html](validation.html) + [`data/validation.json`](data/validation.json) | Validation states and counting rules |
+| [external-use.html](external-use.html) + [`data/external-use.json`](data/external-use.json) | Attributable external-use records |
+| [governance.html](governance.html) + [advisory-charter.html](advisory-charter.html) | Decision rights and advisory structure |
+| [contribute.html](contribute.html) | Independent review and contributor routes |
 | [RESEARCH_LIBRARY.md](RESEARCH_LIBRARY.md) | Evidence-backed report and note series |
 | [CLAIM_BADGES.md](CLAIM_BADGES.md) | Canonical public evidence labels and metric display contract |
 | [EVIDENCE_ROOM.md](EVIDENCE_ROOM.md) | Evidence-room structure and proof objects |
 | [PROOF_LEDGER.md](PROOF_LEDGER.md) | Claim-level evidence, limitations and open zeroes |
 | [programs/modern/](programs/modern/) | Workshops, contributor guidance and review materials |
 | [work_samples/](work_samples/) | Small examples that can be run independently |
-| [index.html](index.html) | Static Evidence Terminal prototype |
 | [intelligence.html](intelligence.html) | Interactive procurement-intelligence product |
 | `data/manifest.json` + `data/procurement-*.part` | Browser-ready normalized official-source snapshot |
 | [scripts/fetch-procurement-data.mjs](scripts/fetch-procurement-data.mjs) | Reproducible World Bank refresh pipeline |
