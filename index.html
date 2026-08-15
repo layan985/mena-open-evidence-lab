@@ -7,78 +7,192 @@
 <title>MENA Open Data & Evidence Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.hero{border-bottom:1px solid var(--line)}.hero-copy{max-width:850px}
-.evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--panel);margin-top:42px}
-.evidence-grid article{padding:22px;border-right:1px solid var(--line)}.evidence-grid article:last-child{border:0}
-.evidence-grid strong{display:block;font-size:40px;letter-spacing:-.05em;margin:10px 0}.evidence-grid span,.badge{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase}
-.evidence-grid p{font-size:12px;color:var(--muted);line-height:1.5}.badge{display:inline-block;border:1px solid var(--line);padding:5px 7px;margin:3px 3px 0 0}
-.official{background:#111;color:#fff}.real{background:#dff2ca}.pending{background:#fff0bd}.library{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.report{background:var(--panel);border:1px solid var(--line);padding:22px;min-height:285px;display:flex;flex-direction:column}.report h3{font-size:24px;margin:24px 0 10px}.report p{font-size:13px;color:var(--muted);line-height:1.6}
-.actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:20px}.actions a,.actions span{font:600 9px 'IBM Plex Mono',monospace;border:1px solid var(--line);padding:7px;text-decoration:none}
-.institutional{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.institutional a{border:1px solid var(--line);background:var(--panel);padding:22px;text-decoration:none;min-height:130px}.institutional small{display:block;color:var(--muted);margin-top:9px;line-height:1.5}
-.rule{border-left:4px solid #111;padding:18px 22px;background:#e6e1d5;margin-top:28px;line-height:1.6}
-.data-access{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}.data-access a{background:#111;color:#fff;padding:20px;text-decoration:none;font:600 11px 'IBM Plex Mono',monospace}.data-access small{display:block;color:#b8bbb5;margin-top:8px;font-family:Inter,sans-serif;font-weight:400;line-height:1.5}
-.challenge{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.challenge article{border-top:3px solid #111;padding:20px 4px}.challenge h3{font-size:22px;margin:10px 0}.challenge p{color:var(--muted);font-size:13px;line-height:1.6}
-@media(max-width:900px){.evidence-grid{grid-template-columns:repeat(2,1fr)}.library,.institutional,.data-access,.challenge{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.evidence-grid,.library,.institutional,.data-access,.challenge{grid-template-columns:1fr}.evidence-grid article{border-right:0;border-bottom:1px solid var(--line)}}
+:root{--paper:#f4f1e8;--paper2:#e9e4d8;--ink:#101110;--muted:#66645e;--rule:#bbb5a8;--signal:#baff63;--amber:#f0c95c;--white:#fbfaf5}
+body{background:var(--paper)}
+.home-shell{width:min(1320px,calc(100% - 48px));margin:auto}
+.home-nav{position:sticky;top:0;z-index:50;background:rgba(244,241,232,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.home-nav-inner{min-height:76px;display:grid;grid-template-columns:minmax(280px,1fr) auto;gap:24px;align-items:center}
+.identity{display:flex;align-items:center;gap:13px;text-decoration:none}.identity-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--ink);color:#fff;font:600 17px 'IBM Plex Mono',monospace}.identity-copy strong{display:block;font-size:13px}.identity-copy span{display:block;margin-top:4px;color:var(--muted);font:10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em}
+.home-nav nav{display:flex;gap:20px;align-items:center;font:500 10px 'IBM Plex Mono',monospace;text-transform:uppercase}.home-nav nav a{text-decoration:none;padding:8px 0;border-bottom:1px solid transparent}.home-nav nav a:hover{border-color:var(--ink)}
+.hero-new{background:var(--ink);color:#f7f5ee;border-bottom:1px solid #000}.hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(320px,.65fr);min-height:650px}.hero-main{padding:94px 68px 74px 0;display:flex;flex-direction:column;justify-content:space-between}.hero-side{border-left:1px solid #393b39;padding:42px 0 42px 38px;display:flex;flex-direction:column;justify-content:space-between}.hero-kicker{font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#a9aca5}.hero-new h1{font-size:clamp(62px,8vw,124px);line-height:.82;letter-spacing:-.075em;font-weight:600;max-width:950px;margin:28px 0 30px}.hero-new h1 em{font-style:normal;color:var(--signal)}.hero-deck{max-width:720px;color:#c4c6c0;font-size:18px;line-height:1.65}.hero-cta{display:flex;gap:8px;flex-wrap:wrap;margin-top:38px}.hero-cta a{font:600 10px 'IBM Plex Mono',monospace;text-transform:uppercase;text-decoration:none;border:1px solid #676a65;padding:12px 14px}.hero-cta .primary{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.chain{border-top:1px solid #3c3f3c;margin-top:28px}.chain-row{display:grid;grid-template-columns:34px 1fr auto;gap:13px;padding:13px 0;border-bottom:1px solid #3c3f3c;align-items:center}.chain-row b{font:600 10px 'IBM Plex Mono',monospace;color:var(--signal)}.chain-row span{font-size:12px}.chain-row small{font:9px 'IBM Plex Mono',monospace;color:#858983;text-transform:uppercase}.hero-side-note{font-size:12px;line-height:1.6;color:#9da09a;max-width:310px;margin-top:30px}
+.status-band{border-bottom:1px solid var(--rule);background:var(--white)}.status-grid{display:grid;grid-template-columns:1.2fr repeat(4,1fr)}.status-intro,.status-cell{padding:22px 20px;border-right:1px solid var(--rule)}.status-cell:last-child{border-right:0}.status-intro span,.status-cell span{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.07em}.status-intro p{font-size:12px;color:var(--muted);line-height:1.5;margin:8px 0 0}.status-cell strong{display:block;font-size:18px;letter-spacing:-.02em;margin:10px 0 6px}.status-cell small{display:block;color:var(--muted);font-size:11px;line-height:1.45}.dot{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:var(--amber)}.dot.live{background:var(--signal)}
+.home-section{padding:88px 0;border-bottom:1px solid var(--rule)}.section-head-new{display:grid;grid-template-columns:1fr minmax(300px,460px);gap:80px;align-items:end;margin-bottom:38px}.section-label{font:600 10px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}.section-head-new h2{font-size:clamp(42px,5.6vw,74px);line-height:.95;letter-spacing:-.06em;font-weight:600;margin:12px 0 0}.section-head-new p{color:var(--muted);line-height:1.65;margin:0}
+.research-index{border-top:2px solid var(--ink)}.research-row{display:grid;grid-template-columns:130px minmax(0,1.25fr) minmax(210px,.75fr) 180px;gap:22px;padding:24px 0;border-bottom:1px solid var(--rule);align-items:start}.research-row:hover{background:rgba(255,255,255,.38)}.research-type,.research-state{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase}.research-title a{font-size:25px;line-height:1.15;font-weight:600;text-decoration:none;letter-spacing:-.03em}.research-title p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55;max-width:630px}.research-proof{font-size:12px;line-height:1.55}.research-proof b{display:block;font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase;margin-bottom:7px}.research-state{border:1px solid var(--rule);padding:8px 9px;text-align:center;background:var(--white)}.research-state.open{background:#fff0be}
+.system-section{background:var(--paper2)}.system-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.system-card{background:var(--white);border:1px solid var(--rule);padding:30px;min-height:270px;display:flex;flex-direction:column}.system-card .num{font:600 10px 'IBM Plex Mono',monospace}.system-card h3{font-size:30px;letter-spacing:-.04em;margin:38px 0 12px}.system-card p{color:var(--muted);font-size:13px;line-height:1.65;max-width:530px}.system-card .links{margin-top:auto;padding-top:20px;display:flex;gap:7px;flex-wrap:wrap}.system-card .links a{font:600 9px 'IBM Plex Mono',monospace;border-bottom:1px solid var(--ink);text-decoration:none;padding-bottom:3px}
+.validation-new{background:#111;color:#f5f3ed}.validation-new .section-label{color:#93978f}.validation-new .section-head-new p{color:#a9aca5}.validation-new .section-head-new{margin-bottom:50px}.validation-track{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #414440;border-left:1px solid #414440}.validation-step{min-height:235px;padding:25px;border-right:1px solid #414440;border-bottom:1px solid #414440}.validation-step .step{font:600 9px 'IBM Plex Mono',monospace;color:var(--signal)}.validation-step h3{font-size:23px;margin:46px 0 12px}.validation-step p{color:#a8aba5;font-size:12px;line-height:1.6}.validation-rule{margin-top:28px;border-left:3px solid var(--signal);padding:4px 0 4px 18px;color:#c2c5bf;font-size:13px;line-height:1.6;max-width:850px}
+.review-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.review-card{border-top:3px solid var(--ink);padding:20px 4px 10px}.review-card span{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase}.review-card h3{font-size:24px;letter-spacing:-.03em;margin:12px 0}.review-card p{font-size:13px;line-height:1.6;color:var(--muted)}.review-card a{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase}
+.institution-list{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}.institution-list a{min-height:150px;padding:24px;text-decoration:none;background:var(--white);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}.institution-list b{font-size:18px}.institution-list small{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:28px}.institution-list a:hover{background:#fff}
+.home-footer{padding:46px 0 70px;display:grid;grid-template-columns:1fr auto;gap:40px}.home-footer strong{font-size:13px}.home-footer p{color:var(--muted);font-size:11px;max-width:530px;line-height:1.55}.footer-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px;font:500 9px 'IBM Plex Mono',monospace;text-transform:uppercase}
+@media(max-width:1000px){.home-nav nav{display:none}.hero-grid{grid-template-columns:1fr}.hero-main{padding-right:0}.hero-side{border-left:0;border-top:1px solid #393b39;padding:34px 0}.status-grid{grid-template-columns:repeat(2,1fr)}.status-intro,.status-cell{border-bottom:1px solid var(--rule)}.section-head-new{grid-template-columns:1fr;gap:20px}.research-row{grid-template-columns:110px 1fr 180px}.research-proof{display:none}.validation-track{grid-template-columns:repeat(2,1fr)}.institution-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.home-shell{width:min(100% - 26px,1320px)}.home-nav-inner{grid-template-columns:1fr}.hero-main{padding:68px 0 48px;min-height:520px}.hero-new h1{font-size:58px}.hero-deck{font-size:16px}.status-grid{grid-template-columns:1fr}.status-intro,.status-cell{border-right:0}.home-section{padding:64px 0}.research-row{grid-template-columns:1fr;gap:10px}.research-state{width:max-content}.system-grid,.validation-track,.review-grid,.institution-list{grid-template-columns:1fr}.home-footer{grid-template-columns:1fr}.footer-nav{justify-content:flex-start}}
 </style>
 </head>
 <body>
-<header class="topbar">
-<a class="brand" href="index.html"><span class="brand-mark">M</span><span><strong>MENA Open Data & Evidence Lab</strong><small>public-interest research infrastructure</small></span></a>
-<nav><a href="publications.html">Research</a><a href="validation.html">Validation</a><a href="governance.html">Governance</a><a href="contribute.html">Review & contribute</a><a href="work-with-us.html">Advisory</a></nav>
+<header class="home-nav">
+  <div class="home-shell home-nav-inner">
+    <a class="identity" href="index.html" aria-label="MENA Open Data and Evidence Lab home">
+      <span class="identity-mark">M</span>
+      <span class="identity-copy"><strong>MENA Open Data & Evidence Lab</strong><span>public-interest research infrastructure</span></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="publications.html">Research</a>
+      <a href="validation.html">Validation</a>
+      <a href="contribute.html">Review</a>
+      <a href="governance.html">Governance</a>
+      <a href="work-with-us.html">Commissioned work</a>
+    </nav>
+  </div>
 </header>
-<main id="top">
-<section class="hero wrap">
-<div class="eyebrow">MENA / PUBLIC DATA / PROVENANCE / REPRODUCIBILITY</div>
-<h1>Every number comes with its history.</h1>
-<p class="hero-copy">The Lab reconstructs fragmented official evidence into traceable research objects: values, vintages, source releases, transformations, QA, limitations, code and correction paths. Public research and commissioned advisory work operate under separate disclosure rules.</p>
-<div class="hero-actions"><a class="button primary" href="publications.html">Open publications</a><a class="button" href="validation.html">Validation status</a><a class="button" href="contribute.html">Review or reproduce</a></div>
-<div class="evidence-grid">
-<article><span>PRICE OBSERVATORY</span><strong data-release-id="price-observatory" data-release-field="numeric-observations">195</strong><p>numeric observations across 48 geography-month release-candidate rows, linked to 30 official release records.</p><i class="badge official">OFFICIAL SOURCE</i><i class="badge pending">RELEASE CANDIDATE</i></article>
-<article><span>AI × LABOR PANEL</span><strong><span data-release-id="ai-labor">176</span> / 400</strong><p>numeric employment firm-years collected toward the planned panel. Collection and independent second-coding remain in progress.</p><i class="badge real">REAL PUBLIC DATA</i><i class="badge pending">IN PROGRESS</i></article>
-<article><span>PUBLICATION SYSTEM</span><strong>4 records</strong><p>canonical records for the live data product, two developing datasets and Workshop 001, each with separate release and review state.</p><i class="badge real">MACHINE-READABLE</i></article>
-<article><span>RELEASE CONTROL</span><strong>1 registry</strong><p>Version, status, evidence labels and core counts are maintained in one canonical machine-readable release register.</p><i class="badge real">VERSIONED</i></article>
-</div>
-<div class="rule"><strong>Validation is not inferred from production.</strong> Internal QA, source audit, independent reproduction and attributable external use are reported separately on the <a href="validation.html">Validation Dashboard</a> and <a href="external-use.html">External-use Ledger</a>.</div>
+
+<main>
+<section class="hero-new">
+  <div class="home-shell hero-grid">
+    <div class="hero-main">
+      <div>
+        <div class="hero-kicker">Middle East + North Africa / data / provenance / reproducibility</div>
+        <h1>Evidence that can be <em>traced.</em></h1>
+        <p class="hero-deck">The Lab turns fragmented public records into research objects that can be inspected, challenged and rebuilt. A reported value is never separated from its source release, vintage, transformation, QA state, code and correction path.</p>
+        <div class="hero-cta">
+          <a class="primary" href="publications.html">Open research index</a>
+          <a href="validation.html">Read validation record</a>
+          <a href="contribute.html">Reproduce or review</a>
+        </div>
+      </div>
+      <p class="hero-side-note">Public research and commissioned work use separate disclosure rules. Commercial relationships do not alter evidence labels or validation status.</p>
+    </div>
+    <aside class="hero-side" aria-label="Evidence chain">
+      <div>
+        <div class="hero-kicker">The evidence chain</div>
+        <div class="chain">
+          <div class="chain-row"><b>01</b><span>Official source</span><small>capture</small></div>
+          <div class="chain-row"><b>02</b><span>Release + vintage</span><small>time</small></div>
+          <div class="chain-row"><b>03</b><span>Transformation</span><small>method</small></div>
+          <div class="chain-row"><b>04</b><span>Quality assurance</span><small>test</small></div>
+          <div class="chain-row"><b>05</b><span>Release state</span><small>version</small></div>
+          <div class="chain-row"><b>06</b><span>Correction path</span><small>record</small></div>
+        </div>
+      </div>
+      <div class="hero-side-note">Where outside review has not happened, the site says so. Founder reruns and internal QA are not counted as independent reproduction.</div>
+    </aside>
+  </div>
 </section>
-<section id="library" class="wrap section">
-<div class="section-heading"><div><div class="section-kicker">Publications</div><h2>Research outputs with release state attached.</h2></div><p>Every output is assigned a canonical publication record covering evidence type, coverage, data, code, methods, review state, corrections and citation metadata as those objects become available.</p></div>
-<div class="library">
-<article class="report"><span class="mono">DATASET / PRICES</span><h3>Official Price Release Observatory</h3><p>Release-candidate observations by geography, month, source release and provenance record.</p><div><i class="badge official">OFFICIAL SOURCE</i><i class="badge pending">RELEASE CANDIDATE</i></div><div class="actions"><a href="https://github.com/layan985/mena-economic-narrative-stress-observatory">DATA + CODE</a><a href="validation.html">AUDIT STATUS</a></div></article>
-<article class="report"><span class="mono">DATASET / FIRMS</span><h3>MENA AI Adoption & Labor Adjustment</h3><p>Firm-level employment evidence with saved source linkage and explicit second-coding boundaries.</p><div><i class="badge real">REAL PUBLIC DATA</i><i class="badge pending">COLLECTION IN PROGRESS</i></div><div class="actions"><a href="https://github.com/layan985/mena-firm-ai-labor-adjustment">DATA + CODE</a><a href="validation.html">VALIDATION</a></div></article>
-<article class="report"><span class="mono">TEACHING / REPRODUCIBILITY</span><h3>Workshop 001</h3><p>Reproducing an economics paper from raw data: slides, notebook, exercise, answer key and post-delivery reproduction record.</p><div><i class="badge pending">SCHEDULED</i></div><div class="actions"><a href="programs/modern/">MATERIALS</a><a href="publications.html">RECORD</a></div></article>
-<article class="report"><span class="mono">DATA PRODUCT / PROCUREMENT</span><h3>MENA Funding & Procurement Intelligence</h3><p>Opportunity pipeline, disclosed awards, supplier patterns, benchmarks and procurement-plan signals from normalized official records.</p><div><i class="badge official">OFFICIAL SOURCE</i><i class="badge real">REAL PUBLIC DATA</i></div><div class="actions"><a href="intelligence.html">DASHBOARD</a><a href="publications.html">RECORD</a><a href="validation.html">VALIDATION</a></div></article>
-<article class="report"><span class="mono">DATA ACCESS / MACHINE-READABLE</span><h3>Evidence registries</h3><p>Release, publication, validation and external-use records are available directly as JSON. Indicator, entity, series, vintage and revision endpoints remain staged work and are not advertised as live APIs.</p><div class="actions"><a href="data/releases.json">RELEASES JSON</a><a href="data/publications.json">PUBLICATIONS JSON</a><a href="data/validation.json">VALIDATION JSON</a></div></article>
-<article class="report"><span class="mono">ADVISORY / COMMISSIONED</span><h3>Institutional Evidence Sprints</h3><p>Commissioned work is separated from public research by visible rules for funding, publication rights, review rights, suppression and conflicts.</p><div class="actions"><a href="work-with-us.html">ENGAGEMENT MODEL</a><a href="funding-independence.html">INDEPENDENCE</a></div></article>
-</div>
-<div class="rule"><strong>Publication standard:</strong> released objects expose status, evidence type, methods, sources, QA, limitations, code/data where available, corrections and review state. Unavailable evidence is recorded as pending rather than implied.</div>
+
+<section class="status-band" aria-label="Current release states">
+  <div class="home-shell status-grid">
+    <div class="status-intro"><span>Current release states</span><p>Operational status is kept separate from external validation.</p></div>
+    <div class="status-cell"><span><i class="dot live"></i>Price Observatory</span><strong>v0.3.0-rc1</strong><small>48 geography-month rows · source audit open</small></div>
+    <div class="status-cell"><span><i class="dot"></i>AI × Labor</span><strong>176 / 400</strong><small>firm-years collected · second coding open</small></div>
+    <div class="status-cell"><span><i class="dot live"></i>Procurement</span><strong>11,799</strong><small>normalized award records · public preview</small></div>
+    <div class="status-cell"><span><i class="dot"></i>Workshop 001</span><strong>23 Aug 2026</strong><small>materials prepared · delivery record pending</small></div>
+  </div>
 </section>
-<section class="wrap section">
-<div class="section-heading"><div><div class="section-kicker">Independent challenge</div><h2>Outside review is a separate workstream.</h2></div><p>The Lab does not convert founder reruns, informal feedback or collaboration discussions into external validation. Review and contribution records are created only when attributable work exists.</p></div>
-<div class="challenge">
-<article><span class="mono">REPRODUCE</span><h3>Run a release independently</h3><p>Rebuild an analysis or dataset from a clean environment and submit a reviewable reproduction record.</p></article>
-<article><span class="mono">AUDIT</span><h3>Challenge a source or method</h3><p>Check source capture, coding, transformations, comparability, tests or a material methodological decision.</p></article>
-<article><span class="mono">CONTRIBUTE</span><h3>Own a bounded research task</h3><p>Contributions are credited by documented work. Open advisory roles are listed separately and are never implied before acceptance.</p></article>
-</div>
-<div class="hero-actions"><a class="button primary" href="contribute.html">Open review & contribution routes</a><a class="button" href="governance.html">Governance record</a></div>
+
+<section class="home-section">
+  <div class="home-shell">
+    <div class="section-head-new">
+      <div><div class="section-label">01 / Research index</div><h2>Outputs, not claims.</h2></div>
+      <p>The front page shows the work first. Each record links to the object itself and keeps release state, evidence type and validation state visible rather than folding them into a single credibility claim.</p>
+    </div>
+    <div class="research-index">
+      <article class="research-row">
+        <div class="research-type">Dataset / Prices</div>
+        <div class="research-title"><a href="https://github.com/layan985/mena-economic-narrative-stress-observatory">Official Price Release Observatory</a><p>Release-candidate observations keyed to geography, month, source release and provenance record.</p></div>
+        <div class="research-proof"><b>Evidence</b>195 numeric observations · 48 rows · 30 official release records</div>
+        <div class="research-state open">RELEASE CANDIDATE</div>
+      </article>
+      <article class="research-row">
+        <div class="research-type">Dataset / Firms</div>
+        <div class="research-title"><a href="https://github.com/layan985/mena-firm-ai-labor-adjustment">MENA AI Adoption & Labor Adjustment</a><p>Firm-level employment evidence with saved source linkage and explicit second-coding boundaries.</p></div>
+        <div class="research-proof"><b>Evidence</b>176 numeric firm-years collected toward a 400 firm-year panel</div>
+        <div class="research-state open">COLLECTION</div>
+      </article>
+      <article class="research-row">
+        <div class="research-type">Data product</div>
+        <div class="research-title"><a href="intelligence.html">MENA Funding & Procurement Intelligence</a><p>Normalized opportunities, awards, procurement plans and supplier signals from official World Bank structured sources.</p></div>
+        <div class="research-proof"><b>Evidence</b>11,799 awards · 32 open opportunities · 38 pipeline notices</div>
+        <div class="research-state">PUBLIC PREVIEW</div>
+      </article>
+      <article class="research-row">
+        <div class="research-type">Teaching / Methods</div>
+        <div class="research-title"><a href="programs/modern/">Workshop 001 — Reproducing an economics paper</a><p>Slides, notebook, exercise, answer key and a post-delivery reproduction record.</p></div>
+        <div class="research-proof"><b>State</b>Materials prepared; live delivery scheduled for 23 August 2026</div>
+        <div class="research-state open">SCHEDULED</div>
+      </article>
+    </div>
+  </div>
 </section>
-<section class="wrap section">
-<div class="section-heading"><div><div class="section-kicker">Institutional framework</div><h2>Governance and validation are public records.</h2></div><p>Decision rights, advisory appointments, conflicts, corrections, funding and attributable external use have dedicated public surfaces with explicit counting rules.</p></div>
-<div class="institutional">
-<a href="governance.html"><b>Research Governance</b><small>Decision rights, advisory roles, independence and escalation.</small></a>
-<a href="validation.html"><b>Validation Dashboard</b><small>Internal QA, source audit, independent reproduction and external-use state.</small></a>
-<a href="external-use.html"><b>External-use Ledger</b><small>Dataset → user → institution → use → evidence → date.</small></a>
-<a href="funding-independence.html"><b>Funding & Independence</b><small>Public research and commissioned-work firewall.</small></a>
-<a href="policies.html"><b>Institutional Policies</b><small>Integrity, conflicts, ethics, privacy, corrections, authorship, licensing, accessibility and security.</small></a>
-<a href="annual-report-2026.html"><b>Annual Report 2026</b><small>Interim research, corrections, contributors, external use, funding and targets.</small></a>
-</div>
-<div class="data-access"><a href="data/releases.json">RELEASE REGISTRY<small>Version, release date, SHA, DOI state, evidence labels, rows and superseded versions.</small></a><a href="data/external-use.json">EXTERNAL-USE REGISTRY<small>Only attributable, reviewable use is counted. Prospective use is excluded.</small></a></div>
+
+<section class="home-section system-section">
+  <div class="home-shell">
+    <div class="section-head-new">
+      <div><div class="section-label">02 / Publication system</div><h2>The boring infrastructure matters.</h2></div>
+      <p>Release counts, publication records, review state and attributable external use are machine-readable. A number should not drift because one page was updated and another was not.</p>
+    </div>
+    <div class="system-grid">
+      <article class="system-card"><span class="num">A / RELEASE CONTROL</span><h3>One canonical release registry.</h3><p>Version, state, evidence labels, coverage and core counts are maintained in one machine-readable register.</p><div class="links"><a href="data/releases.json">RELEASES.JSON</a><a href="publications.html">PUBLICATION RECORDS</a></div></article>
+      <article class="system-card"><span class="num">B / VALIDATION</span><h3>Review state is its own object.</h3><p>Internal QA, source audit, independent reproduction and attributable use are recorded separately. Production status is not treated as validation.</p><div class="links"><a href="validation.html">VALIDATION DASHBOARD</a><a href="data/validation.json">VALIDATION.JSON</a></div></article>
+      <article class="system-card"><span class="num">C / EXTERNAL USE</span><h3>Use must be attributable to count.</h3><p>The external-use ledger is intentionally empty until a named, reviewable use record exists. Prospective interest is not counted as impact.</p><div class="links"><a href="external-use.html">EXTERNAL-USE LEDGER</a><a href="data/external-use.json">EXTERNAL-USE.JSON</a></div></article>
+      <article class="system-card"><span class="num">D / CORRECTIONS</span><h3>A release can be wrong and still be useful.</h3><p>What matters is whether errors, revisions and superseded versions can be located, explained and corrected without rewriting history.</p><div class="links"><a href="policies.html#corrections">CORRECTIONS POLICY</a><a href="policies.html#integrity">RESEARCH INTEGRITY</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="home-section validation-new">
+  <div class="home-shell">
+    <div class="section-head-new">
+      <div><div class="section-label">03 / Validation</div><h2>Four states. Never one vague badge.</h2></div>
+      <p>The Lab separates work that has been checked internally from work that has been challenged by somebody outside the Lab.</p>
+    </div>
+    <div class="validation-track">
+      <article class="validation-step"><span class="step">01 / INTERNAL QA</span><h3>Tests and founder reruns</h3><p>Useful for finding mistakes. Not counted as independent evidence.</p></article>
+      <article class="validation-step"><span class="step">02 / SOURCE AUDIT</span><h3>Capture and coding review</h3><p>Checks that the public record was read, linked and transformed correctly.</p></article>
+      <article class="validation-step"><span class="step">03 / REPRODUCTION</span><h3>Outside execution</h3><p>Requires an external person to rebuild the object with a reviewable record.</p></article>
+      <article class="validation-step"><span class="step">04 / EXTERNAL USE</span><h3>Attributable application</h3><p>Counted only when dataset, user, institution, use, evidence and date can be recorded.</p></article>
+    </div>
+    <div class="validation-rule"><strong>Current rule:</strong> no output is described as independently reproduced until an outside reproduction record exists. Open states remain visible rather than being converted into marketing language.</div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="home-shell">
+    <div class="section-head-new">
+      <div><div class="section-label">04 / Independent challenge</div><h2>Other people’s fingerprints belong on the work.</h2></div>
+      <p>The next credibility gains come from bounded outside work: source audits, second coding, clean-environment reproductions and methods review. The contribution routes are public so review can be evidenced rather than implied.</p>
+    </div>
+    <div class="review-grid">
+      <article class="review-card"><span>Reproduce</span><h3>Run a release independently.</h3><p>Start from a clean environment, rebuild the object and leave a reviewable reproduction record.</p><a href="contribute.html">OPEN REPRODUCTION ROUTE →</a></article>
+      <article class="review-card"><span>Audit</span><h3>Challenge a source or method.</h3><p>Inspect source capture, coding, transformations, comparability, tests or a material methodological decision.</p><a href="contribute.html">OPEN AUDIT ROUTE →</a></article>
+      <article class="review-card"><span>Contribute</span><h3>Own one bounded task.</h3><p>Second coding and contributor tasks are credited by documented work. Advisory appointments are listed only after acceptance.</p><a href="contribute.html">OPEN CONTRIBUTION ROUTE →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="home-section system-section">
+  <div class="home-shell">
+    <div class="section-head-new">
+      <div><div class="section-label">05 / Institution</div><h2>Policies are part of the product.</h2></div>
+      <p>Governance, conflicts, funding, corrections and publication rules are published because institutional credibility depends on boring, inspectable boundaries as much as visible research outputs.</p>
+    </div>
+    <div class="institution-list">
+      <a href="governance.html"><b>Research Governance</b><small>Decision rights, open advisory roles, independence and escalation.</small></a>
+      <a href="funding-independence.html"><b>Funding & Independence</b><small>Public-research and commissioned-work firewall.</small></a>
+      <a href="policies.html"><b>Institutional Policies</b><small>Integrity, conflicts, privacy, corrections, authorship, licensing, accessibility and security.</small></a>
+      <a href="annual-report-2026.html"><b>Annual Report 2026</b><small>Interim research activity, funding, corrections, contributors, outside use and targets.</small></a>
+      <a href="advisory-charter.html"><b>Advisory Charter</b><small>Three open external roles with an explicit appointment rule.</small></a>
+      <a href="work-with-us.html"><b>Commissioned Work</b><small>Engagement model and disclosure boundaries for paid institutional work.</small></a>
+    </div>
+  </div>
 </section>
 </main>
-<footer class="wrap footer"><div><strong>MENA Open Data & Evidence Lab</strong><p>Open, reproducible research infrastructure for the Middle East and North Africa.</p></div><div class="footer-links"><a href="publications.html">Publications</a><a href="contribute.html">Review & contribute</a><a href="governance.html">Governance</a><a href="funding-independence.html">Funding</a><a href="work-with-us.html">Advisory</a></div></footer>
+
+<footer class="home-shell home-footer">
+  <div><strong>MENA Open Data & Evidence Lab</strong><p>Public-interest data, methods and reproducibility infrastructure for the Middle East and North Africa. Evidence state is reported separately from institutional ambition.</p></div>
+  <nav class="footer-nav" aria-label="Footer navigation"><a href="publications.html">Research</a><a href="validation.html">Validation</a><a href="contribute.html">Review</a><a href="governance.html">Governance</a><a href="work-with-us.html">Commissioned work</a></nav>
+</footer>
 <script src="release-registry.js" defer></script>
-</body></html>
+</body>
+</html>
