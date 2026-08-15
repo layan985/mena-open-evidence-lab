@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-15",
+  "rule": "An external validation state requires an identifiable person other than the primary producer to complete the defined verification task and leave a reviewable artifact.",
+  "assignments": [
+    {
+      "id": "price-observatory-source-audit",
+      "research_object": "Official Price Release Observatory v0.3.0-rc1",
+      "verification_type": "independent source audit",
+      "required_role": "Independent Source Auditor",
+      "producer_state": "founder-led release candidate",
+      "independence_requirement": "reviewer must not be the primary producer",
+      "minimum_evidence": ["completed audit template", "source links checked", "discrepancy log", "attribution consent"],
+      "status": "open"
+    },
+    {
+      "id": "ai-labor-second-coding",
+      "research_object": "MENA AI Adoption & Labor Adjustment",
+      "verification_type": "blinded second coding",
+      "required_role": "Independent Second Coder",
+      "producer_state": "founder-led collection",
+      "independence_requirement": "coder must not see founder labels before submission",
+      "minimum_evidence": ["completed coding file", "agreement statistics", "disagreement log", "attribution consent"],
+      "status": "open"
+    },
+    {
+      "id": "procurement-process-audit",
+      "research_object": "MENA Funding & Procurement Intelligence",
+      "verification_type": "independent source and process audit",
+      "required_role": "Independent Process Auditor",
+      "producer_state": "Lab-produced public preview",
+      "independence_requirement": "reviewer must not be the primary producer",
+      "minimum_evidence": ["sample audit sheet", "source comparison", "disagreement log", "limitations note"],
+      "status": "open"
+    },
+    {
+      "id": "workshop-001-reproduction",
+      "research_object": "Workshop 001",
+      "verification_type": "clean-environment reproduction",
+      "required_role": "Independent Reproducer",
+      "producer_state": "materials prepared",
+      "independence_requirement": "reproducer must use only the public package",
+      "minimum_evidence": ["reproduction log", "environment record", "recovered outputs", "discrepancy log"],
+      "status": "opens-after-delivery"
+    }
+  ]
+}
