@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "canonical": true,
+  "last_updated": "2026-08-16",
+  "records": [
+    {
+      "id": "macro-official-statistics",
+      "name": "Macroeconomic Measurement & Official Statistics",
+      "purpose": "Build revision-aware, source-linked infrastructure for official MENA macroeconomic statistics.",
+      "flagship_infrastructure": ["price-observatory", "evidence-terminal"],
+      "recurring_outputs": ["release monitor", "revision note", "country data-quality brief"],
+      "status": "active"
+    },
+    {
+      "id": "public-finance-procurement",
+      "name": "Public Finance, Procurement & Development Intelligence",
+      "purpose": "Turn official procurement and development-finance records into auditable opportunity, award and supplier intelligence.",
+      "flagship_infrastructure": ["procurement-intelligence"],
+      "recurring_outputs": ["procurement quarterly", "market map", "funding intelligence"],
+      "status": "active"
+    },
+    {
+      "id": "firms-labor-technology",
+      "name": "Firms, Labor & Technology",
+      "purpose": "Build source-linked firm and labor evidence with explicit boundaries between observed disclosures, coded events and inferred variables.",
+      "flagship_infrastructure": ["ai-labor"],
+      "recurring_outputs": ["evidence brief", "firm dataset", "sector analysis"],
+      "status": "active"
+    },
+    {
+      "id": "methods-reproducibility",
+      "name": "Methods, Reproducibility & Open Evidence",
+      "purpose": "Develop and apply reproducibility, replication, audit and evidence-governance methods across Lab work.",
+      "flagship_infrastructure": ["workshop-001"],
+      "recurring_outputs": ["replication note", "reproducibility audit", "methods workshop"],
+      "status": "active"
+    }
+  ],
+  "cross_program_infrastructure": [
+    {
+      "id": "evidence-terminal",
+      "name": "MENA Evidence Terminal",
+      "status": "specification",
+      "role": "Machine-readable provenance backbone across all research programs.",
+      "required_fields": ["indicator", "entity", "value", "unit", "reference_period", "release_date", "source", "publisher", "vintage", "retrieval_timestamp", "transformation", "source_hash", "code_commit", "revision_status", "license", "validation_status"]
+    }
+  ]
+}
