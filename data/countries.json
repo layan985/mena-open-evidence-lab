@@ -1,0 +1,23 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "room_schema":["macro_source_map","official_statistics_institutions","labor_market_sources","firm_datasets","procurement","administrative_datasets","survey_infrastructure","known_breaks","vintage_availability","download_formats","methodological_warnings"],
+  "records":[
+    {"code":"JOR","country":"Jordan","status":"source-map-open"},
+    {"code":"PSE","country":"Palestine","status":"source-map-open"},
+    {"code":"EGY","country":"Egypt","status":"source-map-open"},
+    {"code":"MAR","country":"Morocco","status":"source-map-open"},
+    {"code":"TUN","country":"Tunisia","status":"source-map-open"},
+    {"code":"SAU","country":"Saudi Arabia","status":"source-map-open"},
+    {"code":"ARE","country":"United Arab Emirates","status":"source-map-open"},
+    {"code":"LBN","country":"Lebanon","status":"source-map-open"},
+    {"code":"IRQ","country":"Iraq","status":"source-map-open"},
+    {"code":"QAT","country":"Qatar","status":"source-map-open"},
+    {"code":"OMN","country":"Oman","status":"source-map-open"},
+    {"code":"BHR","country":"Bahrain","status":"source-map-open"},
+    {"code":"KWT","country":"Kuwait","status":"source-map-open"},
+    {"code":"DZA","country":"Algeria","status":"source-map-open"}
+  ],
+  "publication_rule":"A country room is not promoted from source-map-open until every required room field has a reviewable record."
+}
