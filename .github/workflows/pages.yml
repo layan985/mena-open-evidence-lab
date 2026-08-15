@@ -35,3 +35,33 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify live custom domain
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "Resolved addresses:"
+          getent ahosts menaevidencelab.org || true
+
+          body="$(mktemp)"
+          url="https://menaevidencelab.org/?build=${GITHUB_SHA}"
+          echo "Fetching: ${url}"
+          curl --fail --silent --show-error --location \
+            --retry 6 --retry-all-errors --retry-delay 5 \
+            -H 'Cache-Control: no-cache, no-store, max-age=0' \
+            -H 'Pragma: no-cache' \
+            "${url}" -o "${body}"
+
+          echo "Live page title:"
+          grep -o '<title>[^<]*</title>' "${body}" | head -1 || true
+
+          if grep -Fq 'Founding institutional engagement' "${body}" && \
+             grep -Fq 'Evidence that can be' "${body}"; then
+            echo "PASS: custom domain is serving the current homepage."
+          else
+            echo "FAIL: custom domain is not serving the current homepage artifact."
+            echo "First visible text markers from live response:"
+            grep -Eo 'Evidence[^<]{0,120}|COMMISSIONED[^<]{0,120}|Founding[^<]{0,120}' "${body}" | head -20 || true
+            exit 1
+          fi
