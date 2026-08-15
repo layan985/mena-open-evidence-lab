@@ -1,13 +1,29 @@
-name: Validate release registry
+name: Validate institutional state
 on:
   push:
     paths:
       - data/releases.json
+      - data/publications.json
+      - data/validation.json
+      - data/external-use.json
+      - data/programs.json
+      - data/engagements.json
+      - programs/modern/workshops/001/DELIVERY_RECORD.md
       - scripts/validate-release-registry.mjs
+      - scripts/validate-institutional-state.mjs
+      - .gitignore
   pull_request:
     paths:
       - data/releases.json
+      - data/publications.json
+      - data/validation.json
+      - data/external-use.json
+      - data/programs.json
+      - data/engagements.json
+      - programs/modern/workshops/001/DELIVERY_RECORD.md
       - scripts/validate-release-registry.mjs
+      - scripts/validate-institutional-state.mjs
+      - .gitignore
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -17,3 +33,4 @@ jobs:
         with:
           node-version: '20'
       - run: node scripts/validate-release-registry.mjs
+      - run: node scripts/validate-institutional-state.mjs
