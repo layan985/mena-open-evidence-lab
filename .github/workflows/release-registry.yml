@@ -1,0 +1,19 @@
+name: Validate release registry
+on:
+  push:
+    paths:
+      - data/releases.json
+      - scripts/validate-release-registry.mjs
+  pull_request:
+    paths:
+      - data/releases.json
+      - scripts/validate-release-registry.mjs
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/validate-release-registry.mjs

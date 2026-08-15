@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "canonical": true,
+  "last_updated": "2026-08-15",
+  "records": [
+    {
+      "id": "procurement-intelligence",
+      "project": "MENA Funding & Procurement Intelligence",
+      "version": "public-preview",
+      "release_date": "2026-08-13",
+      "sha": "718aaf85462c94de30a7d37fee0875f0aeaf1a7c",
+      "doi": null,
+      "validation_level": ["OFFICIAL SOURCE", "REAL PUBLIC DATA"],
+      "row_metric": {"label": "normalized MENA award records", "value": 11799},
+      "reviewers": 0,
+      "supersedes": null,
+      "status": "live",
+      "coverage_note": "World Bank structured sources only; UNGM, EU and GIZ are not included in current counts."
+    },
+    {
+      "id": "price-observatory",
+      "project": "Official Price Release Observatory",
+      "version": "v0.3.0-rc1",
+      "release_date": null,
+      "sha": null,
+      "doi": null,
+      "validation_level": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "PENDING VALIDATION"],
+      "row_metric": {"label": "geography-month release-candidate rows", "value": 48},
+      "numeric_observations": 195,
+      "official_release_links": 30,
+      "reviewers": 0,
+      "supersedes": "v0.2",
+      "status": "release-candidate",
+      "coverage_note": "Independent source audit and frozen release remain outstanding."
+    },
+    {
+      "id": "ai-labor",
+      "project": "MENA Firm AI Adoption and Labor Adjustment",
+      "version": "collection-alpha",
+      "release_date": null,
+      "sha": null,
+      "doi": null,
+      "validation_level": ["REAL PUBLIC DATA", "PENDING VALIDATION"],
+      "row_metric": {"label": "numeric employment firm-years", "value": 176},
+      "source_hash_linked": 168,
+      "target_firm_years": 400,
+      "reviewers": 0,
+      "supersedes": null,
+      "status": "collection-in-progress",
+      "coverage_note": "Collection and independent second-coding are not complete."
+    },
+    {
+      "id": "workshop-001",
+      "project": "Workshop 001 — Reproducing an economics paper from raw data",
+      "version": "001",
+      "release_date": "2026-08-23",
+      "sha": "718aaf85462c94de30a7d37fee0875f0aeaf1a7c",
+      "doi": null,
+      "validation_level": ["PENDING VALIDATION"],
+      "row_metric": {"label": "scheduled live delivery", "value": 1},
+      "reviewers": 0,
+      "supersedes": null,
+      "status": "scheduled",
+      "coverage_note": "Materials are prepared; delivery and participant reproduction evidence are not yet recorded."
+    }
+  ]
+}

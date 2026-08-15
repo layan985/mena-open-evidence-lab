@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-15",
+  "records": [
+    {"id":"procurement-intelligence","internal_qa":"documented","source_audit":"internal-source checks","independent_reproduction":"pending","external_use":"unrecorded"},
+    {"id":"price-observatory","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
+    {"id":"ai-labor","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
+    {"id":"workshop-001","internal_qa":"materials prepared","source_audit":"not applicable","independent_reproduction":"pending after delivery","external_use":"unrecorded"}
+  ]
+}

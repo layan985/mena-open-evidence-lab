@@ -2,6 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {"source": "/api/v1/releases", "destination": "/data/releases.json"},
+    {"source": "/api/v1/validation", "destination": "/data/validation.json"},
+    {"source": "/api/v1/external-use", "destination": "/data/external-use.json"}
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -9,8 +14,12 @@
         {"key": "X-Content-Type-Options", "value": "nosniff"},
         {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}
       ]
+    },
+    {
+      "source": "/api/v1/(.*)",
+      "headers": [
+        {"key": "Cache-Control", "value": "public, max-age=300, s-maxage=300"}
+      ]
     }
   ]
 }
-
-
