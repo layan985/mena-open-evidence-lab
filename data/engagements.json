@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "canonical": true,
+  "last_updated": "2026-08-16",
+  "records": [
+    {
+      "id": "engagement-001",
+      "serial": "ENGAGEMENT 001",
+      "public_title": "Regional Jobs & Resilience Evidence Review",
+      "year": 2026,
+      "geography": "MENA",
+      "commissioned": true,
+      "client_disclosure": "confidential",
+      "status": "active",
+      "public_record": "/engagements/001/",
+      "completion_date": null,
+      "acceptance_evidence_public": false,
+      "case_study_permission_public": false,
+      "testimonial_permission_public": false,
+      "production_client_data_public": false,
+      "external_review_record": null,
+      "independent_reproduction_record": null,
+      "disclosure_note": "Client identity, restricted data, client-specific results, acceptance evidence, commercial terms and sensitive recommendations are not represented by this public registry unless publication rights explicitly permit disclosure."
+    }
+  ],
+  "private_record_rule": "Each commissioned engagement requires a separate access-controlled operating record for contracting, billing, data classification, data receipt, publication rights, deliverables, QA, acceptance, retention and deletion. Private client records must not be committed to the public repository."
+}
