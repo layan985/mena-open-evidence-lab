@@ -11,6 +11,7 @@ on:
       - programs/modern/workshops/001/DELIVERY_RECORD.md
       - scripts/validate-release-registry.mjs
       - scripts/validate-institutional-state.mjs
+      - .github/workflows/release-registry.yml
       - .gitignore
   pull_request:
     paths:
@@ -23,6 +24,7 @@ on:
       - programs/modern/workshops/001/DELIVERY_RECORD.md
       - scripts/validate-release-registry.mjs
       - scripts/validate-institutional-state.mjs
+      - .github/workflows/release-registry.yml
       - .gitignore
 jobs:
   validate:
