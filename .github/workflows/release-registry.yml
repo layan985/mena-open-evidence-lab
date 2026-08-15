@@ -3,14 +3,22 @@ on:
   push:
     paths:
       - 'data/*.json'
+      - 'data/procurement-*.part'
       - 'scripts/validate-*.mjs'
+      - 'scripts/check-procurement-1.0-gate.mjs'
+      - 'PROCUREMENT_1_0_RELEASE_GATE.md'
+      - 'PROCUREMENT_QUARTERLY_SPEC.md'
       - 'programs/modern/workshops/001/DELIVERY_RECORD.md'
       - '.github/workflows/release-registry.yml'
       - '.gitignore'
   pull_request:
     paths:
       - 'data/*.json'
+      - 'data/procurement-*.part'
       - 'scripts/validate-*.mjs'
+      - 'scripts/check-procurement-1.0-gate.mjs'
+      - 'PROCUREMENT_1_0_RELEASE_GATE.md'
+      - 'PROCUREMENT_QUARTERLY_SPEC.md'
       - 'programs/modern/workshops/001/DELIVERY_RECORD.md'
       - '.github/workflows/release-registry.yml'
       - '.gitignore'
@@ -24,3 +32,19 @@ jobs:
           node-version: '20'
       - run: node scripts/validate-release-registry.mjs
       - run: node scripts/validate-institutional-state.mjs
+      - name: Validate procurement public preview
+        run: node scripts/validate-procurement-preview.mjs
+      - name: Record procurement 1.0 gate state
+        shell: bash
+        run: |
+          set +e
+          node scripts/check-procurement-1.0-gate.mjs | tee procurement-gate.txt
+          code=${PIPESTATUS[0]}
+          echo '### Procurement 1.0 gate' >> "$GITHUB_STEP_SUMMARY"
+          cat procurement-gate.txt >> "$GITHUB_STEP_SUMMARY"
+          if [[ "$code" -eq 0 ]]; then
+            echo 'Gate is closed.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Gate remains open. This is expected while the product is a public preview.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit 0
