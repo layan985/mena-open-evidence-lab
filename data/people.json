@@ -1,0 +1,12 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[
+    {"id":"layan-oraidi","name":"Layan Oraidi","role":"Founder and Research Director","status":"active","public":true},
+    {"id":"advisor-methods","name":null,"role":"Methods & Reproducibility Advisor","status":"vacant","public":true},
+    {"id":"advisor-regional-data","name":null,"role":"Regional Data Advisor","status":"vacant","public":true},
+    {"id":"advisor-governance","name":null,"role":"Governance & Open Research Advisor","status":"vacant","public":true}
+  ],
+  "credit_rule":"A contributor or advisor is publicly named only after explicit acceptance or accepted attributable work exists."
+}
