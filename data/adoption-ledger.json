@@ -1,0 +1,9 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "last_updated":"2026-08-16",
+  "records":[],
+  "event_types":["download","external_reproduction","academic_citation","policy_citation","client_use","dataset_reuse","media_use","teaching_use","github_contribution"],
+  "required_fields":["event_type","output_id","actor","date","concrete_use","evidence"],
+  "counting_rule":"No adoption event is counted without a named output, attributable actor, concrete use, date and reviewable supporting evidence."
+}
