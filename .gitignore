@@ -1,1 +1,10 @@
 data/procurement.json
+
+# Restricted institutional operating state must never enter the public repository.
+private/
+data/clients.json
+data/crm.json
+engagements/*/private/
+.env
+.env.*
+!.env.example
