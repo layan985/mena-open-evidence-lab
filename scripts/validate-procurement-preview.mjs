@@ -30,7 +30,8 @@ if (!Array.isArray(data.meta?.limitations) || !data.meta.limitations.some(x => /
 const releases = readJson('data/releases.json');
 const release = releases.records.find(x => x.id === 'procurement-intelligence');
 if (!release) fail('canonical procurement release missing');
-if (release.status !== 'public-preview') fail(`procurement preview validator expected public-preview, got ${release.status}`);
+if (release.version !== 'public-preview') fail(`procurement preview version drift: expected public-preview, got ${release.version}`);
+if (release.status !== 'live') fail(`procurement preview operational status drift: expected live, got ${release.status}`);
 if (!String(release.coverage_note || '').includes('World Bank')) fail('canonical release must state World Bank perimeter');
 
 const notices = data.opportunities?.rows;
