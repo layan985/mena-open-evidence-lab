@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "product_id": "procurement-intelligence",
+  "release_state": "public-preview",
+  "snapshot_retrieved_at": "2026-08-13T17:50:32.912Z",
+  "records": [
+    {
+      "id": "world-bank-procurement-notices",
+      "publisher": "World Bank",
+      "source_family": "current procurement opportunities",
+      "landing_url": "https://projects.worldbank.org/en/projects-operations/opportunities?srce=both",
+      "acquisition_endpoint": "https://search.worldbank.org/api/v2/procnotices",
+      "access_mode": "live_api_retrieval",
+      "archive_status": "not_archived_live_api",
+      "content_sha256": null,
+      "rights_note": "Public World Bank source. The preview republishes normalized notice metadata and directs users to the official notice for verification.",
+      "retrieval_code": "scripts/fetch-procurement-data.mjs"
+    },
+    {
+      "id": "world-bank-procurement-plans",
+      "publisher": "World Bank",
+      "source_family": "procurement plans",
+      "landing_url": "https://projects.worldbank.org/en/projects-operations/potentialopportunities",
+      "acquisition_endpoint": "https://search.worldbank.org/api/v3/wds",
+      "access_mode": "live_api_retrieval",
+      "archive_status": "not_archived_live_api",
+      "content_sha256": null,
+      "rights_note": "Public World Bank source. The preview normalizes disclosed plan metadata and retains official-document links when supplied by the source.",
+      "retrieval_code": "scripts/fetch-procurement-data.mjs"
+    },
+    {
+      "id": "world-bank-ipf-contract-awards",
+      "publisher": "World Bank",
+      "source_family": "IPF contract awards since FY2020",
+      "landing_url": "https://financesone.worldbank.org/contract-awards-in-investment-project-financing-since-fy-2020/DS00005",
+      "acquisition_endpoint": "https://datacatalogapi.worldbank.org/dexapps/fone/api/apiservice?datasetId=DS00005&resourceId=RS00005&type=json",
+      "access_mode": "live_api_retrieval",
+      "archive_status": "not_archived_live_api",
+      "content_sha256": null,
+      "rights_note": "World Bank source identified in the preview as CC BY 4.0. Normalized award records retain the official dataset landing URL.",
+      "retrieval_code": "scripts/fetch-procurement-data.mjs"
+    }
+  ],
+  "boundary": "This manifest records source-family provenance for the public preview. Null source-byte hashes are intentional because the live API responses are not archived in this repository. It does not claim source-byte preservation or a stable 1.0 archive."
+}
