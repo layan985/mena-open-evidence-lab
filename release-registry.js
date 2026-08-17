@@ -1,13 +1,4 @@
 (()=>{
-  function loadPixelTheme(){
-    if(document.querySelector('link[data-pixel-home]'))return;
-    const link=document.createElement('link');
-    link.rel='stylesheet';
-    link.href='assets/pixel-home.css';
-    link.dataset.pixelHome='true';
-    document.head.appendChild(link);
-  }
-
   function addNavLinks(){
     const links=[
       ['Research','research.html'],['Data','data.html'],['Intelligence','intelligence.html'],['Publications','publications.html'],['Client Work','client-work.html'],['Methods','methods.html'],['Validation','validation.html'],['People','people.html'],['Governance','governance.html'],['Funding','funding.html'],['Work With Us','work-with-us.html'],['Contribute','contribute.html']
@@ -19,7 +10,6 @@
   }
 
   function enhanceHomepage(){
-    loadPixelTheme();
     addNavLinks();
     const heroActions=document.querySelector('.hero-cta');
     if(heroActions&&!heroActions.querySelector('[data-commission-engagement]')){
