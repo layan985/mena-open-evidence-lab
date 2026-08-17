@@ -4,6 +4,35 @@
   "last_updated": "2026-08-17",
   "records": [
     {
+      "id": "research-release-002",
+      "project": "Research Release 002 — CPI measurement, decision-time information sets and statistical transparency",
+      "version": "1.0",
+      "release_date": "2026-08-17",
+      "sha": "c62a61e29c6842a1ac59e7af5f01d3c1a0b47c45",
+      "doi": null,
+      "validation_level": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "row_metric": {"label": "audited statistical systems", "value": 5},
+      "research_objects": 3,
+      "reviewers": 0,
+      "supersedes": null,
+      "status": "published",
+      "coverage_note": "Pilot release across Jordan, Egypt, Morocco, Saudi Arabia and the UAE. Missing verification is retained as partial or unverified rather than coded as absence."
+    },
+    {
+      "id": "research-release-001",
+      "project": "Research Release 001 — Official-statistics forensics, comparability and evidence lineage",
+      "version": "1.1",
+      "release_date": "2026-08-17",
+      "sha": "3bf551f24135409d354cd4cfc194f984bc7b6a50",
+      "doi": null,
+      "validation_level": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "row_metric": {"label": "matched Jordan Arabic-English archive pairs", "value": 6},
+      "reviewers": 0,
+      "supersedes": "1.0",
+      "status": "published",
+      "coverage_note": "Archive timestamps are audited as archive timestamps and are not asserted to equal first dissemination in every official channel."
+    },
+    {
       "id": "procurement-intelligence",
       "project": "MENA Funding & Procurement Intelligence",
       "version": "public-preview",
