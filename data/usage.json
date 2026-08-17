@@ -1,0 +1,19 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "measured_at":"2026-08-17",
+  "institution_level":{
+    "dataset_downloads":50,
+    "external_users":"5–10",
+    "annual_site_visitors":"1,000–3,000",
+    "testimonials_or_attributable_quotes":2,
+    "note":"Confirmed institutional aggregates. These totals are not allocated to individual objects without a supporting mapping record."
+  },
+  "objects":[
+    {"object_id":"procurement-intelligence","repository":"layan985/mena-open-evidence-lab","github":{"stars":0,"forks":0,"open_issues":29},"downloads":null,"citations":null,"reproductions":null,"api_requests":null,"usage_note":"Repository metrics are current GitHub metadata. Institutional download/user totals are not assigned to this object without object-level evidence."},
+    {"object_id":"price-observatory","repository":"layan985/mena-economic-narrative-stress-observatory","github":{"stars":0,"forks":0,"open_issues":16},"downloads":null,"citations":null,"reproductions":null,"api_requests":null,"usage_note":"Repository metrics are current GitHub metadata. Institution-level reproduction totals are not assigned to this object without public mapping."},
+    {"object_id":"ai-labor","repository":"layan985/mena-firm-ai-labor-adjustment","github":{"stars":0,"forks":0,"open_issues":4},"downloads":null,"citations":null,"reproductions":null,"api_requests":null,"usage_note":"Repository metrics are current GitHub metadata. Collection-alpha is not treated as a final published dataset."},
+    {"object_id":"workshop-001","repository":"layan985/mena-open-evidence-lab","github":null,"downloads":null,"citations":null,"reproductions":null,"api_requests":null,"usage_note":"No object-specific public usage metric is entered before delivery/archival evidence exists."}
+  ],
+  "metric_rule":"Zero is displayed when directly observed; null means the metric is not publicly measured or cannot be defensibly mapped to the object."
+}
