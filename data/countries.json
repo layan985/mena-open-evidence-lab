@@ -1,16 +1,16 @@
 {
-  "schema_version":"1.0",
+  "schema_version":"1.1",
   "canonical":true,
-  "last_updated":"2026-08-16",
-  "room_schema":["macro_source_map","official_statistics_institutions","labor_market_sources","firm_datasets","procurement","administrative_datasets","survey_infrastructure","known_breaks","vintage_availability","download_formats","methodological_warnings"],
+  "last_updated":"2026-08-17",
+  "room_schema":["current_dashboard","macro_source_map","official_statistics_institutions","labor_market_sources","release_revision_ledger","measurement_notes","original_findings","known_breaks","vintage_availability","download_formats","methodological_warnings"],
   "records":[
-    {"code":"JOR","country":"Jordan","status":"source-map-open"},
+    {"code":"JOR","country":"Jordan","status":"priority-room-live","last_reviewed":"2026-08-17"},
     {"code":"PSE","country":"Palestine","status":"source-map-open"},
-    {"code":"EGY","country":"Egypt","status":"source-map-open"},
-    {"code":"MAR","country":"Morocco","status":"source-map-open"},
+    {"code":"EGY","country":"Egypt","status":"priority-room-live","last_reviewed":"2026-08-17"},
+    {"code":"MAR","country":"Morocco","status":"priority-room-live","last_reviewed":"2026-08-17"},
     {"code":"TUN","country":"Tunisia","status":"source-map-open"},
-    {"code":"SAU","country":"Saudi Arabia","status":"source-map-open"},
-    {"code":"ARE","country":"United Arab Emirates","status":"source-map-open"},
+    {"code":"SAU","country":"Saudi Arabia","status":"priority-room-live","last_reviewed":"2026-08-17"},
+    {"code":"ARE","country":"United Arab Emirates","status":"priority-room-live","last_reviewed":"2026-08-17"},
     {"code":"LBN","country":"Lebanon","status":"source-map-open"},
     {"code":"IRQ","country":"Iraq","status":"source-map-open"},
     {"code":"QAT","country":"Qatar","status":"source-map-open"},
@@ -19,5 +19,5 @@
     {"code":"KWT","country":"Kuwait","status":"source-map-open"},
     {"code":"DZA","country":"Algeria","status":"source-map-open"}
   ],
-  "publication_rule":"A country room is not promoted from source-map-open until every required room field has a reviewable record."
+  "publication_rule":"A priority country room only promotes a dashboard value when the page records its reference period, primary producer, source pointer, vintage and definition. Incomplete values are visibly withheld rather than silently filled from secondary aggregators."
 }
