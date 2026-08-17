@@ -1,0 +1,9 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "records":[],
+  "current_state":"No public withdrawal or retraction record is currently entered.",
+  "required_fields":["object_id","version","action","date","reason","scope","replacement","citation_instruction","decision_record"],
+  "actions":["withdrawn","retracted","expression-of-concern"]
+}
