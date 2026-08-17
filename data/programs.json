@@ -1,38 +1,62 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "canonical": true,
-  "last_updated": "2026-08-16",
+  "last_updated": "2026-08-17",
   "records": [
     {
-      "id": "macro-official-statistics",
-      "name": "Macroeconomic Measurement & Official Statistics",
-      "purpose": "Build revision-aware, source-linked infrastructure for official MENA macroeconomic statistics.",
-      "flagship_infrastructure": ["price-observatory", "evidence-terminal"],
-      "recurring_outputs": ["release monitor", "revision note", "country data-quality brief"],
+      "id": "inflation-price-measurement",
+      "name": "MENA Inflation & Price Measurement Observatory",
+      "purpose": "Measure and compare official price evidence across MENA while preserving basket definitions, base changes, monthly versus annual dynamics, release timing, revisions and structural breaks.",
+      "flagship_infrastructure": ["price-observatory", "release-001"],
+      "recurring_outputs": ["MENA Evidence Note", "Same Label, Different Statistic", "One Chart, Five Caveats"],
       "status": "active"
     },
     {
-      "id": "public-finance-procurement",
-      "name": "Public Finance, Procurement & Development Intelligence",
-      "purpose": "Turn official procurement and development-finance records into auditable opportunity, award and supplier intelligence.",
+      "id": "labour-market-comparability",
+      "name": "MENA Labour Market Comparability Project",
+      "purpose": "Audit the population perimeter, age framework, nationality treatment, denominator and classification architecture behind headline labour-market indicators.",
+      "flagship_infrastructure": ["unemployment-comparability-matrix", "indicator-definition-dictionary"],
+      "recurring_outputs": ["Same Label, Different Statistic", "Method Change", "MENA Evidence Note"],
+      "status": "active"
+    },
+    {
+      "id": "firm-ai-labour-adjustment",
+      "name": "Firm AI Adoption & Labour Adjustment",
+      "purpose": "Separate corporate AI language from verifiable operational adoption and measure how documented adoption relates to employment, workforce composition and labour adjustment.",
+      "flagship_infrastructure": ["ai-labor", "ai-adoption-evidence-ledger"],
+      "recurring_outputs": ["firm dataset", "sector analysis", "AI Adoption Without Measurement"],
+      "status": "active-collection"
+    },
+    {
+      "id": "revision-vintage-archive",
+      "name": "Official Statistics Revision & Vintage Archive",
+      "purpose": "Preserve first releases, later revisions and methodological breaks so researchers can reconstruct what an official series looked like at a historical date.",
+      "flagship_infrastructure": ["vintage-archive", "revision-tracker", "methodology-change-timeline"],
+      "recurring_outputs": ["Release Forensics", "What Was Knowable?", "Method Change"],
+      "status": "build-phase"
+    },
+    {
+      "id": "funding-procurement-intelligence",
+      "name": "MENA Funding & Procurement Intelligence",
+      "purpose": "Normalize official procurement, award and development-finance records into auditable buyer, opportunity and supplier intelligence.",
       "flagship_infrastructure": ["procurement-intelligence"],
-      "recurring_outputs": ["procurement quarterly", "market map", "funding intelligence"],
-      "status": "active"
+      "recurring_outputs": ["funding intelligence", "buyer map", "procurement evidence note"],
+      "status": "live"
     },
     {
-      "id": "firms-labor-technology",
-      "name": "Firms, Labor & Technology",
-      "purpose": "Build source-linked firm and labor evidence with explicit boundaries between observed disclosures, coded events and inferred variables.",
-      "flagship_infrastructure": ["ai-labor"],
-      "recurring_outputs": ["evidence brief", "firm dataset", "sector analysis"],
-      "status": "active"
+      "id": "economic-release-calendar",
+      "name": "MENA Economic Release Calendar",
+      "purpose": "Track verified official economic release dates and, where directly supplied, publication times without inferring dates or times from secondary sources.",
+      "flagship_infrastructure": ["release-calendar", "release-lag-database"],
+      "recurring_outputs": ["MENA Data Radar", "release timeliness benchmark", "Release Forensics"],
+      "status": "active-source-verification"
     },
     {
-      "id": "methods-reproducibility",
-      "name": "Methods, Reproducibility & Open Evidence",
-      "purpose": "Develop and apply reproducibility, replication, audit and evidence-governance methods across Lab work.",
-      "flagship_infrastructure": ["workshop-001"],
-      "recurring_outputs": ["replication note", "reproducibility audit", "methods workshop"],
+      "id": "evidence-lineage",
+      "name": "MENA Evidence Lineage Project",
+      "purpose": "Make claims auditable from source through observation and transformation to published conclusion, retaining language, vintage, retrieval time, file identity and validation state.",
+      "flagship_infrastructure": ["evidence-terminal", "provenance-graph", "source-registry"],
+      "recurring_outputs": ["Claim Audit", "Source Failure", "downloadable provenance record"],
       "status": "active"
     }
   ],
@@ -41,8 +65,8 @@
       "id": "evidence-terminal",
       "name": "MENA Evidence Terminal",
       "status": "specification",
-      "role": "Machine-readable provenance backbone across all research programs.",
-      "required_fields": ["indicator", "entity", "value", "unit", "reference_period", "release_date", "source", "publisher", "vintage", "retrieval_timestamp", "transformation", "source_hash", "code_commit", "revision_status", "license", "validation_status"]
+      "role": "Machine-readable provenance backbone across all research programmes.",
+      "required_fields": ["indicator", "entity", "value", "unit", "reference_period", "release_date", "source", "publisher", "language", "source_file", "vintage", "retrieval_timestamp", "transformation", "source_hash", "code_commit", "revision_status", "license", "validation_status"]
     }
   ]
 }
