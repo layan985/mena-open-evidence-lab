@@ -1,7 +1,9 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-17",
   "records": [
+    {"id":"research-release-002","internal_qa":"documented","source_audit":"official-source pilot across five statistical systems","independent_reproduction":"pending","external_use":"unrecorded"},
+    {"id":"research-release-001","internal_qa":"documented","source_audit":"official-source archive and comparability checks","independent_reproduction":"pending","external_use":"unrecorded"},
     {"id":"procurement-intelligence","internal_qa":"documented","source_audit":"internal-source checks","independent_reproduction":"pending","external_use":"unrecorded"},
     {"id":"price-observatory","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
     {"id":"ai-labor","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
