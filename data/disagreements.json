@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "records":[],
+  "required_fields":["object_id","version","reviewer_or_review_id","issue","reviewer_position","lab_response","resolution","date","public_artifact"],
+  "publication_rule":"A substantive external methodological disagreement may be published with the Lab response where disclosure rights permit. Resolution may be accepted, partially accepted, unresolved, or rejected with reasons."
+}
