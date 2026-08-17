@@ -1,0 +1,16 @@
+{
+  "bundle_version":"1.0",
+  "object":"procurement-intelligence",
+  "release":"public-preview",
+  "created":"2026-08-17",
+  "purpose":"Downloadable manifest for independently tracing the public source perimeter, schema, QA and retrieval code.",
+  "files":[
+    "/data/manifest.json",
+    "/data/procurement-source-manifest.json",
+    "/data/procurement-schema.json",
+    "/data/procurement-qa-report.json",
+    "/scripts/fetch-procurement-data.mjs"
+  ],
+  "coverage_boundary":"World Bank structured sources only in current headline count; UNGM, EU and GIZ are not included.",
+  "instructions":"Resolve each path against the Lab site/repository and preserve the version/commit identifiers when independently tracing the evidence."
+}
