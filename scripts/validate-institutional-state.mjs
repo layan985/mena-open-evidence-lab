@@ -50,6 +50,10 @@ unique(corrections.records, 'correction');
 unique(reviews.records, 'review');
 unique(reproductions.records, 'reproduction');
 
+// Release objects are a strict subset of the publication registry. Standalone
+// analytical publications (for example evidence briefs and data notes) may be
+// published without becoming release-registry objects. Release-registry objects
+// must still have matching publication and validation records with identical state.
 for (const id of releaseIds) {
   if (!publicationIds.has(id)) fail(`${id} is in releases but missing from publications`);
   if (!validationIds.has(id)) fail(`${id} is in releases but missing from validation`);
@@ -59,8 +63,16 @@ for (const id of releaseIds) {
   if (r.status !== p.status) fail(`${id} status drift`);
   if (JSON.stringify(r.validation_level || []) !== JSON.stringify(p.evidence || [])) fail(`${id} evidence-label drift`);
 }
-for (const id of publicationIds) if (!releaseIds.has(id)) fail(`${id} is in publications but missing from releases`);
 for (const id of validationIds) if (!releaseIds.has(id)) fail(`${id} is in validation but missing from releases`);
+for (const p of publications.records) {
+  if (releaseIds.has(p.id)) continue;
+  if (!['published','live'].includes(p.status)) fail(`${p.id} standalone publication must be published/live or represented in releases`);
+  if (!p.publication_date) fail(`${p.id} standalone publication missing publication_date`);
+  if (!p.version) fail(`${p.id} standalone publication missing version`);
+  if (!Array.isArray(p.evidence) || !p.evidence.length) fail(`${p.id} standalone publication missing evidence labels`);
+  if (!p.methodology) fail(`${p.id} standalone publication missing methodology`);
+  if (!p.corrections) fail(`${p.id} standalone publication missing corrections route`);
+}
 
 const crossProgramIds = new Set((programs.cross_program_infrastructure || []).map(x => x.id));
 for (const program of programs.records) {
@@ -118,4 +130,4 @@ for (const staleLiteral of ['v0.3.0-rc1','11,799','176 / 400','195 numeric obser
 }
 if (!homepage.includes('release-registry.js')) fail('homepage must load release registry renderer');
 
-console.log(`Institutional graph OK: ${releaseIds.size} releases, ${programIds.size} programs, ${projectIds.size} projects, ${countries.records.length} country rooms, ${reviews.records.length} reviews, ${reproductions.records.length} reproductions`);
+console.log(`Institutional graph OK: ${releaseIds.size} releases, ${publicationIds.size} publications, ${programIds.size} programs, ${projectIds.size} projects, ${countries.records.length} country rooms, ${reviews.records.length} reviews, ${reproductions.records.length} reproductions`);
