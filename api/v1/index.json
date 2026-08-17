@@ -1,0 +1,14 @@
+{
+  "api_version":"1.0",
+  "updated":"2026-08-17",
+  "base":"/api/v1/",
+  "authentication":"none",
+  "endpoints":[
+    {"name":"releases","path":"releases.json","canonical_source":"/data/releases.json"},
+    {"name":"publications","path":"publications.json","canonical_source":"/data/publications.json"},
+    {"name":"countries","path":"countries.json","canonical_source":"/data/countries.json"},
+    {"name":"corrections","path":"corrections.json","canonical_source":"/data/corrections.json"},
+    {"name":"institutional_metrics","path":"institutional-metrics.json","canonical_source":"/data/institutional-metrics.json"}
+  ],
+  "policy":"Static public snapshots. Breaking field changes require a new API version. No private client data is exposed."
+}
