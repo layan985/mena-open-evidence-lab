@@ -64,12 +64,34 @@ jobs:
         with:
           artifact_name: github-pages-${{ github.run_attempt }}
 
+      - name: Reassert custom-domain HTTPS
+        id: pages_https
+        continue-on-error: true
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          response="$(mktemp)"
+          code="$(curl --silent --show-error --location \
+            -o "$response" -w '%{http_code}' \
+            -X PUT \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H 'X-GitHub-Api-Version: 2026-03-10' \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" \
+            -d '{"https_enforced":true}')"
+          cat "$response" || true
+          echo "GitHub Pages HTTPS update status: ${code}"
+          test "$code" = '204'
+
       - name: Record deployment result
         shell: bash
         run: |
           echo "### GitHub Pages deployment" >> "$GITHUB_STEP_SUMMARY"
           echo "Artifact deployment completed for commit \`${GITHUB_SHA}\`." >> "$GITHUB_STEP_SUMMARY"
           echo "Pages-reported URL: ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "HTTPS reassertion: ${{ steps.pages_https.outcome }}" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Diagnose custom domain
         id: custom_domain
@@ -80,6 +102,18 @@ jobs:
           base="https://menaevidencelab.org"
           echo "Resolved addresses:"
           getent ahosts menaevidencelab.org || true
+
+          tls_tmp="$(mktemp)"
+          echo | openssl s_client \
+            -connect menaevidencelab.org:443 \
+            -servername menaevidencelab.org \
+            -verify_hostname menaevidencelab.org \
+            >"$tls_tmp" 2>&1 || true
+          cat "$tls_tmp"
+          tls_ok=0
+          if grep -Fq 'Verify return code: 0 (ok)' "$tls_tmp"; then
+            tls_ok=1
+          fi
 
           probe() {
             local path="$1"
@@ -97,6 +131,10 @@ jobs:
           }
 
           failures=0
+          if [[ "$tls_ok" -ne 1 ]]; then
+            echo 'TLS hostname verification failed for menaevidencelab.org.' >&2
+            failures=$((failures+1))
+          fi
           probe '/' 'Independent evidence infrastructure for MENA economic and policy research.' || failures=$((failures+1))
           probe '/projects.html' 'Ongoing research is documented before it becomes a paper.' || failures=$((failures+1))
           probe '/methods.html' 'Research Standards Handbook' || failures=$((failures+1))
@@ -111,12 +149,12 @@ jobs:
 
           if [[ "$failures" -gt 0 ]]; then
             echo "CUSTOM_DOMAIN_HEALTH=unhealthy" >> "$GITHUB_ENV"
-            echo "Custom-domain probe failed for ${failures} endpoint(s). GitHub Pages deployment itself completed successfully; investigate DNS/proxy/routing separately." >&2
+            echo "Custom-domain probe failed for ${failures} check(s). GitHub Pages deployment itself completed successfully; investigate DNS/proxy/routing separately." >&2
             exit 1
           fi
 
           echo "CUSTOM_DOMAIN_HEALTH=healthy" >> "$GITHUB_ENV"
-          echo "Custom domain and canonical state endpoints are live."
+          echo "Custom domain, certificate and canonical state endpoints are live."
 
       - name: Summarize custom-domain health
         if: always()
@@ -124,7 +162,7 @@ jobs:
         run: |
           echo "### Custom-domain health" >> "$GITHUB_STEP_SUMMARY"
           if [[ "${CUSTOM_DOMAIN_HEALTH:-unhealthy}" == "healthy" ]]; then
-            echo "✅ \`https://menaevidencelab.org\` served the expected institutional homepage, clean country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
+            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the expected institutional homepage, clean country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "⚠️ \`https://menaevidencelab.org\` did not serve one or more expected endpoints during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
+            echo "⚠️ \`https://menaevidencelab.org\` did not pass one or more TLS/content checks during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
           fi
