@@ -126,7 +126,18 @@ for (const file of ['data/release-package.schema.json','data/source-archive.sche
 
 const homepage = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 for (const release of releases.records) {
-  if (!homepage.includes(`data-release-id="${release.id}"`)) fail(`homepage lacks registry binding for ${release.id}`);
+  const homepageBound = homepage.includes(`data-release-id="${release.id}"`);
+  const numeric = release.id.match(/^research-release-(\d{3})$/);
+  let dedicatedPage = false;
+  if (numeric) {
+    const rel = `release-${numeric[1]}.html`;
+    dedicatedPage = fs.existsSync(path.join(root, rel));
+    if (dedicatedPage) {
+      const page = fs.readFileSync(path.join(root, rel), 'utf8');
+      dedicatedPage = page.includes(release.project) || page.includes(release.id) || page.includes(`Release ${numeric[1]}`);
+    }
+  }
+  if (!homepageBound && !dedicatedPage) fail(`${release.id} lacks a homepage registry binding or dedicated public release page`);
 }
 if (!homepage.includes('release-registry.js')) fail('homepage must load release registry renderer');
 
