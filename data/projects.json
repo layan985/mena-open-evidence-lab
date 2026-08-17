@@ -3,6 +3,8 @@
   "canonical":true,
   "last_updated":"2026-08-17",
   "records":[
+    {"id":"research-release-002","program_id":"inflation-price-measurement","title":"Research Release 002 — CPI measurement, decision-time information sets and statistical transparency","status":"published","latest_release":"1.0","evidence_registry_id":"research-release-002"},
+    {"id":"research-release-001","program_id":"evidence-lineage","title":"Research Release 001 — Official-statistics forensics, comparability and evidence lineage","status":"published","latest_release":"1.1","evidence_registry_id":"research-release-001"},
     {"id":"price-observatory","program_id":"macro-official-statistics","title":"Official Price Release Observatory","status":"release-candidate","latest_release":"v0.3.0-rc1","evidence_registry_id":"price-observatory"},
     {"id":"procurement-intelligence","program_id":"public-finance-procurement","title":"MENA Funding & Procurement Intelligence","status":"live","latest_release":"public-preview","evidence_registry_id":"procurement-intelligence"},
     {"id":"ai-labor","program_id":"firms-labor-technology","title":"MENA Firm AI Adoption and Labor Adjustment","status":"collection-in-progress","latest_release":"v0.2.0a2","evidence_registry_id":"ai-labor"},
