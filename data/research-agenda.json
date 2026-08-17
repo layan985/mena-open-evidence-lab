@@ -1,0 +1,15 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "year":2026,
+  "updated":"2026-08-17",
+  "questions":[
+    {"id":"agenda-01","question":"How do official MENA macroeconomic indicators change across release, revision and vintage cycles, and when do those changes alter the evidence available to decision-makers?","program":"Macroeconomic Conditions","state":"in-progress"},
+    {"id":"agenda-02","question":"How can economic and market stress across MENA be monitored using release-aware public information without confusing timing, revision or descriptive co-movement with causal evidence?","program":"Macroeconomic Conditions","state":"in-progress"},
+    {"id":"agenda-03","question":"How can fragmented procurement records be normalized into auditable regional evidence about buyers, suppliers and opportunity pipelines while preserving source-coverage limits?","program":"Data & Institutions","state":"in-progress"},
+    {"id":"agenda-04","question":"What source-observable evidence links firm technology and AI adoption to labor adjustment, and how much of that evidence survives independent second coding?","program":"Labour & Development","state":"in-progress"},
+    {"id":"agenda-05","question":"Where do national and international statistical definitions prevent responsible comparison of labor and development indicators across MENA?","program":"Labour & Development","state":"proposed"},
+    {"id":"agenda-06","question":"What provenance, reproducibility and review standards are required for fragmented regional evidence to remain auditable after publication?","program":"Methods & Reproducibility","state":"in-progress"}
+  ],
+  "rule":"The agenda identifies intended questions, not promised findings. Questions may be narrowed, deferred or archived with the change recorded publicly."
+}
