@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "statuses":[
+    {"id":"proposed","label":"PROPOSED","definition":"Research question or object has been registered but substantive work has not started."},
+    {"id":"in-progress","label":"IN PROGRESS","definition":"Collection, analysis, coding or drafting is underway and no release claim is made."},
+    {"id":"release-candidate","label":"RELEASE CANDIDATE","definition":"A frozen candidate exists for final QA/review but is not yet a published final release."},
+    {"id":"published","label":"PUBLISHED","definition":"A citable public release has been issued with a stable version and publication record."},
+    {"id":"externally-reviewed","label":"EXTERNALLY REVIEWED","definition":"An outside reviewer has completed a documented review of the relevant object or method."},
+    {"id":"reproduced","label":"REPRODUCED","definition":"An independent party has rerun the specified reproducible object and a result record exists."},
+    {"id":"archived","label":"ARCHIVED","definition":"The object is no longer active but remains permanently addressable and citable."}
+  ],
+  "rule":"Statuses are additive only where evidence supports them. Externally reviewed or reproduced may not be inferred from institution-level aggregate counts without object-level mapping."
+}
