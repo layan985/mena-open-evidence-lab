@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "canonical": true,
+  "last_updated": "2026-08-17",
+  "reporting_basis": "Current institutional metrics confirmed by the Research Director on 17 August 2026. Ranges are published as ranges where the underlying count is not being narrowed publicly. Supporting records may be public or held privately where confidentiality applies.",
+  "records": [
+    {"id":"active-researchers-contributors","label":"Active researchers / contributors","value":"4–6","type":"range","status":"current"},
+    {"id":"external-methods-reviewers","label":"External methods reviewers","value":"2–3","type":"range","status":"current"},
+    {"id":"independent-reproductions","label":"Independent reproductions completed","value":2,"type":"exact","status":"current"},
+    {"id":"published-research-outputs","label":"Published research outputs","value":"3–5","type":"range","status":"current"},
+    {"id":"public-datasets","label":"Public datasets","value":"2–3","type":"range","status":"current"},
+    {"id":"flagship-recurring-product","label":"Flagship recurring observatory / data product","value":1,"type":"exact","status":"current"},
+    {"id":"institutional-research-engagements","label":"Institutional research engagements","value":2,"type":"exact","status":"current"},
+    {"id":"paid-evidence-projects","label":"Paid evidence projects delivered","value":3,"type":"exact","status":"current"},
+    {"id":"testimonials-quotes","label":"Client / research-user testimonials or attributable quotes","value":2,"type":"exact","status":"current"},
+    {"id":"external-users","label":"External users of Lab datasets / code","value":"5–10","type":"range","status":"current"},
+    {"id":"external-contribution","label":"Externally contributed dataset or accepted research contribution","value":1,"type":"exact","status":"current"},
+    {"id":"dataset-downloads","label":"Dataset downloads","value":50,"type":"exact","status":"current"},
+    {"id":"annual-site-visitors","label":"Annual site visitors","value":"1,000–3,000","type":"range","status":"current"},
+    {"id":"unresolved-corrections","label":"Unresolved corrections","value":0,"type":"exact","status":"current"},
+    {"id":"dataset-provenance-coverage","label":"Published datasets with source / provenance records","value":"100%","type":"percentage","status":"current"},
+    {"id":"reproducible-output-code-versioning","label":"Reproducible outputs with code / versioning","value":"100%","type":"percentage","status":"current"}
+  ],
+  "disclosure_rule": "Institution-level totals may be published in aggregate when the underlying relationship or evidence record is confidential. Release-level validation designations remain attached only when the corresponding release-specific record is public or otherwise cleared for disclosure."
+}
