@@ -1,0 +1,44 @@
+/* Exact supplied MENA Open Data & Evidence Lab logo lockup. */
+.top>a:first-child,
+.footer-brand{
+  display:flex!important;
+  align-items:center!important;
+}
+
+.top>a:first-child::before,
+.footer-brand::before{
+  content:""!important;
+  width:148px!important;
+  height:46px!important;
+  flex:0 0 148px!important;
+  display:block!important;
+  background:url('mena-lab-logo-lockup.svg') center/contain no-repeat!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+/* Keep the original text in the DOM for accessibility, but avoid duplicating the lockup visually. */
+.top>a:first-child b{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+}
+
+.footer-brand{
+  font-size:0!important;
+  color:transparent!important;
+}
+
+@media(max-width:760px){
+  .top>a:first-child::before,
+  .footer-brand::before{
+    width:132px!important;
+    height:41px!important;
+    flex-basis:132px!important;
+  }
+}
