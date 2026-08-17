@@ -1,0 +1,12 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "records":[
+    {"id":"procurement-intelligence","version":"public-preview","doi":null,"repository_path":"/data/manifest.json","recorded_sha":"718aaf85462c94de30a7d37fee0875f0aeaf1a7c","archive_state":"version-addressable-in-repository","permanent_external_archive":null},
+    {"id":"price-observatory","version":"v0.3.0-rc1","doi":null,"repository":"https://github.com/layan985/mena-economic-narrative-stress-observatory","archive_state":"release-candidate-not-final-archive","permanent_external_archive":null},
+    {"id":"ai-labor","version":"collection-alpha","doi":null,"repository":"https://github.com/layan985/mena-firm-ai-labor-adjustment","archive_state":"collection-not-final-archive","permanent_external_archive":null},
+    {"id":"workshop-001","version":"001","doi":null,"repository_path":"/programs/modern/","archive_state":"scheduled-materials-not-final-archive","permanent_external_archive":null}
+  ],
+  "policy":"A DOI or permanent external archive link is displayed only after issuance. Release candidates and collection states are not promoted to permanent-release status by implication."
+}
