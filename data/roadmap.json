@@ -1,0 +1,14 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "items":[
+    {"id":"procurement-public-preview","object":"procurement-intelligence","state":"live","next":"Expand source perimeter only when additional sources are ingested, normalized and QA-documented.","date":null},
+    {"id":"price-finalization","object":"price-observatory","state":"release-candidate","next":"Complete the remaining release-validation gate and issue a frozen version when supported.","date":null},
+    {"id":"ai-labor-collection","object":"ai-labor","state":"in-progress","next":"Continue source-linked collection toward the documented 400 firm-year target and preserve second-coding as a separate validation gate.","date":null},
+    {"id":"workshop-001","object":"workshop-001","state":"scheduled","next":"Deliver Workshop 001 and archive final materials and post-delivery evidence.","date":"2026-08-23"},
+    {"id":"terminal","object":"evidence-terminal","state":"in-progress","next":"Move from release-object search toward indicator-level records as source-bound terminal entries are published.","date":null},
+    {"id":"replication-public-mapping","object":"validation","state":"proposed","next":"Publish object-level reproduction records when disclosure and mapping details are available; do not infer mapping from institution-level totals.","date":null}
+  ],
+  "rule":"Roadmap dates are shown only where already scheduled. Planned work is not represented as a completed release."
+}
