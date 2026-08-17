@@ -1,0 +1,12 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "records":[
+    {"date":"2026-08-17","object":"institutional-site","version":"2026-08-17","type":"infrastructure","summary":"Added institutional metrics ledger, expanded research architecture, Evidence Terminal prototype, global search, country/topic routes, citation/API infrastructure and bilingual metadata."},
+    {"date":"2026-08-13","object":"procurement-intelligence","version":"public-preview","type":"release","summary":"Published current public-preview procurement intelligence object within the documented World Bank structured-source perimeter."},
+    {"date":"2026-08-15","object":"price-observatory","version":"v0.3.0-rc1","type":"release-candidate","summary":"Registered release-candidate state superseding the earlier v0.2 pilot; final independent source audit remains a separate gate."},
+    {"date":"2026-08-15","object":"ai-labor","version":"collection-alpha","type":"collection-state","summary":"Registered collection-alpha state with current firm-year and source-hash-linked counts; not a final published dataset."}
+  ],
+  "rule":"Historical observation revisions are reported only when the affected values and versions are actually known; example revision numbers are never fabricated."
+}
