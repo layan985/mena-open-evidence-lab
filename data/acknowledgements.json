@@ -1,0 +1,19 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "institution_level":{
+    "active_researchers_contributors":"4–6",
+    "external_methods_reviewers":"2–3",
+    "independent_reproductions":2,
+    "accepted_external_contributions":1,
+    "disclosure":"Confirmed institutional totals. Individual names and object mappings are published only where attribution and disclosure are appropriate."
+  },
+  "object_records":[
+    {"object_id":"procurement-intelligence","production_credit":["MENA Open Data & Evidence Lab"],"named_reviewers":[],"named_reproducers":[],"named_external_contributors":[],"named_hosts":[],"named_funders":[],"note":"No additional attributable acknowledgement is entered in the public object record."},
+    {"object_id":"price-observatory","production_credit":["MENA Open Data & Evidence Lab"],"named_reviewers":[],"named_reproducers":[],"named_external_contributors":[],"named_hosts":[],"named_funders":[],"note":"Institution-level review/reproduction totals are not assigned to this object without public mapping evidence."},
+    {"object_id":"ai-labor","production_credit":["MENA Open Data & Evidence Lab"],"named_reviewers":[],"named_reproducers":[],"named_external_contributors":[],"named_hosts":[],"named_funders":[],"note":"Public collection record remains founder/Lab-produced; outside credits require accepted attributable records."},
+    {"object_id":"workshop-001","production_credit":["MENA Open Data & Evidence Lab"],"named_reviewers":[],"named_reproducers":[],"named_external_contributors":[],"named_hosts":[],"named_funders":[],"note":"Host, attendees and outside reproduction are not inferred before attributable records exist."}
+  ],
+  "credit_rule":"Production, contribution, review, reproduction, hosting and funding are distinct roles. Acknowledgement does not imply employment, advisory membership or institutional endorsement."
+}
