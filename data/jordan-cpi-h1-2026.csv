@@ -1,0 +1,7 @@
+record_id,geography,reference_period,headline_cpi_annual_pct,cpi_month_on_month_pct,source_institution,source_url,retrieved_date,evidence_status
+JOR-2026-01,Jordan,2026-01,1.06,0.17,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_022026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
+JOR-2026-02,Jordan,2026-02,1.17,0.22,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_032026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
+JOR-2026-03,Jordan,2026-03,1.87,0.76,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_042026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
+JOR-2026-04,Jordan,2026-04,2.49,0.70,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_052026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
+JOR-2026-05,Jordan,2026-05,2.83,0.55,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_062026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
+JOR-2026-06,Jordan,2026-06,2.79,0.14,Department of Statistics (Jordan),https://dosweb.dos.gov.jo/cpi_072026/,2026-08-13,OFFICIAL SOURCE / REAL PUBLIC DATA
