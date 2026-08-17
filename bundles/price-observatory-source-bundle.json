@@ -1,0 +1,11 @@
+{
+  "bundle_version":"1.0",
+  "object":"price-observatory",
+  "release":"v0.3.0-rc1",
+  "created":"2026-08-17",
+  "purpose":"Downloadable manifest for tracing the release-candidate data, code, methods and source links.",
+  "repository":"https://github.com/layan985/mena-economic-narrative-stress-observatory",
+  "known_public_state":{"geography_month_rows":48,"numeric_observations":195,"official_release_links":30},
+  "validation_boundary":"Release candidate; independent source audit and frozen final release remain separate gates.",
+  "instructions":"Use the project repository at the recorded version state. Do not cite this manifest as evidence of independent validation."
+}
