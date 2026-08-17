@@ -1,0 +1,16 @@
+/* Correct public founder name display without altering research/data content. */
+#layan-oraidi h2,
+.person-card h3{
+  font-size:0!important;
+}
+#layan-oraidi h2::after,
+.person-card h3::after{
+  content:'Layan Aloreidi';
+  font-size:inherit;
+  font-family:'Inter',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif!important;
+  font-weight:650!important;
+  letter-spacing:-.035em!important;
+  color:inherit;
+}
+#layan-oraidi h2::after{font-size:34px;line-height:1.05}
+.person-card h3::after{font-size:34px;line-height:1.05}
