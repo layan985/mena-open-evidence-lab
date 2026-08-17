@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "canonical": true,
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-17",
   "records": [
     {
       "id": "procurement-intelligence",
@@ -36,18 +36,20 @@
     {
       "id": "ai-labor",
       "project": "MENA Firm AI Adoption and Labor Adjustment",
-      "version": "collection-alpha",
+      "version": "v0.2.0a2",
       "release_date": null,
       "sha": null,
       "doi": null,
       "validation_level": ["REAL PUBLIC DATA", "PENDING VALIDATION"],
       "row_metric": {"label": "numeric employment firm-years", "value": 176},
+      "firms_with_numeric_employment": 38,
+      "target_firms": 50,
       "source_hash_linked": 168,
       "target_firm_years": 400,
       "reviewers": 0,
-      "supersedes": null,
+      "supersedes": "v0.1.1",
       "status": "collection-in-progress",
-      "coverage_note": "Collection and independent second-coding are not complete."
+      "coverage_note": "Audited collection/provenance alpha; collection and independent second-human coding are not complete."
     },
     {
       "id": "workshop-001",
