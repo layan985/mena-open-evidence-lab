@@ -4,20 +4,20 @@
   "last_updated":"2026-08-17",
   "room_schema":["current_dashboard","macro_source_map","official_statistics_institutions","labor_market_sources","release_revision_ledger","measurement_notes","original_findings","known_breaks","vintage_availability","download_formats","methodological_warnings"],
   "records":[
-    {"code":"JOR","country":"Jordan","status":"priority-room-live","last_reviewed":"2026-08-17"},
-    {"code":"PSE","country":"Palestine","status":"source-map-open"},
-    {"code":"EGY","country":"Egypt","status":"priority-room-live","last_reviewed":"2026-08-17"},
-    {"code":"MAR","country":"Morocco","status":"priority-room-live","last_reviewed":"2026-08-17"},
-    {"code":"TUN","country":"Tunisia","status":"source-map-open"},
-    {"code":"SAU","country":"Saudi Arabia","status":"priority-room-live","last_reviewed":"2026-08-17"},
-    {"code":"ARE","country":"United Arab Emirates","status":"priority-room-live","last_reviewed":"2026-08-17"},
-    {"code":"LBN","country":"Lebanon","status":"source-map-open"},
-    {"code":"IRQ","country":"Iraq","status":"source-map-open"},
-    {"code":"QAT","country":"Qatar","status":"source-map-open"},
-    {"code":"OMN","country":"Oman","status":"source-map-open"},
-    {"code":"BHR","country":"Bahrain","status":"source-map-open"},
-    {"code":"KWT","country":"Kuwait","status":"source-map-open"},
-    {"code":"DZA","country":"Algeria","status":"source-map-open"}
+    {"code":"JOR","country":"Jordan","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"PSE","country":"Palestine","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"EGY","country":"Egypt","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"MAR","country":"Morocco","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"TUN","country":"Tunisia","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"SAU","country":"Saudi Arabia","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"ARE","country":"United Arab Emirates","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"LBN","country":"Lebanon","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"IRQ","country":"Iraq","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"QAT","country":"Qatar","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"OMN","country":"Oman","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"BHR","country":"Bahrain","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"KWT","country":"Kuwait","status":"country-room-live","last_reviewed":"2026-08-17"},
+    {"code":"DZA","country":"Algeria","status":"country-room-live","last_reviewed":"2026-08-17"}
   ],
-  "publication_rule":"A priority country room only promotes a dashboard value when the page records its reference period, primary producer, source pointer, vintage and definition. Incomplete values are visibly withheld rather than silently filled from secondary aggregators."
+  "publication_rule":"A country room only promotes a dashboard value when the page records its reference period, primary producer, source pointer, vintage and definition. Incomplete values are visibly withheld rather than silently filled from secondary aggregators."
 }
