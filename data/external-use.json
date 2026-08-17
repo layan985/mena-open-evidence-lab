@@ -1,6 +1,9 @@
 {
-  "schema_version": "1.0",
-  "last_updated": "2026-08-15",
+  "schema_version": "1.1",
+  "last_updated": "2026-08-17",
+  "reported_independent_users": 2,
+  "published_attributable_records": 0,
   "records": [],
-  "counting_rule": "An external-use record requires an attributable user or institution, a concrete use, a date, and a citation, link, correspondence record or other reviewable evidence. Conversations, impressions and prospective use are not counted."
+  "disclosure_note": "Two independent users have been reported by the Lab. Their identities, specific uses and supporting evidence have not yet been published in the attributable external-use ledger, so they are not counted as public validation records.",
+  "counting_rule": "An attributable external-use record requires a named Lab output, attributable user or institution, a concrete use, a date, and a citation, link, correspondence record or other reviewable evidence. Reported use may be shown separately but is not treated as public validation until the record is documented."
 }
