@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-17",
+  "publication_rule": "Only values tied to a named primary official source and an explicit reference period are promoted to the dashboard. Unverified or methodologically incompatible values remain withheld.",
+  "rooms": {
+    "JOR": {
+      "country": "Jordan",
+      "slug": "jordan",
+      "status": "priority-room-live",
+      "headline": "What do we know now, and what exactly does each Jordanian statistic measure?",
+      "dek": "Jordan is the first complete country room. It combines current official indicators with a source map, measurement notes, a preservation ledger and two Lab findings built from public Jordanian evidence.",
+      "indicators": [
+        {"label":"Headline CPI","value":"2.79","unit":"% y/y","period":"Jun 2026","release_date":"Jul 2026","source":"Department of Statistics","source_url":"https://dosweb.dos.gov.jo/cpi_072026/","vintage":"retrieved 13 Aug 2026","definition":"All-items consumer price index, annual percentage change; current 2018=100 series."},
+        {"label":"CPI monthly change","value":"0.14","unit":"% m/m","period":"Jun 2026","release_date":"Jul 2026","source":"Department of Statistics","source_url":"https://dosweb.dos.gov.jo/cpi_072026/","vintage":"retrieved 13 Aug 2026","definition":"Month-on-month change in headline CPI."},
+        {"label":"Unemployment","value":"withheld","unit":"","period":"latest official labour release","release_date":"","source":"Department of Statistics","source_url":"https://dosweb.dos.gov.jo/labourforce/employment-and-unemployment/","vintage":"checked 17 Aug 2026","definition":"Dashboard promotion withheld until the current total-population release is archived with its denominator and release date."},
+        {"label":"Labour-force participation","value":"withheld","unit":"","period":"latest official labour release","release_date":"","source":"Department of Statistics","source_url":"https://dosweb.dos.gov.jo/labourforce/employment-and-unemployment/","vintage":"checked 17 Aug 2026","definition":"Participation is reported relative to the population aged 15+; current value not promoted without a preserved source release."},
+        {"label":"Real GDP growth","value":"withheld","unit":"","period":"latest official national accounts","release_date":"","source":"Department of Statistics","source_url":"https://dosweb.dos.gov.jo/","vintage":"checked 17 Aug 2026","definition":"Current value withheld pending a directly archived official national-accounts release."},
+        {"label":"Policy rate","value":"withheld","unit":"","period":"current","release_date":"","source":"Central Bank of Jordan","source_url":"https://www.cbj.gov.jo/","vintage":"checked 17 Aug 2026","definition":"Current policy-rate value is not promoted until the underlying CBJ decision notice is preserved."},
+        {"label":"FX regime","value":"peg","unit":"JOD/USD","period":"current","release_date":"","source":"Central Bank of Jordan","source_url":"https://www.cbj.gov.jo/","vintage":"checked 17 Aug 2026","definition":"Jordanian dinar exchange-rate arrangement against the US dollar; room tracks regime and official rate separately."},
+        {"label":"Country-specific variable","value":"6","unit":"CPI monthly records","period":"Jan–Jun 2026","release_date":"17 Aug 2026 Lab extract","source":"MENA Lab from DoS releases","source_url":"../../data/jordan-cpi-h1-2026.csv","vintage":"frozen 17 Aug 2026","definition":"Preserved six-month headline CPI evidence series used by the Lab evidence brief."}
+      ],
+      "sources": [
+        {"domain":"Prices","producer":"Department of Statistics","release":"Consumer Price Index","frequency":"monthly","format":"web / XLS / PDF varies","archive_quality":"partial","url":"https://dosweb.dos.gov.jo/economic/price-indices/"},
+        {"domain":"Labour","producer":"Department of Statistics","release":"Employment & Unemployment / Labour Force Survey","frequency":"quarterly","format":"web / PDF / tables","archive_quality":"partial","url":"https://dosweb.dos.gov.jo/labourforce/employment-and-unemployment/"},
+        {"domain":"Monetary / FX","producer":"Central Bank of Jordan","release":"Policy decisions, rates, monetary statistics","frequency":"event / monthly / daily","format":"web / PDF / XLS","archive_quality":"partial","url":"https://www.cbj.gov.jo/"},
+        {"domain":"Fiscal","producer":"Ministry of Finance","release":"General government finance / debt / budget reporting","frequency":"monthly / annual","format":"PDF / XLS","archive_quality":"partial","url":"https://mof.gov.jo/"},
+        {"domain":"Trade","producer":"Department of Statistics","release":"External trade statistics","frequency":"monthly","format":"web / tables","archive_quality":"partial","url":"https://dosweb.dos.gov.jo/"}
+      ],
+      "measurement_notes": [
+        {"id":"JDN-M01","question":"Annual inflation rose after monthly price pressure had started cooling. Contradiction?","answer":"No. Year-on-year CPI compares each month with the same month a year earlier, while month-on-month CPI compares adjacent months. The windows can move differently because of base effects and the full prior-year path."},
+        {"id":"JDN-M02","question":"Is CPI a direct cost-of-living index?","answer":"No. Jordan's statistical methodology describes CPI as a measure of price change. It should not be silently re-labelled as a household-specific cost-of-living measure."},
+        {"id":"JDN-M03","question":"Which Jordanian unemployment rate are you quoting?","answer":"The official labour system distinguishes Jordanians and non-Jordanians, and current outputs can report a total-population measure. A headline number is incomplete without the population perimeter, age framework and denominator."},
+        {"id":"JDN-M04","question":"Can a 2026 CPI release be compared with any older Jordan series without checking metadata?","answer":"Not automatically. The current published CPI series uses 2018=100. Base-period and basket changes must be recorded before joining historical files."},
+        {"id":"JDN-M05","question":"What did users actually know at the time?","answer":"A current historical table can differ from what was available on the original release date. The ledger therefore preserves release date, reference period and original-source pointer separately."}
+      ],
+      "ledger": [
+        {"released":"Feb 2026","indicator":"CPI","reference":"Jan 2026","first":"1.06% y/y","current":"1.06% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_022026/"},
+        {"released":"Mar 2026","indicator":"CPI","reference":"Feb 2026","first":"1.17% y/y","current":"1.17% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_032026/"},
+        {"released":"Apr 2026","indicator":"CPI","reference":"Mar 2026","first":"1.87% y/y","current":"1.87% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_042026/"},
+        {"released":"May 2026","indicator":"CPI","reference":"Apr 2026","first":"2.49% y/y","current":"2.49% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_052026/"},
+        {"released":"Jun 2026","indicator":"CPI","reference":"May 2026","first":"2.83% y/y","current":"2.83% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_062026/"},
+        {"released":"Jul 2026","indicator":"CPI","reference":"Jun 2026","first":"2.79% y/y","current":"2.79% y/y","revised":"No observed revision","url":"https://dosweb.dos.gov.jo/cpi_072026/"}
+      ],
+      "findings": [
+        {"id":"JDN-001","title":"The annual inflation rate was still rising after monthly price pressure had begun easing.","body":"Jordan's headline CPI rose from 1.06% y/y in January to 2.83% in May 2026, even though month-on-month price growth had already varied substantially across the period. By June, the annual rate eased slightly to 2.79% and the monthly rate to 0.14%.","why":"The finding is about measurement windows, not a causal claim. Annual and monthly inflation answer different questions."},
+        {"id":"JDN-002","title":"Which Jordanian unemployment rate are you quoting?","body":"Jordanian labour-market outputs distinguish population perimeters including Jordanians and non-Jordanians. A single unemployment figure can therefore conceal a denominator and population-scope choice that matters for comparison.","why":"This is a Same Label, Different Statistic problem: the label 'unemployment' is not enough metadata."}
+      ],
+      "program": [
+        {"id":"JDN-001","title":"Inflation measurement window","state":"published","description":"Annual versus monthly CPI note using preserved Jan–Jun 2026 releases."},
+        {"id":"JDN-002","title":"Which unemployment rate?","state":"active","description":"Total population versus nationality, sex, age and denominator audit."},
+        {"id":"JDN-003","title":"Jordan price-source registry","state":"active","description":"CPI, producer prices, wholesale prices and industrial price/production source map."},
+        {"id":"JDN-004","title":"Release punctuality audit","state":"queued","description":"Declared dissemination timetable versus observed publication dates."},
+        {"id":"JDN-005","title":"2026 revision ledger","state":"active","description":"Preserve each price release as a dated vintage and flag later changes."}
+      ],
+      "downloads": [{"label":"Jordan CPI H1 2026 CSV","url":"../../data/jordan-cpi-h1-2026.csv"},{"label":"Unemployment comparability CSV","url":"../../data/unemployment-comparability-jordan-egypt-morocco.csv"}],
+      "status_box": {"primary_agencies_mapped":"4","active_release_series":"6","archived_source_releases":"6","revision_history":"partial","definition_audit":"CPI complete / labour active","independent_reproduction":"pending","last_checked":"17 Aug 2026"}
+    },
+    "EGY": {
+      "country":"Egypt","slug":"egypt","status":"priority-room-live","headline":"Which Egyptian inflation rate?","dek":"Egypt's room starts with the perimeter problem: urban headline CPI, national CPI concepts and CBE core inflation are different statistical objects. The page keeps those objects separate and preserves the chain from CAPMAS production to CBE policy use.",
+      "indicators":[
+        {"label":"Urban headline CPI","value":"14.3","unit":"% y/y","period":"Jun 2026","release_date":"Jul 2026","source":"CAPMAS / CBE","source_url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates","vintage":"checked 17 Aug 2026","definition":"Urban headline CPI annual inflation; distinct from national CPI and CBE core inflation."},
+        {"label":"Core inflation","value":"withheld","unit":"","period":"latest","release_date":"","source":"Central Bank of Egypt","source_url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates","vintage":"checked 17 Aug 2026","definition":"CBE-calculated core measure. Value withheld until the current release is preserved alongside the methodology note."},
+        {"label":"Unemployment","value":"withheld","unit":"","period":"latest labour-force release","release_date":"","source":"CAPMAS","source_url":"https://www.capmas.gov.eg/","vintage":"checked 17 Aug 2026","definition":"Labour-force survey measure for the Egyptian civilian labour force inside Egypt; current value not promoted without archived release metadata."},
+        {"label":"Labour-force participation","value":"withheld","unit":"","period":"latest labour-force release","release_date":"","source":"CAPMAS","source_url":"https://www.capmas.gov.eg/","vintage":"checked 17 Aug 2026","definition":"Participation measure tied to CAPMAS labour-force survey population and age framework."},
+        {"label":"Real GDP growth","value":"withheld","unit":"","period":"latest official quarter","release_date":"","source":"Ministry of Planning / official national accounts","source_url":"https://mped.gov.eg/","vintage":"checked 17 Aug 2026","definition":"Current rate withheld pending directly preserved official release."},
+        {"label":"Policy rate","value":"withheld","unit":"","period":"current","release_date":"","source":"Central Bank of Egypt","source_url":"https://www.cbe.org.eg/","vintage":"checked 17 Aug 2026","definition":"MPC policy corridor rates; dashboard value withheld until current decision notice is archived."},
+        {"label":"FX rate","value":"withheld","unit":"EGP/USD","period":"current","release_date":"","source":"Central Bank of Egypt","source_url":"https://www.cbe.org.eg/","vintage":"checked 17 Aug 2026","definition":"Official exchange-rate series; current spot value intentionally not promoted from a secondary feed."},
+        {"label":"CPI base","value":"2018/19","unit":"base year","period":"current series","release_date":"","source":"CAPMAS / CBE methodology","source_url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates","vintage":"checked 17 Aug 2026","definition":"Current CPI base FY2018/19; expenditure weights derived from FY2017/18 household survey."}
+      ],
+      "sources":[
+        {"domain":"Prices","producer":"CAPMAS","release":"Consumer Price Index","frequency":"monthly","format":"web / PDF / tables","archive_quality":"partial","url":"https://www.capmas.gov.eg/"},
+        {"domain":"Core inflation / policy","producer":"Central Bank of Egypt","release":"Inflation rates, MPC decisions, monetary statistics","frequency":"monthly / event","format":"web / PDF","archive_quality":"strong","url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates"},
+        {"domain":"Labour","producer":"CAPMAS","release":"Labour Force Survey","frequency":"quarterly","format":"web / PDF / tables","archive_quality":"partial","url":"https://www.capmas.gov.eg/"},
+        {"domain":"National accounts","producer":"Ministry of Planning, Economic Development & International Cooperation","release":"GDP / national accounts","frequency":"quarterly / annual","format":"web / PDF","archive_quality":"partial","url":"https://mped.gov.eg/"},
+        {"domain":"Fiscal","producer":"Ministry of Finance","release":"Budget and public finance statistics","frequency":"monthly / annual","format":"PDF / XLS","archive_quality":"partial","url":"https://mof.gov.eg/"}
+      ],
+      "measurement_notes":[
+        {"id":"EGY-M01","question":"Urban headline, national headline or core inflation?","answer":"They are not interchangeable. CAPMAS produces CPI releases across geographic concepts; the CBE's policy target is tied to urban headline inflation, while the CBE calculates core inflation separately."},
+        {"id":"EGY-M02","question":"What does the headline urban rate leave out?","answer":"The label itself identifies a geographic perimeter. A national welfare claim cannot be inferred from an urban headline rate without checking the underlying coverage."},
+        {"id":"EGY-M03","question":"Why can year-on-year inflation accelerate when current monthly price pressure is modest?","answer":"Because the annual rate depends on the comparison month a year earlier. The room treats base effects as an explicit measurement object rather than a narrative afterthought."},
+        {"id":"EGY-M04","question":"Did rebasing change the historical series?","answer":"The current CPI series uses FY2018/19 as base year with weights from the FY2017/18 household survey. Historical joins across prior bases require a vintage and methodology map."},
+        {"id":"EGY-M05","question":"Where does a media inflation number actually come from?","answer":"The source tree is CAPMAS statistical production → CBE headline/core policy presentation → downstream IMF, World Bank and media reuse. The room preserves that hierarchy."}
+      ],
+      "ledger":[
+        {"released":"May 2026","indicator":"Urban headline CPI","reference":"Apr 2026","first":"14.9% y/y","current":"14.9% y/y in preserved CBE series","revised":"No revision observed in source consulted","url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates"},
+        {"released":"Jul 2026","indicator":"Urban headline CPI","reference":"Jun 2026","first":"14.3% y/y","current":"14.3% y/y","revised":"No revision observed","url":"https://www.cbe.org.eg/en/economic-research/statistics/inflation-rates"}
+      ],
+      "findings":[
+        {"id":"EGY-001","title":"The phrase “Egyptian inflation” hides a geographic choice.","body":"Egypt's policy-facing headline measure is urban headline inflation. A national CPI concept and a CBE core measure answer different questions and should not be merged into one generic inflation series.","why":"The statistical perimeter is part of the number. Geography belongs in the citation, not only in the methodology appendix."},
+        {"id":"EGY-002","title":"Headline and core inflation are separate analytical objects.","body":"CAPMAS produces the headline CPI input while the Central Bank of Egypt calculates core inflation separately. Divergence between the two can be informative, but only after their construction and exclusions are kept explicit.","why":"A policy narrative that silently switches between headline and core inflation can manufacture a trend that is not present in either series alone."}
+      ],
+      "program":[
+        {"id":"EGY-001","title":"Urban is not national","state":"active","description":"Map the geography and population perimeter behind the headline inflation rate."},
+        {"id":"EGY-002","title":"Headline vs core inflation","state":"active","description":"Document construction, exclusions and divergence without treating either as a substitute for the other."},
+        {"id":"EGY-003","title":"The base-effect machine","state":"active","description":"Reconstruct annual inflation from monthly movements and prior-year comparison months."},
+        {"id":"EGY-004","title":"CPI vintage map","state":"queued","description":"Track rebasing events, weights and series transitions."},
+        {"id":"EGY-005","title":"Egyptian inflation source tree","state":"active","description":"CAPMAS production through CBE policy series and downstream reuse."}
+      ],
+      "downloads":[{"label":"Unemployment comparability CSV","url":"../../data/unemployment-comparability-jordan-egypt-morocco.csv"}],
+      "status_box":{"primary_agencies_mapped":"5","active_release_series":"5","archived_source_releases":"2","revision_history":"partial","definition_audit":"inflation active / labour partial","independent_reproduction":"pending","last_checked":"17 Aug 2026"}
+    },
+    "SAU": {
+      "country":"Saudi Arabia","slug":"saudi-arabia","status":"priority-room-live","headline":"Did the economy change, or did the measurement system change?","dek":"Saudi Arabia's room foregrounds documented methodology breaks: the Labour Force Survey redesign from Q1 2025, census-based population-series transitions and a CPI system with updated classifications and chain-linked weights.",
+      "indicators":[
+        {"label":"Headline CPI","value":"withheld","unit":"","period":"latest monthly release","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=124","vintage":"checked 17 Aug 2026","definition":"Current all-items CPI, 2023=100; value withheld until a directly preserved monthly release is attached."},
+        {"label":"Unemployment","value":"withheld","unit":"","period":"latest labour-market release","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=119","vintage":"checked 17 Aug 2026","definition":"Labour-market rate subject to the Q1 2025 survey redesign and population-series documentation."},
+        {"label":"Labour-force participation","value":"withheld","unit":"","period":"latest labour-market release","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=119","vintage":"checked 17 Aug 2026","definition":"Participation rate; comparison across the Q1 2025 methodology break requires explicit treatment."},
+        {"label":"Real GDP growth","value":"withheld","unit":"","period":"latest official quarter","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=125","vintage":"checked 17 Aug 2026","definition":"Official national-accounts growth; current value withheld pending frozen release."},
+        {"label":"Policy rate","value":"withheld","unit":"","period":"current","release_date":"","source":"Saudi Central Bank","source_url":"https://www.sama.gov.sa/en-US/Pages/default.aspx","vintage":"checked 17 Aug 2026","definition":"SAMA policy rates; current value withheld until decision notice is archived."},
+        {"label":"FX regime","value":"3.75","unit":"SAR/USD reference peg","period":"current regime","release_date":"","source":"Saudi Central Bank","source_url":"https://www.sama.gov.sa/en-US/Pages/default.aspx","vintage":"checked 17 Aug 2026","definition":"Longstanding riyal-US dollar peg reference; transaction quotes can vary around the official parity."},
+        {"label":"CPI index base","value":"2023=100","unit":"index base","period":"current methodology","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=124","vintage":"checked 17 Aug 2026","definition":"Current CPI presentation with updated consumption classification and chain-linked weight methodology."},
+        {"label":"Labour-method break","value":"Q1 2025","unit":"survey redesign","period":"methodology break","release_date":"","source":"GASTAT","source_url":"https://www.stats.gov.sa/en/statistics?category=119","vintage":"checked 17 Aug 2026","definition":"New questionnaire detail and employment-status standard changes begin in Q1 2025 documentation."}
+      ],
+      "sources":[
+        {"domain":"Prices","producer":"General Authority for Statistics (GASTAT)","release":"Consumer Price Index","frequency":"monthly","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.stats.gov.sa/en/statistics?category=124"},
+        {"domain":"Labour","producer":"GASTAT","release":"Labour Market Statistics / Labour Force Survey","frequency":"quarterly","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.stats.gov.sa/en/statistics?category=119"},
+        {"domain":"Monetary / FX","producer":"Saudi Central Bank (SAMA)","release":"Policy rates, exchange rates, monetary statistics","frequency":"event / daily / monthly","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.sama.gov.sa/en-US/Pages/default.aspx"},
+        {"domain":"National accounts","producer":"GASTAT","release":"GDP / National Accounts","frequency":"quarterly / annual","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.stats.gov.sa/en/statistics?category=125"},
+        {"domain":"Fiscal","producer":"Ministry of Finance","release":"Budget performance and fiscal statements","frequency":"quarterly / annual","format":"PDF / XLS","archive_quality":"strong","url":"https://www.mof.gov.sa/en/Pages/default.aspx"}
+      ],
+      "measurement_notes":[
+        {"id":"SAU-M01","question":"Did unemployment change, or did measurement change?","answer":"The Labour Force Survey was redesigned from Q1 2025. A break analysis must separate genuine labour-market movement from questionnaire and classification changes."},
+        {"id":"SAU-M02","question":"Are all historical Saudi labour observations on the same population frame?","answer":"No. GASTAT documentation identifies different census-based population series across historical periods, including 1992, 2004, 2010 and 2022 census bases."},
+        {"id":"SAU-M03","question":"Is the current CPI basket fixed forever?","answer":"No. The current CPI methodology uses annually updated chain-linked weights and presents the index as 2023=100 under updated consumption classifications."},
+        {"id":"SAU-M04","question":"Saudi or non-Saudi labour indicator?","answer":"Nationality is a first-order perimeter choice in Saudi labour statistics. Nationality-specific and total indicators should not be collapsed into a single trend."},
+        {"id":"SAU-M05","question":"Survey employment or administrative employment?","answer":"Survey-based labour status and administrative employment records measure different constructs. Differences between them are an evidence object, not automatically an error."}
+      ],
+      "ledger":[
+        {"released":"Q1 2025 onward","indicator":"Labour Force Survey","reference":"quarterly","first":"new survey design","current":"current design","revised":"Structural methodology break","url":"https://www.stats.gov.sa/en/statistics?category=119"},
+        {"released":"current CPI methodology","indicator":"CPI","reference":"current series","first":"2023=100 presentation","current":"annually updated chain-linked weights","revised":"Methodology/version tracking required","url":"https://www.stats.gov.sa/en/statistics?category=124"}
+      ],
+      "findings":[
+        {"id":"SAU-001","title":"A labour-market break starts in Q1 2025.","body":"GASTAT documents a Labour Force Survey redesign beginning in Q1 2025, including questionnaire changes and updates connected to international employment-status standards. Pre/post comparisons therefore require a methodology flag.","why":"A clean-looking unemployment time series can be analytically dirty if the measurement system changes underneath it."},
+        {"id":"SAU-002","title":"Saudi inflation weights are designed to move.","body":"The current CPI methodology uses chain-linked, annually updated weights with a 2023=100 presentation and updated consumption classifications. The basket is not a timeless fixed object.","why":"Long-horizon inflation comparison needs methodology/version metadata, not only index values."}
+      ],
+      "program":[
+        {"id":"SAU-001","title":"Did unemployment change, or did measurement change?","state":"active","description":"Map the labour methodology timeline from census bases to the Q1 2025 redesign."},
+        {"id":"SAU-002","title":"When the inflation basket moves","state":"active","description":"Track chain-linked weights, classification updates and CPI version transitions."},
+        {"id":"SAU-003","title":"Saudi vs non-Saudi labour indicators","state":"queued","description":"Preserve nationality perimeter explicitly in every labour record."},
+        {"id":"SAU-004","title":"Survey vs administrative employment","state":"queued","description":"Document construct differences between household survey and administrative employment data."},
+        {"id":"SAU-005","title":"CPI methodology/version ledger","state":"active","description":"Version the CPI methodology as carefully as the monthly values."}
+      ],
+      "downloads":[],
+      "status_box":{"primary_agencies_mapped":"4","active_release_series":"5","archived_source_releases":"0","revision_history":"methodology map active","definition_audit":"labour + CPI active","independent_reproduction":"pending","last_checked":"17 Aug 2026"}
+    },
+    "MAR": {
+      "country":"Morocco","slug":"morocco","status":"priority-room-live","headline":"The 2026 labour series is not simply the old series with a new date.","dek":"Morocco is the Lab's first bilingual-provenance room. HCP's new 2026 employment survey introduces explicit conceptual and design changes, so the page preserves French source terminology and flags non-comparability with the older ENE series.",
+      "indicators":[
+        {"label":"Unemployment — strict concept","value":"10.8","unit":"%","period":"Q1 2026","release_date":"2026","source":"Haut-Commissariat au Plan","source_url":"https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-premier-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4309.html","vintage":"checked 17 Aug 2026","definition":"Strict unemployment under the new EMO2026 framework; HCP says it is not directly comparable with the old ENE series."},
+        {"label":"Labour-force participation","value":"41.8","unit":"%","period":"Q1 2026","release_date":"2026","source":"Haut-Commissariat au Plan","source_url":"https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-premier-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4309.html","vintage":"checked 17 Aug 2026","definition":"Participation under the new EMO2026 survey framework."},
+        {"label":"Headline CPI","value":"withheld","unit":"","period":"latest monthly CPI","release_date":"","source":"Haut-Commissariat au Plan","source_url":"https://www.hcp.ma/Indice-des-prix-a-la-consommation_a111.html","vintage":"checked 17 Aug 2026","definition":"Current CPI value withheld pending a preserved monthly bulletin."},
+        {"label":"Real GDP growth","value":"withheld","unit":"","period":"latest official quarter","release_date":"","source":"Haut-Commissariat au Plan","source_url":"https://www.hcp.ma/","vintage":"checked 17 Aug 2026","definition":"National-accounts value withheld pending direct archived release."},
+        {"label":"Policy rate","value":"withheld","unit":"","period":"current","release_date":"","source":"Bank Al-Maghrib","source_url":"https://www.bkam.ma/","vintage":"checked 17 Aug 2026","definition":"Current key policy rate withheld until the latest Board decision is preserved."},
+        {"label":"FX regime","value":"basket band","unit":"MAD","period":"current regime","release_date":"","source":"Bank Al-Maghrib","source_url":"https://www.bkam.ma/","vintage":"checked 17 Aug 2026","definition":"Dirham operates within an official fluctuation framework around a currency basket; spot values are not promoted from secondary feeds."},
+        {"label":"Survey break","value":"EMO2026","unit":"new labour survey","period":"2026","release_date":"2026","source":"HCP","source_url":"https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-premier-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4309.html","vintage":"checked 17 Aug 2026","definition":"New concepts, questionnaire and survey design; strict unemployment is explicitly non-comparable with old ENE unemployment."},
+        {"label":"Provenance mode","value":"FR → EN","unit":"bilingual","period":"current room","release_date":"17 Aug 2026","source":"MENA Lab","source_url":"../../data/unemployment-comparability-jordan-egypt-morocco.csv","vintage":"frozen 17 Aug 2026","definition":"French original terminology preserved while English metadata are added separately."}
+      ],
+      "sources":[
+        {"domain":"Prices","producer":"Haut-Commissariat au Plan (HCP)","release":"Indice des prix à la consommation","frequency":"monthly","format":"web / PDF / tables","archive_quality":"strong","url":"https://www.hcp.ma/Indice-des-prix-a-la-consommation_a111.html"},
+        {"domain":"Labour","producer":"HCP","release":"Enquête sur l'emploi / EMO2026","frequency":"quarterly","format":"web / PDF / tables","archive_quality":"strong","url":"https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-premier-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4309.html"},
+        {"domain":"National accounts","producer":"HCP","release":"Comptes nationaux / conjoncture","frequency":"quarterly / annual","format":"web / PDF / XLS","archive_quality":"strong","url":"https://www.hcp.ma/"},
+        {"domain":"Monetary / FX","producer":"Bank Al-Maghrib","release":"Monetary policy, rates, exchange-rate data","frequency":"event / daily / monthly","format":"web / PDF / XLS","archive_quality":"strong","url":"https://www.bkam.ma/"},
+        {"domain":"Fiscal","producer":"Ministry of Economy and Finance","release":"Budget / debt / treasury statistics","frequency":"monthly / annual","format":"PDF / XLS","archive_quality":"partial","url":"https://www.finances.gov.ma/"}
+      ],
+      "measurement_notes":[
+        {"id":"MAR-M01","question":"Can Q1 2026 unemployment be pasted onto the old ENE series?","answer":"No. HCP explicitly states that the new strict-unemployment concept under EMO2026 is not directly comparable with the previous ENE unemployment series."},
+        {"id":"MAR-M02","question":"Unemployment versus underemployment?","answer":"They capture different labour-market conditions. Underemployment should remain a separate indicator rather than being folded into unemployment."},
+        {"id":"MAR-M03","question":"Urban and rural labour markets: one Morocco rate?","answer":"National aggregates can hide large geographic structure. The room preserves urban/rural dimensions when source tables support them."},
+        {"id":"MAR-M04","question":"Who counts as economically active?","answer":"Participation and unemployment depend on the activity-status framework. The 2026 survey redesign makes those definitions part of the time-series metadata."},
+        {"id":"MAR-M05","question":"Why preserve French terminology?","answer":"Translation can silently erase distinctions in official concepts. The room stores French original labels and adds English explanatory metadata instead of replacing the source language."}
+      ],
+      "ledger":[
+        {"released":"Q1 2026","indicator":"Labour market","reference":"Q1 2026","first":"EMO2026 strict unemployment 10.8%; participation 41.8%","current":"same preserved release","revised":"Structural break vs old ENE series","url":"https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-premier-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4309.html"}
+      ],
+      "findings":[
+        {"id":"MAR-001","title":"Morocco's Q1 2026 unemployment rate belongs to a new measurement regime.","body":"HCP's EMO2026 introduces a new employment survey framework and explicitly warns that strict unemployment under the new system is not directly comparable with the older ENE unemployment series.","why":"A graph can show a false jump or improvement if a methodology break is treated as an economic event."},
+        {"id":"MAR-002","title":"Bilingual provenance is part of statistical accuracy.","body":"Morocco's official evidence base is rich in French-language source material. The Lab preserves original terminology while adding English metadata, allowing users to inspect the source concept rather than relying on a flattened translation.","why":"Some comparability errors begin in translation before they reach the spreadsheet."}
+      ],
+      "program":[
+        {"id":"MAR-001","title":"Unemployment vs underemployment","state":"active","description":"Keep the two labour-market concepts analytically separate."},
+        {"id":"MAR-002","title":"Urban/rural labour-market differences","state":"queued","description":"Preserve geographic heterogeneity where HCP source tables allow."},
+        {"id":"MAR-003","title":"Who counts as economically active?","state":"active","description":"Document activity-status concepts under the new 2026 survey."},
+        {"id":"MAR-004","title":"Labour-market metadata map","state":"active","description":"Create a bilingual concept, denominator and survey-version registry."},
+        {"id":"MAR-005","title":"CPI release/vintage archive","state":"queued","description":"Preserve monthly CPI bulletins and detect revisions or replaced files."}
+      ],
+      "downloads":[{"label":"Unemployment comparability CSV","url":"../../data/unemployment-comparability-jordan-egypt-morocco.csv"}],
+      "status_box":{"primary_agencies_mapped":"4","active_release_series":"5","archived_source_releases":"1","revision_history":"methodology break mapped","definition_audit":"labour active","independent_reproduction":"pending","last_checked":"17 Aug 2026"}
+    },
+    "ARE": {
+      "country":"United Arab Emirates","slug":"united-arab-emirates","status":"priority-room-live","headline":"UAE, Dubai or Abu Dhabi? The geography hidden inside a statistic.","dek":"The UAE room treats statistical architecture as the research problem. Federal FCSC evidence and emirate-level Dubai and Abu Dhabi statistics are separate perimeters; the page asks which geographic question each release actually answers.",
+      "indicators":[
+        {"label":"Federal CPI","value":"withheld","unit":"","period":"latest federal release","release_date":"","source":"Federal Competitiveness and Statistics Centre","source_url":"https://fcsc.gov.ae/en-us/Pages/Statistics/Statistics-by-Subject.aspx","vintage":"checked 17 Aug 2026","definition":"Federal consumer-price evidence; value withheld pending preserved source release."},
+        {"label":"Dubai CPI","value":"withheld","unit":"","period":"latest Dubai release","release_date":"","source":"Dubai Data & Statistics Establishment / DSC","source_url":"https://www.dsc.gov.ae/","vintage":"checked 17 Aug 2026","definition":"CPI whose reference area is the Emirate of Dubai; it is not the UAE federal CPI."},
+        {"label":"Abu Dhabi CPI","value":"withheld","unit":"","period":"latest Abu Dhabi release","release_date":"","source":"Statistics Centre – Abu Dhabi","source_url":"https://www.scad.gov.ae/","vintage":"checked 17 Aug 2026","definition":"Abu Dhabi emirate-specific consumer-price evidence."},
+        {"label":"Unemployment","value":"withheld","unit":"","period":"latest official labour release","release_date":"","source":"FCSC / emirate statistical systems","source_url":"https://fcsc.gov.ae/","vintage":"checked 17 Aug 2026","definition":"Dashboard value withheld because federal and emirate labour products must not be silently mixed."},
+        {"label":"Real GDP growth","value":"withheld","unit":"","period":"latest federal national accounts","release_date":"","source":"FCSC","source_url":"https://fcsc.gov.ae/","vintage":"checked 17 Aug 2026","definition":"Federal national-accounts value withheld pending preserved release."},
+        {"label":"Policy rate","value":"withheld","unit":"","period":"current","release_date":"","source":"Central Bank of the UAE","source_url":"https://www.centralbank.ae/en/","vintage":"checked 17 Aug 2026","definition":"CBUAE Base Rate; current value withheld until the latest official decision notice is archived."},
+        {"label":"FX regime","value":"peg","unit":"AED/USD","period":"current","release_date":"","source":"Central Bank of the UAE","source_url":"https://www.centralbank.ae/en/","vintage":"checked 17 Aug 2026","definition":"Dirham exchange-rate arrangement against the US dollar; page tracks regime separately from market quotes."},
+        {"label":"Statistical perimeters","value":"3","unit":"priority systems","period":"current room","release_date":"17 Aug 2026","source":"MENA Lab source map","source_url":"#source-map","vintage":"frozen 17 Aug 2026","definition":"Federal UAE, Dubai and Abu Dhabi are treated as separate statistical perimeters for core price/economic releases."}
+      ],
+      "sources":[
+        {"domain":"Federal prices / national accounts","producer":"Federal Competitiveness and Statistics Centre (FCSC)","release":"Federal CPI, national accounts and federal statistics","frequency":"monthly / quarterly / annual","format":"web / XLS / PDF","archive_quality":"partial","url":"https://fcsc.gov.ae/en-us/Pages/Statistics/Statistics-by-Subject.aspx"},
+        {"domain":"Dubai prices / economy","producer":"Dubai Data & Statistics Establishment / Dubai Statistics Centre","release":"Dubai CPI and emirate economic statistics","frequency":"monthly / quarterly / annual","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.dsc.gov.ae/"},
+        {"domain":"Abu Dhabi prices / labour / trade","producer":"Statistics Centre – Abu Dhabi (SCAD)","release":"Abu Dhabi CPI, labour, trade and economic statistics","frequency":"monthly / quarterly / annual","format":"web / XLS / PDF","archive_quality":"strong","url":"https://www.scad.gov.ae/"},
+        {"domain":"Monetary / FX","producer":"Central Bank of the UAE","release":"Base Rate, exchange rates and monetary statistics","frequency":"event / daily / monthly","format":"web / PDF / XLS","archive_quality":"strong","url":"https://www.centralbank.ae/en/"},
+        {"domain":"Fiscal","producer":"Ministry of Finance","release":"Federal fiscal statistics","frequency":"quarterly / annual","format":"web / PDF","archive_quality":"partial","url":"https://mof.gov.ae/"}
+      ],
+      "measurement_notes":[
+        {"id":"UAE-M01","question":"Federal UAE CPI or Dubai CPI?","answer":"They answer different geographic questions. Dubai's CPI metadata defines the reference area as the Emirate of Dubai; it cannot be substituted for federal UAE inflation."},
+        {"id":"UAE-M02","question":"Where does Abu Dhabi fit?","answer":"SCAD publishes Abu Dhabi-specific CPI, labour, trade and other statistics. Those are emirate-level evidence, not duplicate federal releases."},
+        {"id":"UAE-M03","question":"Which rate is “right”?","answer":"The useful question is which perimeter matches the research question. A Dubai household-cost question and a federal macro question require different statistical objects."},
+        {"id":"UAE-M04","question":"Can publication lags differ across the three systems?","answer":"Yes. Federal and emirate agencies have different release calendars. The planned lag audit records reference period and publication date for each perimeter."},
+        {"id":"UAE-M05","question":"Can historical coverage be joined automatically?","answer":"No. Federal, Dubai and Abu Dhabi series can have different base years, start dates and metadata. The coverage matrix will record those boundaries before any merge."}
+      ],
+      "ledger":[
+        {"released":"room baseline 17 Aug 2026","indicator":"Statistical architecture","reference":"current","first":"FCSC + Dubai + Abu Dhabi mapped separately","current":"same","revised":"No","url":"https://fcsc.gov.ae/"}
+      ],
+      "findings":[
+        {"id":"UAE-001","title":"“UAE inflation” can refer to different geographic statistical objects.","body":"The federal statistical system, Dubai's statistical authority and Abu Dhabi's SCAD all publish economic statistics. A number quoted without its geographic perimeter can answer a different question from the one the reader thinks is being answered.","why":"The geography belongs in the variable name. 'CPI' alone is insufficient metadata in a federal statistical system with major emirate-level producers."},
+        {"id":"UAE-002","title":"The UAE's statistical architecture is itself evidence infrastructure.","body":"FCSC provides federal statistics while Dubai and Abu Dhabi maintain deep emirate-level systems. The Lab maps the institutional source tree first, then compares values only where definitions and geography genuinely align.","why":"Source architecture prevents false comparisons before they enter a model, memo or chart."}
+      ],
+      "program":[
+        {"id":"UAE-001","title":"One country, multiple statistical perimeters","state":"active","description":"Map federal and emirate evidence systems as distinct provenance layers."},
+        {"id":"UAE-002","title":"Federal vs Dubai vs Abu Dhabi CPI","state":"active","description":"Document which geographic question each CPI answers."},
+        {"id":"UAE-003","title":"Federal/emirate source map","state":"active","description":"Build an institution-by-domain source registry."},
+        {"id":"UAE-004","title":"Publication lag comparison","state":"queued","description":"Compare reference periods with actual publication dates across FCSC, Dubai and SCAD."},
+        {"id":"UAE-005","title":"Historical series coverage matrix","state":"queued","description":"Record base years, start dates and breaks for federal and emirate series."}
+      ],
+      "downloads":[],
+      "status_box":{"primary_agencies_mapped":"5","active_release_series":"5","archived_source_releases":"0","revision_history":"architecture baseline","definition_audit":"geography active","independent_reproduction":"pending","last_checked":"17 Aug 2026"}
+    }
+  }
+}
