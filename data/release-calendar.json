@@ -1,0 +1,11 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "timezone_policy":"Publisher-local time when supplied; otherwise date-only. No inferred release times.",
+  "sources":[
+    {"id":"jor-cbj-sdds-arc","country":"Jordan","institution":"Central Bank of Jordan","calendar_type":"SDDS Advance Release Calendar","source_url":"https://www.cbj.gov.jo/En/List/Special_Data_Dissemination_Standard_SDDS","arc_url":"https://dsbb.imf.org/sdds/country/JOR/advance-release-calendar-base","verified":"2026-08-17","status":"source-verified"}
+  ],
+  "events":[],
+  "ingestion_rule":"An event enters the calendar only after its date/time and publisher link are verified against an official calendar or release notice. Empty events is preferable to invented dates."
+}
