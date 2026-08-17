@@ -1,0 +1,20 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "nodes":[
+    {"id":"source","label":"Official / public source","href":"data.html"},
+    {"id":"retrieval","label":"Retrieval + timestamp","href":"methods.html"},
+    {"id":"vintage","label":"Vintage / revision state","href":"changelog.html"},
+    {"id":"raw","label":"Raw evidence","href":"source-bundles.html"},
+    {"id":"transform","label":"Transformation + code","href":"methods.html"},
+    {"id":"dataset","label":"Versioned dataset / release","href":"data.html"},
+    {"id":"publication","label":"Publication / claim","href":"publications.html"},
+    {"id":"review","label":"External review","href":"validation.html"},
+    {"id":"reproduction","label":"Independent reproduction","href":"validation.html"},
+    {"id":"correction","label":"Correction / disagreement","href":"corrections.html"},
+    {"id":"archive","label":"Archive / DOI state","href":"archive.html"}
+  ],
+  "edges":[["source","retrieval"],["retrieval","vintage"],["vintage","raw"],["raw","transform"],["transform","dataset"],["dataset","publication"],["publication","review"],["review","reproduction"],["reproduction","correction"],["correction","archive"]],
+  "rule":"The graph describes the Lab's provenance contract. An object may stop before review/reproduction where those states are not yet supported."
+}
