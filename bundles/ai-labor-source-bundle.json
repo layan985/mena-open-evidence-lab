@@ -1,0 +1,12 @@
+{
+  "bundle_version":"1.0",
+  "object":"ai-labor",
+  "release":"collection-alpha",
+  "created":"2026-08-17",
+  "purpose":"Downloadable manifest for tracing the current collection schema, source-linked records and code perimeter.",
+  "repository":"https://github.com/layan985/mena-firm-ai-labor-adjustment",
+  "local_schema":"/data/ai-labor-coding-schema.json",
+  "known_public_state":{"numeric_employment_firm_years":176,"source_hash_linked":168,"target_firm_years":400},
+  "validation_boundary":"Collection in progress; independent second coding is not represented as complete at object level here.",
+  "instructions":"Use the coding schema and project repository together; collection-alpha is not a final published dataset."
+}
