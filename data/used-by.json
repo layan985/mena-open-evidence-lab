@@ -1,0 +1,9 @@
+{
+  "schema_version":"1.0",
+  "canonical":true,
+  "updated":"2026-08-17",
+  "institution_level":{"external_users":"5–10","testimonials_or_attributable_quotes":2},
+  "records":[],
+  "current_public_state":"No named attributable paper, course, report or institution-use record is currently entered in this public registry.",
+  "rule":"A named Used by record requires a public attributable source or explicit permission. Institutional aggregate usage does not identify the user or object by implication."
+}
