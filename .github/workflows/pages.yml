@@ -35,7 +35,14 @@ jobs:
           grep -Fq '"canonical": true' data/releases.json
           grep -Fq '"id": "engagement-001"' data/engagements.json
           grep -Fq '"status": "active"' data/engagements.json
-          grep -Fq 'Evidence that can be' index.html
+          grep -Fq 'Independent evidence infrastructure for MENA economic and policy research.' index.html
+          grep -Fq 'Independent users reported' index.html
+          test -f projects.html
+          test -f methods.html
+          test -f impact.html
+          test -f events.html
+          test -f partnerships.html
+          test -f annual-report-2026.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -82,10 +89,13 @@ jobs:
           }
 
           failures=0
-          probe '/' 'Evidence that can be' || failures=$((failures+1))
+          probe '/' 'Independent evidence infrastructure for MENA economic and policy research.' || failures=$((failures+1))
+          probe '/projects.html' 'Ongoing research is documented before it becomes a paper.' || failures=$((failures+1))
+          probe '/methods.html' 'Research Standards Handbook' || failures=$((failures+1))
+          probe '/external-use.html' '2' || failures=$((failures+1))
           probe '/data/releases.json' '"canonical": true' || failures=$((failures+1))
           probe '/data/engagements.json' '"id": "engagement-001"' || failures=$((failures+1))
-          probe '/data/projects.json' '"canonical": true' || failures=$((failures+1))
+          probe '/data/projects.json' '"canonical":true' || failures=$((failures+1))
 
           if [[ "$failures" -gt 0 ]]; then
             echo "CUSTOM_DOMAIN_HEALTH=unhealthy" >> "$GITHUB_ENV"
@@ -102,7 +112,7 @@ jobs:
         run: |
           echo "### Custom-domain health" >> "$GITHUB_STEP_SUMMARY"
           if [[ "${CUSTOM_DOMAIN_HEALTH:-unhealthy}" == "healthy" ]]; then
-            echo "✅ \`https://menaevidencelab.org\` served the expected homepage and canonical state files." >> "$GITHUB_STEP_SUMMARY"
+            echo "✅ \`https://menaevidencelab.org\` served the expected institutional homepage and canonical state files." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "⚠️ \`https://menaevidencelab.org\` did not serve one or more expected endpoints during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
           fi
