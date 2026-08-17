@@ -44,6 +44,7 @@ jobs:
           test -f partnerships.html
           test -f annual-report-2026.html
           test -f countries/index.html
+          grep -Fq 'Country evidence rooms · 14 economies' countries/index.html
           for country in jordan palestine egypt morocco tunisia saudi-arabia united-arab-emirates lebanon iraq qatar oman bahrain kuwait algeria; do
             test -f "countries/${country}/index.html"
             grep -Fq "href=\"${country}/\"" countries/index.html
@@ -138,10 +139,21 @@ jobs:
           probe '/' 'Independent evidence infrastructure for MENA economic and policy research.' || failures=$((failures+1))
           probe '/projects.html' 'Ongoing research is documented before it becomes a paper.' || failures=$((failures+1))
           probe '/methods.html' 'Research Standards Handbook' || failures=$((failures+1))
-          probe '/countries/' 'Country research rooms' || failures=$((failures+1))
-          probe '/countries/jordan/' 'Country room · JOR' || failures=$((failures+1))
-          probe '/countries/egypt/' 'Country room · EGY' || failures=$((failures+1))
-          probe '/countries/morocco/' 'Country room · MAR' || failures=$((failures+1))
+          probe '/countries/' 'Country evidence rooms · 14 economies' || failures=$((failures+1))
+          probe '/countries/jordan/' 'Country evidence room · JOR' || failures=$((failures+1))
+          probe '/countries/palestine/' 'Country evidence room · PSE' || failures=$((failures+1))
+          probe '/countries/egypt/' 'Country evidence room · EGY' || failures=$((failures+1))
+          probe '/countries/morocco/' 'Country evidence room · MAR' || failures=$((failures+1))
+          probe '/countries/tunisia/' 'Country evidence room · TUN' || failures=$((failures+1))
+          probe '/countries/saudi-arabia/' 'Country evidence room · SAU' || failures=$((failures+1))
+          probe '/countries/united-arab-emirates/' 'Country evidence room · ARE' || failures=$((failures+1))
+          probe '/countries/lebanon/' 'Country evidence room · LBN' || failures=$((failures+1))
+          probe '/countries/iraq/' 'Country evidence room · IRQ' || failures=$((failures+1))
+          probe '/countries/qatar/' 'Country evidence room · QAT' || failures=$((failures+1))
+          probe '/countries/oman/' 'Country evidence room · OMN' || failures=$((failures+1))
+          probe '/countries/bahrain/' 'Country evidence room · BHR' || failures=$((failures+1))
+          probe '/countries/kuwait/' 'Country evidence room · KWT' || failures=$((failures+1))
+          probe '/countries/algeria/' 'Country evidence room · DZA' || failures=$((failures+1))
           probe '/external-use.html' '2' || failures=$((failures+1))
           probe '/data/releases.json' '"canonical": true' || failures=$((failures+1))
           probe '/data/engagements.json' '"id": "engagement-001"' || failures=$((failures+1))
@@ -162,7 +174,7 @@ jobs:
         run: |
           echo "### Custom-domain health" >> "$GITHUB_STEP_SUMMARY"
           if [[ "${CUSTOM_DOMAIN_HEALTH:-unhealthy}" == "healthy" ]]; then
-            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the expected institutional homepage, clean country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
+            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the expected institutional homepage, all fourteen country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "⚠️ \`https://menaevidencelab.org\` did not pass one or more TLS/content checks during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
           fi
