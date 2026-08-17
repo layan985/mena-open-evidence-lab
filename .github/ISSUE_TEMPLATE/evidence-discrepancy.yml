@@ -1,0 +1,40 @@
+name: Evidence discrepancy
+description: Report a source, value, definition, provenance, revision or metadata problem.
+title: "Evidence discrepancy: "
+labels: ["evidence-discrepancy"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for helping improve the public evidence record. Do not include confidential or personal data."
+  - type: input
+    id: object
+    attributes:
+      label: Research object
+      description: Dataset, publication, project, indicator or release ID.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / date
+  - type: textarea
+    id: issue
+    attributes:
+      label: What appears incorrect or unclear?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL or citation
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected value / definition / behavior
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Disclosure check
+      options:
+        - label: I have not included confidential, restricted or personal data.
+          required: true
