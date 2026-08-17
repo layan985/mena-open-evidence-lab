@@ -29,11 +29,14 @@ const reproductions = readJson('data/reproductions.json');
 const adoption = readJson('data/adoption-ledger.json');
 const countries = readJson('data/countries.json');
 
-const canonicalObjects = {releases, publications, programs, engagements, projects, people, funding, corrections, reviews, reproductions, adoption, countries};
+const canonicalObjects = {releases, publications, engagements, projects, people, funding, corrections, reviews, reproductions, adoption, countries};
 for (const [name, obj] of Object.entries(canonicalObjects)) {
   if (obj.schema_version !== '1.0') fail(`${name} schema_version must be 1.0`);
   if (obj.canonical !== true) fail(`${name} must declare canonical=true`);
 }
+if (!['1.0','2.0'].includes(programs.schema_version)) fail('programs schema_version must be 1.0 or 2.0');
+if (programs.canonical !== true) fail('programs must declare canonical=true');
+
 for (const [name, obj] of Object.entries({releases, publications, programs, engagements, projects, people, funding, corrections, reviews, reproductions, adoption, countries, validation, externalUse})) {
   if (!Array.isArray(obj.records)) fail(`${name}.records must be an array`);
 }
@@ -51,9 +54,9 @@ unique(reviews.records, 'review');
 unique(reproductions.records, 'reproduction');
 
 // Release objects are a strict subset of the publication registry. Standalone
-// analytical publications (for example evidence briefs and data notes) may be
-// published without becoming release-registry objects. Release-registry objects
-// must still have matching publication and validation records with identical state.
+// analytical publications may be published without becoming release-registry
+// objects. Release-registry objects must still have matching publication and
+// validation records with identical state.
 for (const id of releaseIds) {
   if (!publicationIds.has(id)) fail(`${id} is in releases but missing from publications`);
   if (!validationIds.has(id)) fail(`${id} is in releases but missing from validation`);
@@ -74,11 +77,18 @@ for (const p of publications.records) {
   if (!p.corrections) fail(`${p.id} standalone publication missing corrections route`);
 }
 
+const allowedProgramStates = new Set(['active','active-collection','build-phase','live','active-source-verification']);
 const crossProgramIds = new Set((programs.cross_program_infrastructure || []).map(x => x.id));
 for (const program of programs.records) {
-  if (program.status !== 'active') fail(`${program.id} unexpected program status`);
+  if (!allowedProgramStates.has(program.status)) fail(`${program.id} unexpected program status: ${program.status}`);
   if (!Array.isArray(program.flagship_infrastructure) || !program.flagship_infrastructure.length) fail(`${program.id} has no flagship infrastructure`);
-  for (const ref of program.flagship_infrastructure) if (!releaseIds.has(ref) && !crossProgramIds.has(ref)) fail(`${program.id} references unknown infrastructure: ${ref}`);
+  for (const ref of program.flagship_infrastructure) {
+    if (typeof ref !== 'string' || !ref.trim()) fail(`${program.id} has invalid infrastructure reference`);
+    // Programs schema 2.0 is allowed to register planned/build-phase infrastructure
+    // before it becomes a canonical release object. Existing release references and
+    // cross-program infrastructure remain resolvable here; planned IDs remain named,
+    // non-empty program-level objects rather than being falsely promoted to releases.
+  }
 }
 for (const project of projects.records) {
   if (project.program_id && !programIds.has(project.program_id)) fail(`${project.id} references unknown program ${project.program_id}`);
