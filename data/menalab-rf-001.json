@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "record_id": "MENALAB-RF-001",
+  "series": "Release Forensics",
+  "country": "Saudi Arabia",
+  "indicator": "Gross domestic product at current prices",
+  "unit": "SAR",
+  "reference_period": "2023",
+  "revision_announced": "2025-05-01",
+  "relative_revision_pct": 14.1,
+  "absolute_revision_sar_billion": 566,
+  "revised_total_announcement": "approximately SAR 4.5 trillion",
+  "previous_value_status": "not promoted from rounded announcement arithmetic",
+  "non_oil_share_revised_pct": 53.2,
+  "non_oil_share_revision_pp": 5.7,
+  "non_oil_share_previous_implied_pct": 47.5,
+  "non_oil_share_previous_note": "Arithmetic implication of rounded GASTAT values; not treated as a separately quoted observation.",
+  "sector_estimate_changes_pct": {
+    "construction": 61.0,
+    "wholesale_retail_restaurants_hotels": 29.8,
+    "transport_storage_communications": 25.6
+  },
+  "methodological_inputs": [
+    "Comprehensive Economic Survey",
+    "Household Income and Expenditure Survey",
+    "Comprehensive Agricultural Survey",
+    "expanded administrative data",
+    "more detailed supply-and-use tables",
+    "expanded classification from 85 to 134 economic activities"
+  ],
+  "real_gdp_method_note": "GASTAT also adopted chain-linked methodology for real-GDP measurement; this record does not attribute the 14.1% current-price level revision to chain-linking.",
+  "historical_series_treatment": "recalibrated/backcast following the comprehensive revision",
+  "research_significance": "High: may affect GDP ratios, sector shares, productivity estimates, coefficients, cross-country comparisons and historical narratives.",
+  "severity_status": "R3 candidate — thresholds not yet calibrated",
+  "primary_sources": [
+    "https://stats.gov.sa/en/w/news/38",
+    "https://stats.gov.sa/en/w/frequently-asked-questions-gdp-comprehensive-revision",
+    "https://stats.gov.sa/en/w/statistical-methodology-comprehensive-revision-of-gross-domestic-product-gdp-"
+  ],
+  "web_note": "/release-forensics-001.html",
+  "related_release": "/release-003.html",
+  "publication_date": "2026-08-18",
+  "version": "1.0"
+}
