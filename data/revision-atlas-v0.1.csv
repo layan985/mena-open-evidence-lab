@@ -1,0 +1,12 @@
+id,jurisdiction,reference_period,indicator,first_release_stage,first_release_date,first_value,later_release_stage,later_release_date,later_value,numeric_difference_pp,revision_pp,direction,comparability_state,include_in_pooled_revision_statistics
+RA-0001,Saudi Arabia,2024-Q1,"Real GDP, year-on-year growth",flash estimate,2024-05-01,-1.8,quarterly GDP estimate,2024-06-09,-1.7,0.1,0.1,up,COMPARABLE,true
+RA-0002,Saudi Arabia,2024-Q2,"Real GDP, year-on-year growth",flash estimate,2024-07-31,-0.4,quarterly GDP estimate,2024-09-08,-0.3,0.1,0.1,up,COMPARABLE,true
+RA-0003,Saudi Arabia,2024-Q3,"Real GDP, year-on-year growth",flash estimate,2024-11-03,2.8,quarterly GDP estimate,2024-12-08,2.8,0.0,0.0,unchanged,COMPARABLE,true
+RA-0004,Saudi Arabia,2024-Q4,"Real GDP, year-on-year growth",flash estimate,2025-01-30,4.4,quarterly GDP estimate,2025-03-09,4.5,0.1,0.1,up,COMPARABLE,true
+RA-0005,Saudi Arabia,2025-Q1,"Real GDP, year-on-year growth",flash estimate,2025-05-01,2.7,quarterly GDP estimate,2025-06-09,3.4,0.7,0.7,up,COMPARABLE,true
+RA-0006,Saudi Arabia,2025-Q2,"Real GDP, year-on-year growth",flash estimate,2025-07-31,3.9,quarterly GDP estimate,2025-09-08,3.9,0.0,0.0,unchanged,COMPARABLE,true
+RA-0007,Saudi Arabia,2025-Q3,"Real GDP, year-on-year growth",flash estimate,2025-10-29,5.0,quarterly GDP estimate,2025-12-08,4.8,-0.2,-0.2,down,COMPARABLE,true
+RA-0008,Saudi Arabia,2025-Q4,"Real GDP, year-on-year growth",flash estimate,2026-02-01,4.9,quarterly GDP estimate,2026-03-09,5.0,0.1,0.1,up,COMPARABLE,true
+RA-0009,Saudi Arabia,2026-Q1,"Real GDP, year-on-year growth",flash estimate,2026-04-30,2.8,quarterly GDP estimate,2026-06-09,3.0,0.2,0.2,up,COMPARABLE,true
+RA-0010,Jordan,2025-Q1,"GDP at constant prices, year-on-year growth",quarterly GDP estimate,2025-07-02,2.7,later official restatement,2026-07-05,2.7,0.0,,not-classified,RESTATEMENT,false
+RA-0011,Bahrain,2024,"Real GDP, annual growth",preliminary annual estimate,2025-05-06,2.6,current official constant-price series,,2.901,0.301,,not-classified,METHOD_REVIEW,false
