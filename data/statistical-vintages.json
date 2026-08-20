@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "canonical": true,
+  "register": "MENA Statistical Vintage Register",
+  "protocol": "/STATISTICAL_VINTAGE_PROTOCOL.md",
+  "last_updated": "2026-08-20",
+  "records": [
+    {
+      "id": "MSVR-0001",
+      "state": "LIVE",
+      "jurisdiction": "Saudi Arabia",
+      "statistical_authority": "General Authority for Statistics (GASTAT)",
+      "indicator": "Real Gross Domestic Product",
+      "reference_period": "2026-Q2",
+      "release_stage": "flash estimate",
+      "official_release_date": "2026-07-30",
+      "lab_freeze_date": "2026-08-20",
+      "unit": "percent year-on-year growth",
+      "price_volume_basis": "chain-linked volume measure; 2023=100",
+      "seasonal_adjustment": "headline record uses year-on-year growth; not seasonally adjusted",
+      "headline_value": -4.8,
+      "components": [
+        {"series": "Oil activities", "value": -24.7, "unit": "percent year-on-year growth"},
+        {"series": "Non-oil activities", "value": 0.6, "unit": "percent year-on-year growth"},
+        {"series": "Government activities", "value": 0.9, "unit": "percent year-on-year growth"}
+      ],
+      "official_release_url": "https://stats.gov.sa/en/w/gdp-flash-estimate-q2/2026-1",
+      "source_files": [
+        "GDP Flash Q2.2026EN.pdf",
+        "GDP Flash Estimates 2026Q2-EN (1).xlsx"
+      ],
+      "source_file_sha256": null,
+      "source_hash_state": "not published: binary source bytes were not successfully retrieved by the Lab at freeze time",
+      "predecessor_vintage_id": null,
+      "successor_vintage_id": null,
+      "revision_value": null,
+      "revision_unit": "percentage points",
+      "comparability_state": "pending later comparable vintage",
+      "validation_state": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED", "PENDING INDEPENDENT REPRODUCTION"],
+      "claim_boundary": "This record freezes the official flash estimate. It does not predict that a later estimate will differ.",
+      "notes": "Later official values, if observed, will be appended as new vintage records. MSVR-0001 will not be overwritten to match them."
+    }
+  ]
+}
