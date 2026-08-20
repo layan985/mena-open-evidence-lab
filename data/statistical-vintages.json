@@ -39,6 +39,40 @@
       "validation_state": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED", "PENDING INDEPENDENT REPRODUCTION"],
       "claim_boundary": "This record freezes the official flash estimate. It does not predict that a later estimate will differ.",
       "notes": "Later official values, if observed, will be appended as new vintage records. MSVR-0001 will not be overwritten to match them."
+    },
+    {
+      "id": "MSVR-0002",
+      "state": "LIVE",
+      "jurisdiction": "Jordan",
+      "statistical_authority": "Department of Statistics (DoS), Hashemite Kingdom of Jordan",
+      "indicator": "Gross Domestic Product at constant prices",
+      "reference_period": "2026-Q1",
+      "release_stage": "quarterly GDP estimate",
+      "official_release_date": "2026-07-05",
+      "lab_freeze_date": "2026-08-20",
+      "unit": "percent year-on-year growth",
+      "price_volume_basis": "constant prices; base year not stated in the press release",
+      "seasonal_adjustment": "not stated in the press release; comparison is Q1 2026 versus Q1 2025",
+      "headline_value": 2.9,
+      "components": [
+        {"series": "Agriculture, forestry and fishing", "value": 6.8, "unit": "percent year-on-year growth", "contribution_to_growth_pp": 0.40},
+        {"series": "Manufacturing industries", "value": 5.3, "unit": "percent year-on-year growth", "contribution_to_growth_pp": 0.86},
+        {"series": "Mining and quarrying", "value": 4.7, "unit": "percent year-on-year growth", "contribution_to_growth_pp": 0.18},
+        {"series": "Electricity, gas, steam and air conditioning supply", "value": 4.3, "unit": "percent year-on-year growth", "contribution_to_growth_pp": 0.09},
+        {"series": "Wholesale and retail trade; repair of motor vehicles and motorcycles", "value": 3.2, "unit": "percent year-on-year growth", "contribution_to_growth_pp": 0.27}
+      ],
+      "official_release_url": "https://dosweb.dos.gov.jo/DataBank/News/Gdp/2026/GDP_Q1_2026_en.pdf",
+      "source_files": ["GDP_Q1_2026_en.pdf"],
+      "source_file_sha256": null,
+      "source_hash_state": "not published: the Lab could verify the official PDF content but did not successfully retrieve the binary bytes through the hashing path at freeze time",
+      "predecessor_vintage_id": null,
+      "successor_vintage_id": null,
+      "revision_value": null,
+      "revision_unit": "percentage points",
+      "comparability_state": "pending later comparable vintage",
+      "validation_state": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED", "PENDING INDEPENDENT REPRODUCTION"],
+      "claim_boundary": "The headline is an official quarterly GDP estimate. The source explicitly describes the sectoral constant-price estimates as preliminary. This record does not broaden that wording to claim that every field in the release is formally designated preliminary.",
+      "notes": "The release reports headline real GDP growth of 2.9% year on year. It states that preliminary sectoral estimates show all economic activities growing in Q1 2026. Later directly comparable official values, if observed, will be appended rather than overwriting MSVR-0002."
     }
   ]
 }
