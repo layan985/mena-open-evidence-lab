@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.1",
+  "canonical": true,
+  "registry": "MENA Narrative Reversal Registry",
+  "definition": "A narrative reversal occurs when a later comparable official statistical vintage changes a qualitative conclusion implied by an earlier official vintage.",
+  "classes": [
+    "sign_reversal",
+    "ranking_reversal",
+    "threshold_reversal",
+    "acceleration_deceleration_reversal"
+  ],
+  "last_updated": "2026-08-21",
+  "records": [
+    {
+      "id": "NR-SAU-GDP-2023-001",
+      "country": "Saudi Arabia",
+      "country_code": "SAU",
+      "indicator": "Real GDP growth",
+      "reference_period": "2023",
+      "class": "sign_reversal",
+      "earlier_vintage_value": -0.8,
+      "later_vintage_value": 0.5,
+      "unit": "percent annual real GDP growth",
+      "revision_pp": 1.3,
+      "earlier_conclusion": "contraction",
+      "later_conclusion": "growth",
+      "evidence_page": "/evidence/saudi-gdp-revision-2023.html",
+      "data": "/data/saudi-gdp-2023-vintage-pair.csv",
+      "validation_state": [
+        "OFFICIAL SOURCES",
+        "SOURCE-LINKED",
+        "FOUNDER PRODUCED",
+        "PENDING INDEPENDENT REPRODUCTION"
+      ],
+      "claim_boundary": "The reversal describes the official statistical record across vintages, not a retroactive change in underlying 2023 economic activity."
+    }
+  ],
+  "research_queue": [
+    {
+      "country": "Saudi Arabia",
+      "scope": "2011-2023 national-accounts back-cast",
+      "status": "reconstruction in build; no additional reversals asserted"
+    },
+    {
+      "country": "Jordan",
+      "scope": "comprehensive national-accounts revision",
+      "status": "methodology shock documented; reversal testing pending"
+    },
+    {
+      "country": "Morocco",
+      "scope": "national-accounts rebasing 2007 to 2014",
+      "status": "headline level effect documented; reversal testing pending"
+    },
+    {
+      "country": "Tunisia",
+      "scope": "national-accounts base 2015",
+      "status": "methodology event documented; reversal testing pending"
+    }
+  ]
+}
