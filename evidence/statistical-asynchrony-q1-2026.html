@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A first measurement of Q1 2026 economic-information latency and release architecture across four MENA statistical systems.">
+<title>The Economy Exists Before the Statistic Does — MENA Evidence Lab</title>
+<link rel="stylesheet" href="../institutional.css">
+<style>.note{max-width:900px;margin:0 auto;padding:80px 24px}.note h1{font-size:clamp(48px,8vw,88px);line-height:.93;letter-spacing:-.06em;margin:15px 0 20px}.note h2{font-size:34px;margin-top:52px}.note p,.note li{font-size:17px;line-height:1.7}.lead{font-size:22px!important;color:var(--muted)}table{border-collapse:collapse;width:100%;margin:28px 0;font-size:14px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase}.big{font-size:clamp(50px,10vw,110px);letter-spacing:-.07em;font-weight:700;line-height:.9;margin:30px 0 10px}.qual{background:var(--soft);padding:20px;border-left:4px solid var(--ink)}.source-list a{color:inherit}.meta{font:600 9px/1.7 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--muted)}</style>
+</head>
+<body>
+<header class="top"><a href="../index.html"><b>MENA Open Data & Evidence Lab</b></a><nav><a href="../mena-rtd.html">MENA-RTD</a><a href="../research.html">Research</a><a href="../data.html">Data</a><a href="../methods.html">Methods</a></nav></header>
+<main class="note">
+<div class="k">MENA Evidence Note · Statistical Asynchrony 001 · 21 Aug 2026</div>
+<h1>The Economy Exists Before the Statistic Does</h1>
+<p class="lead">A first measurement of economic-information latency across MENA — and why the clock itself has to be defined before countries are compared.</p>
+<p>Q1 2026 ended on 31 March. The economic quarter was the same calendar object across Saudi Arabia, Morocco, Jordan and Oman. The statistical information available about it was not.</p>
+<div class="big">29 → 103</div>
+<p class="meta">days after quarter-end · recorded release objects in the current seed</p>
+<table>
+<thead><tr><th>Economy</th><th>Recorded release object</th><th>Date</th><th>Days after Q1</th></tr></thead>
+<tbody>
+<tr><td>Saudi Arabia</td><td>Flash GDP estimate</td><td>29 Apr 2026</td><td><strong>29</strong></td></tr>
+<tr><td>Saudi Arabia</td><td>Fuller Q1 GDP release</td><td>8 Jun 2026</td><td><strong>69</strong></td></tr>
+<tr><td>Morocco</td><td>Q1 national accounts release</td><td>29 Jun 2026</td><td><strong>90</strong></td></tr>
+<tr><td>Jordan</td><td>Observed English Q1 GDP page</td><td>5 Jul 2026</td><td><strong>96</strong></td></tr>
+<tr><td>Oman</td><td>Q1 national-accounts catalogue publication</td><td>12 Jul 2026</td><td><strong>103</strong></td></tr>
+</tbody></table>
+<div class="qual"><strong>Important qualification.</strong> The 74-day spread from 29 to 103 days is a real spread across the recorded release objects, but it is not yet a harmonized estimate of “first public information.” Saudi Arabia publishes a flash estimate. Oman’s formal catalogue date is later than evidence of preliminary Q1 figures in public reporting. Jordan’s English page and archive metadata expose different July dates. MENA-RTD preserves these distinctions rather than choosing one date silently.</div>
+<h2>The result is the architecture</h2>
+<p>A normal historical panel downloaded today suppresses this problem. Once all values have arrived, every Q1 observation sits neatly next to every other Q1 observation. That tidy panel is not the information set that existed in real time.</p>
+<p>This is what we call <strong>statistical asynchrony</strong>: at a given historical moment, economies are observable at different statistical depths. Release speed is only one dimension. Release architecture — flash estimate, preliminary release, full release, archive record, revision — is another.</p>
+<h2>A different dataset</h2>
+<p>MENA-RTD records releases rather than overwriting them. The key object is the historical information set: all source-verified observations that were public by date <em>d</em>. That makes it possible to reconstruct exactly what an analyst could have used on, for example, 15 May 2026, and prevents revised future information from leaking backward into pseudo-real-time analysis.</p>
+<h2>What comes next</h2>
+<p>The immediate build is a 2015–2026 release clock across ten economies and five indicator families: GDP, CPI, unemployment, industrial production and trade. The target is at least 5,000 source-linked historical releases. That is a target, not a current count.</p>
+<p>Once the archive is dense enough, the first analyses are: median publication latency by country and indicator; release-latency distributions; regional information-completeness curves; T50/T75/T90 information thresholds; first-versus-later GDP estimates; news-versus-noise revision tests; and models of whether faster release is associated with larger subsequent revision.</p>
+<h2>Source record</h2>
+<ul class="source-list">
+<li>Saudi Arabia General Authority for Statistics: <a href="https://www.stats.gov.sa/en/search?delta=60&amp;parentCategory=119021&amp;sort=createDate-&amp;start=32">Q1 2026 flash-estimate catalogue record</a> and <a href="https://www.stats.gov.sa/en/search-publication?delta=60&amp;parentCategory=124295">Q1 2026 GDP publication catalogue</a>.</li>
+<li>Morocco High Commission for Planning: <a href="https://www.hcp.ma/search/v2026/">2026 publication search / Q1 national economic situation</a>.</li>
+<li>Jordan Department of Statistics: <a href="https://dosweb.dos.gov.jo/gdp_072026/">Q1 2026 GDP release page</a>.</li>
+<li>Oman National Centre for Statistics and Information: <a href="https://www.ncsi.gov.om/ar">publication catalogue / quarterly national accounts Q1 2026</a>.</li>
+</ul>
+<p class="meta">Data: <a href="../data/mena_release_clock.csv">mena_release_clock.csv</a> · Schema: <a href="../data/mena-rtd-schema.json">mena-rtd-schema.json</a> · Method: <a href="../MENA_RTD_METHODS.md">MENA_RTD_METHODS.md</a> · Code: <a href="../scripts/analyze-mena-release-clock.py">analyze-mena-release-clock.py</a></p>
+</main>
+<footer class="footer">MENA Open Data & Evidence Lab · Evidence Note 001</footer>
+</body>
+</html>
