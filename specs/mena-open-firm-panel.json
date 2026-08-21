@@ -1,0 +1,17 @@
+{
+  "id": "mena-open-firm-panel",
+  "version": "0.1.0",
+  "status": "design",
+  "program": "firm-dynamics",
+  "unit": "firm-month",
+  "coverage_claim": "probabilistic observable panel; never described as a census",
+  "required_fields": ["firm_id","legal_name","country","sector","location","incorporation","website_alive","web_change","job_postings","occupation_mix","procurement_activity","public_contract_value","listed_status","financial_filing","funding_event","export_signal","trademark_event","closure_signal","source_count","last_observed"],
+  "latent_state": {
+    "states": ["active","dormant","exited"],
+    "model_family": "Hidden Markov Model",
+    "output": "P(state | observed evidence)",
+    "rule": "absence of signals is not deterministic proof of exit"
+  },
+  "source_rules": ["respect licenses and site terms","retain source-level provenance","record observation gaps","do not infer protected attributes"],
+  "research_questions": ["firm survival","public-contract acquisition and survival","hiring as a leading signal","sector entry","technology adoption and labour adjustment","shock effects on new-firm formation"]
+}
