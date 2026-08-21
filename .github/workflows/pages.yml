@@ -41,6 +41,16 @@ jobs:
           grep -Fq 'Measurement economics for MENA.' measurement-economics.html
           test -f vintage-vault.html
           grep -Fq 'MENA Vintage Vault' vintage-vault.html
+          test -f mena-rtd.html
+          grep -Fq 'What was actually knowable on date d?' mena-rtd.html
+          test -f evidence/saudi-gdp-revision-2023.html
+          grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' evidence/saudi-gdp-revision-2023.html
+          test -f data/saudi-gdp-2023-vintage-pair.csv
+          grep -Fq 'SAU-GDP-2023-REAL-PRE' data/saudi-gdp-2023-vintage-pair.csv
+          test -f data/saudi-gdp-2023-revision-evidence.json
+          grep -Fq '"id": "MENALAB-MA-001"' data/saudi-gdp-2023-revision-evidence.json
+          test -f data/narrative-reversals.json
+          grep -Fq '"id": "NR-SAU-GDP-2023-001"' data/narrative-reversals.json
           test -f mena-cal.html
           grep -Fq 'MENA-CAL' mena-cal.html
           test -f methodology-registry.html
@@ -128,6 +138,11 @@ jobs:
           probe '/' 'The economy changes. So does the machinery used to measure it.' || failures=$((failures+1))
           probe '/measurement-economics.html' 'Measurement economics for MENA.' || failures=$((failures+1))
           probe '/vintage-vault.html' 'MENA Vintage Vault' || failures=$((failures+1))
+          probe '/mena-rtd.html' 'What was actually knowable on date d?' || failures=$((failures+1))
+          probe '/evidence/saudi-gdp-revision-2023.html' 'Saudi Arabia’s 2023 GDP changed sign.' || failures=$((failures+1))
+          probe '/data/saudi-gdp-2023-vintage-pair.csv' 'SAU-GDP-2023-REAL-PRE' || failures=$((failures+1))
+          probe '/data/saudi-gdp-2023-revision-evidence.json' '"id": "MENALAB-MA-001"' || failures=$((failures+1))
+          probe '/data/narrative-reversals.json' '"id": "NR-SAU-GDP-2023-001"' || failures=$((failures+1))
           probe '/mena-cal.html' 'MENA-CAL' || failures=$((failures+1))
           probe '/methodology-registry.html' 'MENA Methodology Shock Registry' || failures=$((failures+1))
           probe '/data/mena-cal-schema.json' '"dataset": "MENA-CAL"' || failures=$((failures+1))
@@ -167,7 +182,7 @@ jobs:
         run: |
           echo "### Custom-domain health" >> "$GITHUB_STEP_SUMMARY"
           if [[ "${CUSTOM_DOMAIN_HEALTH:-unhealthy}" == "healthy" ]]; then
-            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the measurement-economics homepage, three core assets, country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
+            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the measurement-economics homepage, core assets, Measurement Anomaly 001, country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
           else
             echo "⚠️ \`https://menaevidencelab.org\` did not pass one or more TLS/content checks during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
           fi
