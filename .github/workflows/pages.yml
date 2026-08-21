@@ -44,7 +44,9 @@ jobs:
 
           require_file CNAME
           require_text CNAME 'menaevidencelab.org'
-          require_text index.html 'The economy changes. So does the machinery used to measure it.'
+          require_text index.html 'Independent evidence infrastructure for MENA economic and policy research.'
+          require_text index.html 'Saudi Arabia’s 2023 economy went from shrinking to growing without 2023 changing.'
+          require_text index.html 'Measurement infrastructure'
           require_file measurement-economics.html
           require_text measurement-economics.html 'Measure the measurement system.'
           require_file vintage-vault.html
@@ -95,7 +97,8 @@ jobs:
             test -f "_site/$f"
             printf '%s  %s\n' "$(sha256sum "_site/$f" | cut -d' ' -f1)" "$f"
           done
-          grep -Fq 'The economy changes. So does the machinery used to measure it.' _site/index.html
+          grep -Fq 'Independent evidence infrastructure for MENA economic and policy research.' _site/index.html
+          grep -Fq 'Saudi Arabia’s 2023 economy went from shrinking to growing without 2023 changing.' _site/index.html
           grep -Fq 'Measure the measurement system.' _site/measurement-economics.html
           grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' _site/evidence/saudi-gdp-revision-2023.html
           grep -Fq 'SAU-GDP-2023-REAL-PRE' _site/data/saudi-gdp-2023-vintage-pair.csv
@@ -148,7 +151,8 @@ jobs:
             echo "marker=${marker_code} home=${home_code} evidence=${note_code}"
             if [[ "$marker_code" == '200' && "$home_code" == '200' && "$note_code" == '200' ]] \
               && grep -Fq "$expected_sha" "$marker" \
-              && grep -Fq 'The economy changes. So does the machinery used to measure it.' "$home" \
+              && grep -Fq 'Independent evidence infrastructure for MENA economic and policy research.' "$home" \
+              && grep -Fq 'Saudi Arabia’s 2023 economy went from shrinking to growing without 2023 changing.' "$home" \
               && grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' "$note"; then
               echo 'LIVE SITE MATCHES THE DEPLOYED ARTIFACT.'
               exit 0
