@@ -29,23 +29,36 @@ jobs:
           set -euo pipefail
           node scripts/validate-release-registry.mjs
           node scripts/validate-institutional-state.mjs
-          test -f CNAME
-          grep -Fxq 'menaevidencelab.org' CNAME
-          grep -Fq 'The economy changes. So does the machinery used to measure it.' index.html
-          test -f measurement-economics.html
-          grep -Fq 'Measurement economics for MENA.' measurement-economics.html
-          test -f vintage-vault.html
-          grep -Fq 'MENA Vintage Vault' vintage-vault.html
-          test -f mena-rtd.html
-          grep -Fq 'What was actually knowable on date d?' mena-rtd.html
-          test -f evidence/saudi-gdp-revision-2023.html
-          grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' evidence/saudi-gdp-revision-2023.html
-          test -f data/saudi-gdp-2023-vintage-pair.csv
-          grep -Fq 'SAU-GDP-2023-REAL-PRE' data/saudi-gdp-2023-vintage-pair.csv
-          test -f data/saudi-gdp-2023-revision-evidence.json
-          grep -Fq '"id": "MENALAB-MA-001"' data/saudi-gdp-2023-revision-evidence.json
-          test -f data/narrative-reversals.json
-          grep -Fq '"id": "NR-SAU-GDP-2023-001"' data/narrative-reversals.json
+
+          require_file() {
+            local file="$1"
+            echo "CHECK file: ${file}"
+            test -f "$file"
+          }
+
+          require_text() {
+            local file="$1" text="$2"
+            echo "CHECK text in ${file}: ${text}"
+            grep -Fq "$text" "$file"
+          }
+
+          require_file CNAME
+          require_text CNAME 'menaevidencelab.org'
+          require_text index.html 'The economy changes. So does the machinery used to measure it.'
+          require_file measurement-economics.html
+          require_text measurement-economics.html 'Measure the measurement system.'
+          require_file vintage-vault.html
+          require_text vintage-vault.html 'MENA Vintage Vault'
+          require_file mena-rtd.html
+          require_text mena-rtd.html 'What was actually knowable on date d?'
+          require_file evidence/saudi-gdp-revision-2023.html
+          require_text evidence/saudi-gdp-revision-2023.html 'Saudi Arabia’s 2023 GDP changed sign.'
+          require_file data/saudi-gdp-2023-vintage-pair.csv
+          require_text data/saudi-gdp-2023-vintage-pair.csv 'SAU-GDP-2023-REAL-PRE'
+          require_file data/saudi-gdp-2023-revision-evidence.json
+          require_text data/saudi-gdp-2023-revision-evidence.json '"id": "MENALAB-MA-001"'
+          require_file data/narrative-reversals.json
+          require_text data/narrative-reversals.json '"id": "NR-SAU-GDP-2023-001"'
           echo "SOURCE_SHA=$(git rev-parse HEAD)"
 
       - name: Assemble canonical static site
@@ -83,6 +96,7 @@ jobs:
             printf '%s  %s\n' "$(sha256sum "_site/$f" | cut -d' ' -f1)" "$f"
           done
           grep -Fq 'The economy changes. So does the machinery used to measure it.' _site/index.html
+          grep -Fq 'Measure the measurement system.' _site/measurement-economics.html
           grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' _site/evidence/saudi-gdp-revision-2023.html
           grep -Fq 'SAU-GDP-2023-REAL-PRE' _site/data/saudi-gdp-2023-vintage-pair.csv
 
