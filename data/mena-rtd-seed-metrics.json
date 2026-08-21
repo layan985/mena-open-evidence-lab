@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1.0",
+  "dataset_status": "seed",
+  "generated_from": "data/mena_release_clock.csv",
+  "row_count": 5,
+  "economy_count": 4,
+  "reference_periods": ["2026-Q1"],
+  "release_architecture": {
+    "Saudi Arabia": ["flash_estimate", "full_quarterly_release"],
+    "Morocco": ["national_accounts_release"],
+    "Jordan": ["quarterly_gdp_release"],
+    "Oman": ["national_accounts_catalogue"]
+  },
+  "equal_weight_earliest_recorded_release_demo": {
+    "qualification": "Illustrative seed only. Release architecture is heterogeneous; this is not a harmonized full-release comparison or a claim about first public availability in every economy.",
+    "curve": [
+      {"days_after_period_end": 29, "completeness": 0.25},
+      {"days_after_period_end": 90, "completeness": 0.50},
+      {"days_after_period_end": 96, "completeness": 0.75},
+      {"days_after_period_end": 103, "completeness": 1.0}
+    ],
+    "T50_days": 90,
+    "T75_days": 96,
+    "T90_days": 103
+  },
+  "headline_spread": {
+    "min_recorded_latency_days": 29,
+    "max_recorded_latency_days": 103,
+    "spread_days": 74,
+    "qualification": "The 74-day spread compares recorded Q1 release objects with different architectures. It is a release-architecture result, not yet a harmonized first-information estimate."
+  },
+  "metadata_conflicts": [
+    {
+      "country": "Jordan",
+      "reference_period": "2026-Q1",
+      "observed_public_date": "2026-07-05",
+      "formal_catalog_date": "2026-07-01",
+      "date_status": "metadata_conflict",
+      "note": "The English release page and archive metadata expose different dates; both are retained pending resolution."
+    }
+  ]
+}
