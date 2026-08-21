@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://menaevidencelab.org/data/narrative-reversal.schema.json",
+  "title": "MENA Narrative Reversal Record",
+  "type": "object",
+  "required": [
+    "id",
+    "country",
+    "country_code",
+    "indicator",
+    "reference_period",
+    "class",
+    "earlier_vintage_value",
+    "later_vintage_value",
+    "unit",
+    "earlier_source_url",
+    "later_source_url",
+    "comparability_note",
+    "claim_boundary"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^NR-[A-Z]{3}-.+-[0-9]{3}$"},
+    "country": {"type": "string"},
+    "country_code": {"type": "string", "minLength": 3, "maxLength": 3},
+    "indicator": {"type": "string"},
+    "reference_period": {"type": "string"},
+    "class": {
+      "type": "string",
+      "enum": ["sign_reversal", "ranking_reversal", "threshold_reversal", "acceleration_deceleration_reversal"]
+    },
+    "earlier_vintage_value": {"type": "number"},
+    "later_vintage_value": {"type": "number"},
+    "unit": {"type": "string"},
+    "threshold": {"type": ["number", "null"]},
+    "revision": {"type": ["number", "null"]},
+    "earlier_conclusion": {"type": ["string", "null"]},
+    "later_conclusion": {"type": ["string", "null"]},
+    "earlier_source_url": {"type": "string", "format": "uri"},
+    "later_source_url": {"type": "string", "format": "uri"},
+    "methodology_event_id": {"type": ["string", "null"]},
+    "comparability_note": {"type": "string"},
+    "evidence_page": {"type": ["string", "null"]},
+    "data": {"type": ["string", "null"]},
+    "validation_state": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "reproduction_status": {
+      "type": "string",
+      "enum": ["pending", "reproduced", "failed", "queried"]
+    },
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}
