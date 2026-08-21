@@ -1,0 +1,39 @@
+{
+  "analysis_id": "MENALAB-NR-PILOT-001",
+  "status": "selected_primary_source_pilot",
+  "comparisons": 8,
+  "countries": 3,
+  "sign_reversals": 1,
+  "sign_reversal_share_selected_pilot": 0.125,
+  "mean_absolute_revision_pp": 0.5125,
+  "median_absolute_revision_pp": 0.45,
+  "largest_absolute_revision": {
+    "record_id": "NRP-SAU-2023",
+    "revision_pp": 1.3
+  },
+  "confirmed_reversal_ids": [
+    "NRP-SAU-2023"
+  ],
+  "by_country": {
+    "SAU": {
+      "country": "Saudi Arabia",
+      "comparisons": 1,
+      "sign_reversals": 1,
+      "mean_absolute_revision_pp": 1.3
+    },
+    "MAR": {
+      "country": "Morocco",
+      "comparisons": 4,
+      "sign_reversals": 0,
+      "mean_absolute_revision_pp": 0.425
+    },
+    "TUN": {
+      "country": "Tunisia",
+      "comparisons": 3,
+      "sign_reversals": 0,
+      "mean_absolute_revision_pp": 0.3666666666666667
+    }
+  },
+  "claim_boundary": "This is a deliberately selected pilot of source-linked comparable pairs. The 12.5% reversal share is not an estimate of population prevalence across MENA statistics, countries, years, or revision events.",
+  "next_gate": "Expand within-country archived vintage panels before estimating empirical reversal frequencies or calibrating Narrative Fragility probabilities."
+}
