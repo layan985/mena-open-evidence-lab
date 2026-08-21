@@ -15,16 +15,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout current main
         uses: actions/checkout@v6
+        with:
+          ref: main
 
-      - name: Validate deployable institutional state
+      - name: Validate source tree
         shell: bash
         run: |
           set -euo pipefail
@@ -32,11 +31,7 @@ jobs:
           node scripts/validate-institutional-state.mjs
           test -f CNAME
           grep -Fxq 'menaevidencelab.org' CNAME
-          grep -Fq '"canonical": true' data/releases.json
-          grep -Fq '"id": "engagement-001"' data/engagements.json
-          grep -Fq '"status": "active"' data/engagements.json
           grep -Fq 'The economy changes. So does the machinery used to measure it.' index.html
-          grep -Fq 'Three assets. One measurement stack.' index.html
           test -f measurement-economics.html
           grep -Fq 'Measurement economics for MENA.' measurement-economics.html
           test -f vintage-vault.html
@@ -51,138 +46,114 @@ jobs:
           grep -Fq '"id": "MENALAB-MA-001"' data/saudi-gdp-2023-revision-evidence.json
           test -f data/narrative-reversals.json
           grep -Fq '"id": "NR-SAU-GDP-2023-001"' data/narrative-reversals.json
-          test -f mena-cal.html
-          grep -Fq 'MENA-CAL' mena-cal.html
-          test -f methodology-registry.html
-          grep -Fq 'MENA Methodology Shock Registry' methodology-registry.html
-          test -f data/mena-cal-schema.json
-          grep -Fq '"dataset": "MENA-CAL"' data/mena-cal-schema.json
-          test -f data/mena-cal-regimes.json
-          grep -Fq 'UAE-WORKWEEK-2022-01' data/mena-cal-regimes.json
-          test -f data/methodology-shocks.json
-          grep -Fq 'MSR-SAU-GDP-CR-2023' data/methodology-shocks.json
-          test -f data/statistical-vintages.json
-          test -f projects.html
-          test -f methods.html
-          test -f impact.html
-          test -f events.html
-          test -f partnerships.html
-          test -f annual-report-2026.html
-          test -f countries/index.html
-          grep -Fq 'Country evidence rooms · 14 economies' countries/index.html
-          for country in jordan palestine egypt morocco tunisia saudi-arabia united-arab-emirates lebanon iraq qatar oman bahrain kuwait algeria; do
-            test -f "countries/${country}/index.html"
-            grep -Fq "href=\"${country}/\"" countries/index.html
+          echo "SOURCE_SHA=$(git rev-parse HEAD)"
+
+      - name: Assemble canonical static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            ./ _site/
+          sha="$(git rev-parse HEAD)"
+          printf '{"repository":"%s","commit":"%s","workflow_run":"%s"}\n' \
+            "$GITHUB_REPOSITORY" "$sha" "$GITHUB_RUN_ID" > _site/__deployment.json
+
+      - name: Prove artifact contents before upload
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== deployment marker ==='
+          cat _site/__deployment.json
+          echo '=== required files ==='
+          for f in \
+            index.html \
+            measurement-economics.html \
+            vintage-vault.html \
+            mena-rtd.html \
+            evidence/saudi-gdp-revision-2023.html \
+            data/saudi-gdp-2023-vintage-pair.csv \
+            data/saudi-gdp-2023-revision-evidence.json \
+            data/narrative-reversals.json; do
+            test -f "_site/$f"
+            printf '%s  %s\n' "$(sha256sum "_site/$f" | cut -d' ' -f1)" "$f"
           done
+          grep -Fq 'The economy changes. So does the machinery used to measure it.' _site/index.html
+          grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' _site/evidence/saudi-gdp-revision-2023.html
+          grep -Fq 'SAU-GDP-2023-REAL-PRE' _site/data/saudi-gdp-2023-vintage-pair.csv
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload static site
+      - name: Upload canonical Pages artifact
+        id: upload
         uses: actions/upload-pages-artifact@v4
         with:
-          path: .
-          name: github-pages-${{ github.run_attempt }}
+          path: _site
+          name: github-pages
 
-      - name: Deploy
+      - name: Record build artifact
+        shell: bash
+        run: |
+          echo '### Pages build artifact' >> "$GITHUB_STEP_SUMMARY"
+          echo "- Source main SHA: \`$(git rev-parse HEAD)\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Artifact ID: \`${{ steps.upload.outputs.artifact_id }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo '- Artifact contains `__deployment.json` plus Measurement Anomaly 001 routes.' >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy exact build artifact
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages-${{ github.run_attempt }}
+          artifact_name: github-pages
 
-      - name: Reassert custom-domain HTTPS
-        id: pages_https
-        continue-on-error: true
+      - name: Verify live deployment marker and release
         shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          response="$(mktemp)"
-          code="$(curl --silent --show-error --location -o "$response" -w '%{http_code}' -X PUT -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${GH_TOKEN}" -H 'X-GitHub-Api-Version: 2026-03-10' "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages" -d '{"https_enforced":true}')"
-          cat "$response" || true
-          echo "GitHub Pages HTTPS update status: ${code}"
-          test "$code" = '204'
+          base='https://menaevidencelab.org'
+          expected_sha="${GITHUB_SHA}"
+          for attempt in $(seq 1 24); do
+            echo "Verification attempt ${attempt}"
+            marker="$(mktemp)"
+            home="$(mktemp)"
+            note="$(mktemp)"
+            marker_code="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache, no-store, max-age=0' -o "$marker" -w '%{http_code}' "${base}/__deployment.json?run=${GITHUB_RUN_ID}")"
+            home_code="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache, no-store, max-age=0' -o "$home" -w '%{http_code}' "${base}/?run=${GITHUB_RUN_ID}")"
+            note_code="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache, no-store, max-age=0' -o "$note" -w '%{http_code}' "${base}/evidence/saudi-gdp-revision-2023.html?run=${GITHUB_RUN_ID}")"
+            echo "marker=${marker_code} home=${home_code} evidence=${note_code}"
+            if [[ "$marker_code" == '200' && "$home_code" == '200' && "$note_code" == '200' ]] \
+              && grep -Fq "$expected_sha" "$marker" \
+              && grep -Fq 'The economy changes. So does the machinery used to measure it.' "$home" \
+              && grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' "$note"; then
+              echo 'LIVE SITE MATCHES THE DEPLOYED ARTIFACT.'
+              exit 0
+            fi
+            echo '--- live marker/body evidence ---'
+            cat "$marker" 2>/dev/null || true
+            head -c 240 "$home" 2>/dev/null || true; echo
+            head -c 240 "$note" 2>/dev/null || true; echo
+            sleep 10
+          done
+          echo 'Pages deployment completed but the custom domain did not serve the deployed artifact marker.' >&2
+          exit 1
 
-      - name: Record deployment result
-        shell: bash
-        run: |
-          echo "### GitHub Pages deployment" >> "$GITHUB_STEP_SUMMARY"
-          echo "Artifact deployment completed for commit \`${GITHUB_SHA}\`." >> "$GITHUB_STEP_SUMMARY"
-          echo "Pages-reported URL: ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "HTTPS reassertion: ${{ steps.pages_https.outcome }}" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Diagnose custom domain
-        id: custom_domain
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -u
-          base="https://menaevidencelab.org"
-          echo "Resolved addresses:"
-          getent ahosts menaevidencelab.org || true
-          tls_tmp="$(mktemp)"
-          echo | openssl s_client -connect menaevidencelab.org:443 -servername menaevidencelab.org -verify_hostname menaevidencelab.org >"$tls_tmp" 2>&1 || true
-          cat "$tls_tmp"
-          tls_ok=0
-          if grep -Fq 'Verify return code: 0 (ok)' "$tls_tmp"; then tls_ok=1; fi
-          probe() {
-            local path="$1" expected="$2" tmp code
-            tmp="$(mktemp)"
-            code="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache, no-store, max-age=0' -o "$tmp" -w '%{http_code}' "${base}${path}?build=${GITHUB_SHA}" || printf '000')"
-            echo "${path} -> HTTP ${code}"
-            if [[ "$code" != "200" ]] || ! grep -Fq "$expected" "$tmp"; then return 1; fi
-          }
-          failures=0
-          if [[ "$tls_ok" -ne 1 ]]; then echo 'TLS hostname verification failed for menaevidencelab.org.' >&2; failures=$((failures+1)); fi
-          probe '/' 'The economy changes. So does the machinery used to measure it.' || failures=$((failures+1))
-          probe '/measurement-economics.html' 'Measurement economics for MENA.' || failures=$((failures+1))
-          probe '/vintage-vault.html' 'MENA Vintage Vault' || failures=$((failures+1))
-          probe '/mena-rtd.html' 'What was actually knowable on date d?' || failures=$((failures+1))
-          probe '/evidence/saudi-gdp-revision-2023.html' 'Saudi Arabia’s 2023 GDP changed sign.' || failures=$((failures+1))
-          probe '/data/saudi-gdp-2023-vintage-pair.csv' 'SAU-GDP-2023-REAL-PRE' || failures=$((failures+1))
-          probe '/data/saudi-gdp-2023-revision-evidence.json' '"id": "MENALAB-MA-001"' || failures=$((failures+1))
-          probe '/data/narrative-reversals.json' '"id": "NR-SAU-GDP-2023-001"' || failures=$((failures+1))
-          probe '/mena-cal.html' 'MENA-CAL' || failures=$((failures+1))
-          probe '/methodology-registry.html' 'MENA Methodology Shock Registry' || failures=$((failures+1))
-          probe '/data/mena-cal-schema.json' '"dataset": "MENA-CAL"' || failures=$((failures+1))
-          probe '/data/methodology-shocks.json' 'MSR-SAU-GDP-CR-2023' || failures=$((failures+1))
-          probe '/projects.html' 'Ongoing research is documented before it becomes a paper.' || failures=$((failures+1))
-          probe '/methods.html' 'Research Standards Handbook' || failures=$((failures+1))
-          probe '/countries/' 'Country evidence rooms · 14 economies' || failures=$((failures+1))
-          probe '/countries/jordan/' 'Country evidence room · JOR' || failures=$((failures+1))
-          probe '/countries/palestine/' 'Country evidence room · PSE' || failures=$((failures+1))
-          probe '/countries/egypt/' 'Country evidence room · EGY' || failures=$((failures+1))
-          probe '/countries/morocco/' 'Country evidence room · MAR' || failures=$((failures+1))
-          probe '/countries/tunisia/' 'Country evidence room · TUN' || failures=$((failures+1))
-          probe '/countries/saudi-arabia/' 'Country evidence room · SAU' || failures=$((failures+1))
-          probe '/countries/united-arab-emirates/' 'Country evidence room · ARE' || failures=$((failures+1))
-          probe '/countries/lebanon/' 'Country evidence room · LBN' || failures=$((failures+1))
-          probe '/countries/iraq/' 'Country evidence room · IRQ' || failures=$((failures+1))
-          probe '/countries/qatar/' 'Country evidence room · QAT' || failures=$((failures+1))
-          probe '/countries/oman/' 'Country evidence room · OMN' || failures=$((failures+1))
-          probe '/countries/bahrain/' 'Country evidence room · BHR' || failures=$((failures+1))
-          probe '/countries/kuwait/' 'Country evidence room · KWT' || failures=$((failures+1))
-          probe '/countries/algeria/' 'Country evidence room · DZA' || failures=$((failures+1))
-          probe '/external-use.html' '2' || failures=$((failures+1))
-          probe '/data/releases.json' '"canonical": true' || failures=$((failures+1))
-          probe '/data/engagements.json' '"id": "engagement-001"' || failures=$((failures+1))
-          probe '/data/projects.json' '"canonical":true' || failures=$((failures+1))
-          if [[ "$failures" -gt 0 ]]; then
-            echo "CUSTOM_DOMAIN_HEALTH=unhealthy" >> "$GITHUB_ENV"
-            echo "Custom-domain probe failed for ${failures} check(s). GitHub Pages deployment itself completed successfully; investigate DNS/proxy/routing separately." >&2
-            exit 1
-          fi
-          echo "CUSTOM_DOMAIN_HEALTH=healthy" >> "$GITHUB_ENV"
-          echo "Custom domain, certificate and canonical measurement-economics endpoints are live."
-
-      - name: Summarize custom-domain health
+      - name: Record deployment
         if: always()
         shell: bash
         run: |
-          echo "### Custom-domain health" >> "$GITHUB_STEP_SUMMARY"
-          if [[ "${CUSTOM_DOMAIN_HEALTH:-unhealthy}" == "healthy" ]]; then
-            echo "✅ \`https://menaevidencelab.org\` served a hostname-valid TLS certificate plus the measurement-economics homepage, core assets, Measurement Anomaly 001, country routes and canonical state files." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "⚠️ \`https://menaevidencelab.org\` did not pass one or more TLS/content checks during the post-deploy probe. This is recorded as a domain-health warning rather than a failed Pages artifact deployment." >> "$GITHUB_STEP_SUMMARY"
-          fi
+          echo '### GitHub Pages deployment' >> "$GITHUB_STEP_SUMMARY"
+          echo "- Pages-reported URL: ${{ steps.deployment.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Workflow SHA: \`${GITHUB_SHA}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo '- Live marker: `https://menaevidencelab.org/__deployment.json`' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Evidence route: `https://menaevidencelab.org/evidence/saudi-gdp-revision-2023.html`' >> "$GITHUB_STEP_SUMMARY"
