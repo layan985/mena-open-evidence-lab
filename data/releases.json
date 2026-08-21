@@ -1,8 +1,22 @@
 {
   "schema_version": "1.0",
   "canonical": true,
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-22",
   "records": [
+    {
+      "id": "research-release-005",
+      "project": "Research Release 005 — When the Economy Changes Without the Economy Changing",
+      "version": "1.0-rc1",
+      "release_date": null,
+      "sha": null,
+      "doi": null,
+      "validation_level": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED", "PENDING VALIDATION"],
+      "row_metric": {"label": "verified measurement-shock observations", "value": 22},
+      "reviewers": 0,
+      "supersedes": null,
+      "status": "release-candidate",
+      "coverage_note": "Four selected forensic cases across Saudi Arabia, Tunisia, Morocco and Jordan. The cases demonstrate distinct propagation mechanisms and are not a representative sample or regional ranking. Independent reproduction pending."
+    },
     {
       "id": "research-release-002",
       "project": "Research Release 002 — CPI measurement, decision-time information sets and statistical transparency",
