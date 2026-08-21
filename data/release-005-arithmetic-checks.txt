@@ -1,0 +1,29 @@
+Research Release 005 — frozen arithmetic checks
+Generated: 2026-08-22
+
+Saudi Arabia
+2023 real GDP growth: +0.5 - (-0.8) = +1.3 percentage points
+Non-oil share: 53.2 - 47.5 = +5.7 percentage points
+
+Tunisia
+Implied old-base 2015 GDP: 89,802.2 - 5,113.0 = 84,689.2 TND million
+2020 public debt/GDP: 83.5 - 88.6 = -5.1 percentage points
+2020 budget deficit/GDP: 11.1 - 11.8 = -0.7 percentage points
+2019 real GDP growth: 1.4 - 0.9 = +0.5 percentage points
+2020 real GDP growth: -9.2 - (-8.8) = -0.4 percentage points
+2010-2020 average real GDP growth: 0.8 - 0.8 = 0.0 percentage points
+
+Morocco
+2014 nominal GDP: 1,001,454 - 925,376 = 76,078 MAD million
+Tertiary-sector share: 54.8 - 51.6 = +3.2 percentage points
+2016 real GDP growth: 0.5 - 1.1 = -0.6 percentage points
+2017 real GDP growth: 5.1 - 4.2 = +0.9 percentage points
+2014-2019 average real GDP growth: 3.2 - 3.1 = +0.1 percentage points
+
+Jordan
+Prior classification margin: 4,430 - 4,496 = -66 USD
+FY27 classification margin: 5,260 - 4,636 = +624 USD
+Atlas GNI/capita year-to-year difference: 5,260 - 4,430 = +830 USD (+18.74%)
+
+Interpretive rule:
+The +830 USD Jordan change is NOT assigned wholly to national-accounts rebasing. The World Bank attributes the category change to the comprehensive revision together with 2025 growth; Atlas-method mechanics and other inputs also matter.

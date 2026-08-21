@@ -1,0 +1,41 @@
+{
+  "id": "research-release-005",
+  "type": "Research Release",
+  "title": "When the Economy Changes Without the Economy Changing",
+  "subtitle": "How national-accounts revisions propagate through narratives, ratios, economic structure and institutional classifications",
+  "authors": ["MENA Open Data & Evidence Lab"],
+  "publication_date": null,
+  "release_candidate_date": "2026-08-22",
+  "version": "1.0-rc1",
+  "status": "release-candidate",
+  "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED", "PENDING INDEPENDENT VALIDATION"],
+  "geography": ["Saudi Arabia", "Tunisia", "Morocco", "Jordan"],
+  "doi": null,
+  "abstract": "A four-country forensic study of comprehensive national-accounts revisions. Rather than ranking revision magnitude, the release traces how documented measurement-system changes propagate into different downstream objects: Saudi Arabia's 2023 real-growth sign, Tunisia's GDP-denominated fiscal ratios, Morocco's measured sector composition and annual growth profile, and Jordan's World Bank income classification. The selected cases motivate a Measurement Shock Propagation Matrix and a larger pre-registered episode study.",
+  "headline_results": [
+    "Saudi Arabia: 2023 real GDP growth -0.8% to +0.5% across pre- and post-comprehensive-revision vintages.",
+    "Tunisia: 2015 GDP level +6%; 2020 public debt/GDP 88.6% to 83.5% under the revised denominator.",
+    "Morocco: 2014 GDP level +8.2%; tertiary-sector share 51.6% to 54.8%; annual growth revisions move both up and down.",
+    "Jordan: World Bank states the comprehensive revision found the economy nearly 10% larger and, together with 2025 growth, pushed the country from lower-middle to upper-middle income."
+  ],
+  "data": [
+    "/data/release-005-measurement-shock-propagation.csv",
+    "/data/release-005-source-manifest.json"
+  ],
+  "code": "/scripts/reproduce-release-005.py",
+  "methodology": [
+    "/MEASUREMENT_STABILITY_FRAMEWORK.md",
+    "/research/measurement-shock-propagation-pilot.md"
+  ],
+  "public_page": "/release-005.html",
+  "review_status": "Primary-source evidence assembled and arithmetic reproducible; selected forensic cases are not a representative regional sample; independent reproduction and larger pre-registered episode expansion pending.",
+  "claim_boundaries": [
+    "No regional average revision is estimated.",
+    "Large revisions are not interpreted as manipulation, incompetence or statistical failure.",
+    "Comprehensive methodology shocks are separated from routine revisions.",
+    "GDP-denominated ratio changes are not equivalent to changes in nominal numerators.",
+    "Jordan's income reclassification is not attributed entirely to rebasing."
+  ],
+  "suggested_citation": null,
+  "license": "Lab-authored release; underlying official statistics remain subject to source terms."
+}
