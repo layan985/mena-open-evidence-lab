@@ -1,0 +1,26 @@
+{
+  "id": "latent-activity-state",
+  "version": "0.1.0",
+  "status": "design",
+  "program": "alternative-economic-measurement",
+  "estimand": "posterior distribution of latent economic activity conditional on the historical information set",
+  "state_equation": "x_t = A x_(t-1) + eta_t",
+  "measurement_families": [
+    {"id":"official-gdp","role":"official vintage-aware anchor","required_release_metadata":true},
+    {"id":"industrial-production","role":"official high-frequency activity signal"},
+    {"id":"nighttime-lights","role":"physical activity proxy"},
+    {"id":"sentinel-5p-no2","role":"industrial/transport proxy"},
+    {"id":"port-ais","role":"trade/shipping proxy"},
+    {"id":"job-demand","role":"labour-demand proxy"},
+    {"id":"electricity","role":"physical activity proxy where licensed and available"}
+  ],
+  "required_output": ["posterior_mean", "posterior_interval", "signal_contributions", "information_cutoff", "model_version"],
+  "validation": {
+    "mode": "expanding-window pseudo-real-time",
+    "forbid_revised_future_leakage": true,
+    "benchmarks": ["AR", "official-only dynamic factor", "satellite-only", "combined state-space", "random forest", "XGBoost"],
+    "scores": ["MAE", "RMSE", "direction_accuracy", "CRPS", "interval_coverage", "calibration"],
+    "comparison_test": "Diebold-Mariano where sample assumptions support it"
+  },
+  "interpretation_rule": "Official–physical divergence is an anomaly to investigate, not automatic evidence that official data are wrong."
+}
