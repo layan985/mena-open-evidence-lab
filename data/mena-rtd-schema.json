@@ -1,0 +1,30 @@
+{
+  "title": "MENA-RTD release-clock schema",
+  "version": "0.1.0",
+  "status": "seed",
+  "primary_key": ["country", "reference_period", "indicator", "release_channel", "release_type", "observed_public_date"],
+  "fields": {
+    "country": "Economy name",
+    "iso3": "ISO-3 code",
+    "reference_period": "Economic reference period",
+    "period_end": "Reference-period end date",
+    "indicator": "Indicator name",
+    "release_channel": "Observed dissemination channel",
+    "release_type": "Flash, preliminary, full release, revision, catalogue publication, etc.",
+    "observed_public_date": "Date the release was observed publicly",
+    "formal_catalog_date": "Date assigned by the statistical agency catalogue/archive when available",
+    "latency_days": "Days from period_end to observed_public_date",
+    "reported_value": "Value in the source where captured",
+    "unit": "Unit of the reported_value",
+    "source_tier": "1=official statistical agency; 2=other official; 3=secondary",
+    "date_status": "verified, verified_catalogue, metadata_conflict, provisional, unresolved",
+    "source_url": "Canonical source URL",
+    "source_note": "Qualification or provenance note"
+  },
+  "rules": [
+    "Never collapse flash and full releases into one release object.",
+    "Preserve conflicting official dates rather than choosing silently.",
+    "A formal catalogue date is not automatically the first date economic information was publicly available.",
+    "All derived latency metrics must declare the release-type clock used."
+  ]
+}
