@@ -1,0 +1,86 @@
+{
+  "release_id": "research-release-005",
+  "title": "When the Economy Changes Without the Economy Changing",
+  "version": "1.0-rc1",
+  "updated": "2026-08-22",
+  "claim_state": "release-candidate",
+  "sources": [
+    {
+      "country": "Saudi Arabia",
+      "authority": "General Authority for Statistics (GASTAT)",
+      "role": "official comprehensive revision announcement",
+      "url": "https://stats.gov.sa/en/w/news/38",
+      "supports": ["2023 nominal GDP +14.1%", "+SAR 566bn", "non-oil share 53.2%", "+5.7pp non-oil share change", "revision methodology context"]
+    },
+    {
+      "country": "Saudi Arabia",
+      "authority": "General Authority for Statistics (GASTAT)",
+      "role": "pre-comprehensive-revision 2024/Q4 GDP publication",
+      "url": "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014",
+      "supports": ["2023 real GDP growth -0.8%"]
+    },
+    {
+      "country": "Saudi Arabia",
+      "authority": "General Authority for Statistics (GASTAT)",
+      "role": "revised annual national accounts publication",
+      "url": "https://www.stats.gov.sa/documents/20117/2435267/Annual%2BNational%2BAccounts%2BPublication%2B2023%2BEN%2B28-4-2025.pdf/fe77080e-dd5a-bf4b-820c-da362b4b1bbe",
+      "supports": ["2023 real GDP growth +0.5%", "2023 nominal GDP SAR 4,570bn"]
+    },
+    {
+      "country": "Tunisia",
+      "authority": "Institut National de la Statistique",
+      "role": "official base-change note",
+      "url": "https://www.ins.tn/publication/les-comptes-nationaux-changent-de-base",
+      "supports": ["base 1997 to base 2015 methodology change"]
+    },
+    {
+      "country": "Tunisia",
+      "authority": "Institut National de la Statistique",
+      "role": "official base-2015 synthesis",
+      "url": "https://www.ins.tn/sites/default/files/publication/pdf/15082021%20SCNT%20Base%202015%20Document%20synthese_0.pdf",
+      "supports": ["2015 GDP +6%", "TND 89,802.2m revised GDP", "TND 5,113m revision", "services 43.6% to 46.1% of value added", "2019 growth 0.9% to 1.4%", "2020 growth -8.8% to -9.2%", "2010-2020 average growth 0.8% under both bases", "debt/GDP 88.6% to 83.5%", "deficit/GDP 11.8% to 11.1%"]
+    },
+    {
+      "country": "Morocco",
+      "authority": "Haut-Commissariat au Plan",
+      "role": "official base-2014 national accounts report",
+      "url": "https://applications-web.hcp.ma/DCN/Doc/RappBase14.pdf",
+      "supports": ["2014 GDP MAD 925,376m to MAD 1,001,454m", "+8.2% GDP level", "tertiary value added +14.8%", "tertiary share 51.6% to 54.8%", "2016 growth 1.1% to 0.5%", "2017 growth 4.2% to 5.1%", "2014-2019 average growth 3.1% to 3.2%"]
+    },
+    {
+      "country": "Morocco",
+      "authority": "Haut-Commissariat au Plan",
+      "role": "official national-accounts database archive",
+      "url": "https://applications-web.hcp.ma/DCN/CB14.html",
+      "supports": ["coexisting Base 2014, Base 2007, Base 1998 and retrospective-series archive structure"]
+    },
+    {
+      "country": "Jordan",
+      "authority": "World Bank Development Data Group",
+      "role": "official explanation of FY27 income-classification change",
+      "url": "https://blogs.worldbank.org/en/opendata/who-moves-up-and-why--a-closer-look-at-the-new-world-bank-group-",
+      "supports": ["Jordan comprehensive revision found economy nearly 10% larger", "revision plus 2.8% 2025 growth pushed Jordan across classification threshold", "lower-middle to upper-middle reclassification"]
+    },
+    {
+      "country": "Jordan",
+      "authority": "World Bank Group",
+      "role": "FY27 analytical income-classification table",
+      "url": "https://documents1.worldbank.org/curated/en/099063026190549947/pdf/BOSIB-8ff63426-3c40-412d-bad2-cc20a4ebea81.pdf",
+      "supports": ["Jordan 2025 Atlas GNI/capita $5,260", "Jordan 2024 Atlas GNI/capita $4,430", "FY27 upper-middle threshold $4,636", "prior upper-middle threshold $4,496", "country note: 2023 GDP level almost 10% higher after revision"]
+    },
+    {
+      "country": "Jordan",
+      "authority": "Jordan Department of Statistics",
+      "role": "official annual national-accounts access point",
+      "url": "https://dosweb.dos.gov.jo/nationalaccount/annual-accounts/",
+      "supports": ["revised national-accounts series access"]
+    }
+  ],
+  "exclusions": [
+    "No regional mean revision magnitude is estimated from these four selected cases.",
+    "No competence, manipulation or political-intent score is inferred from revision size.",
+    "Jordan's $830 Atlas-GNI-per-capita increase is not attributed entirely to rebasing.",
+    "GDP-denominated ratio changes are distinguished from changes in their nominal numerators.",
+    "Methodology shocks are not pooled with routine revisions."
+  ]
+}
