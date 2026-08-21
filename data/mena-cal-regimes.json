@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "canonical": true,
+  "dataset": "MENA-CAL regime register",
+  "last_updated": "2026-08-21",
+  "records": [
+    {
+      "id": "UAE-WORKWEEK-2022-01",
+      "country": "United Arab Emirates",
+      "country_code": "ARE",
+      "regime_type": "federal_working_week",
+      "effective_from": "2022-01-01",
+      "effective_to": null,
+      "weekend_regime": "Saturday-Sunday weekend with Friday half-day in the federal working-week system",
+      "prior_regime": "Friday-Saturday weekend",
+      "source": "Government of Dubai Media Office",
+      "source_url": "https://www.mediaoffice.ae/en/news/2021/december/07-12/the-changes-to-the-working-week-system",
+      "validation_state": "OFFICIAL SOURCE / REGIME SEED",
+      "claim_boundary": "This record describes the announced federal working-week reform. Country-date coding for private-sector, emirate-specific and historical exceptions requires separate verification."
+    },
+    {
+      "id": "SAU-SEASONAL-RAMADAN-HAJJ",
+      "country": "Saudi Arabia",
+      "country_code": "SAU",
+      "regime_type": "seasonal_adjustment_calendar_treatment",
+      "effective_from": null,
+      "effective_to": null,
+      "weekend_regime": null,
+      "prior_regime": null,
+      "source": "General Authority for Statistics (GASTAT)",
+      "source_url": "https://www.stats.gov.sa/documents/20117/2435133/Statistical%2BMethodology%2BCR%2BGDP%2B2023.pdf/c73816b4-b307-41f7-f6b2-5d10c8ddc078?t=1746013194599",
+      "validation_state": "OFFICIAL METHODOLOGY SOURCE / RESEARCH DESIGN INPUT",
+      "claim_boundary": "The source documents treatment of Ramadan and Hajj in GASTAT seasonal-adjustment methodology. It does not establish that every Saudi statistical series uses the same specification."
+    }
+  ]
+}
