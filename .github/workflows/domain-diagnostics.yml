@@ -1,0 +1,72 @@
+name: Diagnose MENA Evidence Lab custom domain
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DNS, TLS and content diagnostics
+        shell: bash
+        run: |
+          set +e
+          domain='menaevidencelab.org'
+          base="https://${domain}"
+
+          echo '=== PUBLIC DNS (Google DoH) ==='
+          for t in A AAAA CNAME NS; do
+            echo "--- ${domain} ${t} ---"
+            curl -fsSL "https://dns.google/resolve?name=${domain}&type=${t}" || true
+            echo
+          done
+          echo '--- www CNAME ---'
+          curl -fsSL "https://dns.google/resolve?name=www.${domain}&type=CNAME" || true
+          echo
+
+          echo '=== RUNNER RESOLUTION ==='
+          getent ahosts "$domain" || true
+
+          echo '=== TLS CERTIFICATE ==='
+          echo | openssl s_client -connect "${domain}:443" -servername "$domain" -showcerts 2>/tmp/tls.err | openssl x509 -noout -subject -issuer -dates -ext subjectAltName 2>/tmp/x509.err || true
+          echo '--- TLS stderr ---'
+          cat /tmp/tls.err /tmp/x509.err 2>/dev/null || true
+          echo '--- hostname verification ---'
+          echo | openssl s_client -connect "${domain}:443" -servername "$domain" -verify_hostname "$domain" 2>&1 | tail -n 12 || true
+
+          probe() {
+            path="$1"
+            expected="$2"
+            body="$(mktemp)"
+            headers="$(mktemp)"
+            meta="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 -H 'Cache-Control: no-cache, no-store, max-age=0' -D "$headers" -o "$body" -w 'HTTP=%{http_code} REMOTE_IP=%{remote_ip} EFFECTIVE_URL=%{url_effective} SSL_VERIFY=%{ssl_verify_result}' "${base}${path}?diag=${GITHUB_RUN_ID}" 2>&1)"
+            echo
+            echo "=== ${path} ==="
+            echo "$meta"
+            echo '--- selected headers ---'
+            grep -Ei '^(HTTP/|server:|location:|age:|cache-control:|last-modified:|etag:|via:|x-github|x-served-by:|x-cache:|x-vercel)' "$headers" || true
+            if grep -Fq "$expected" "$body"; then
+              echo "EXPECTED_CONTENT=present"
+            else
+              echo "EXPECTED_CONTENT=MISSING"
+              echo '--- body snippet ---'
+              head -c 700 "$body" | tr '\n' ' '; echo
+            fi
+          }
+
+          echo '=== HTTP CONTENT PROBES ==='
+          probe '/' 'The economy changes. So does the machinery used to measure it.'
+          probe '/measurement-economics.html' 'Measurement economics for MENA.'
+          probe '/vintage-vault.html' 'MENA Vintage Vault'
+          probe '/mena-rtd.html' 'What was actually knowable on date d?'
+          probe '/evidence/saudi-gdp-revision-2023.html' 'Saudi Arabia’s 2023 GDP changed sign.'
+          probe '/data/saudi-gdp-2023-vintage-pair.csv' 'SAU-GDP-2023-REAL-PRE'
+          probe '/data/saudi-gdp-2023-revision-evidence.json' '"id": "MENALAB-MA-001"'
+          probe '/data/narrative-reversals.json' '"id": "NR-SAU-GDP-2023-001"'
+
+          echo
+          echo 'Diagnostic complete. This workflow intentionally exits 0 so all evidence remains visible.'
+          exit 0
