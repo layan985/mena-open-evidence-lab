@@ -1,0 +1,14 @@
+{
+  "id": "mena-state-capital-graph",
+  "version": "0.1.0",
+  "status": "design",
+  "program": "state-and-markets",
+  "time_stamped": true,
+  "node_types": ["government","ministry","sovereign_wealth_fund","state_owned_enterprise","bank","listed_firm","private_firm","fund","sector","procurement_agency"],
+  "edge_types": ["ownership","investment","loan","procurement_award","board_relationship","subsidy","industrial_policy_measure","joint_venture"],
+  "required_edge_fields": ["source","source_date","effective_from","effective_to","amount","currency","confidence","provenance_hash"],
+  "research_designs": ["event study","difference-in-differences","matching","synthetic control"],
+  "required_identification_checks": ["pre-trends","treatment timing","selection into treatment","spillovers","concurrent policy changes"],
+  "candidate_outcomes": ["firm_entry","investment","job_postings","wage_demand","exports","patents","procurement_concentration"],
+  "interpretation_rule": "network exposure is descriptive until a defensible identification design is specified"
+}
