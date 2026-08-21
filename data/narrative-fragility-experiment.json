@@ -1,0 +1,26 @@
+{
+  "experiment_id": "MENALAB-NF-EXP-001",
+  "status": "simulation_methods_experiment",
+  "seed": 20260822,
+  "draws_per_distribution": 1000000,
+  "estimand": "P[(y-c)(y+R-c)<0]",
+  "interpretation": "Probability that a future revision R moves a first-release estimate y across a qualitative threshold c.",
+  "design": {
+    "normal_benchmark": "Zero-mean unit-variance Normal revision process.",
+    "heavy_tail_benchmark": "Student-t with 3 degrees of freedom, rescaled to unit variance.",
+    "distance": "Absolute first-release distance from threshold divided by the standard deviation of revisions.",
+    "empirical_calibration": "None. This is a standardized methods benchmark, not a country estimate."
+  },
+  "headline_results": {
+    "normal_flip_probability_distance_0_5_sd": 0.308538,
+    "normal_flip_probability_distance_1_sd": 0.158655,
+    "normal_flip_probability_distance_2_sd": 0.022750,
+    "normal_flip_probability_distance_3_sd": 0.001350,
+    "heavy_tail_crossover_approx_sd": 2.10,
+    "t3_to_normal_flip_ratio_at_2_5_sd": 1.828909,
+    "t3_to_normal_flip_ratio_at_3_sd": 5.128844
+  },
+  "finding": "At equal variance, a heavy-tailed revision process is more peaked and produces fewer threshold crossings close to the boundary, but beyond roughly 2.10 revision standard deviations its fat tails dominate and produce more reversals than the Normal benchmark.",
+  "claim_boundary": "These are simulated revision processes. They do not estimate the revision distribution of Saudi Arabia or any other MENA statistical system. Empirical calibration requires archived real-time vintages and observed revision distributions.",
+  "related_empirical_record": "NR-SAU-GDP-2023-001"
+}
