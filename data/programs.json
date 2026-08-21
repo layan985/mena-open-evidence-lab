@@ -1,62 +1,51 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "3.0",
   "canonical": true,
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-21",
   "records": [
     {
-      "id": "inflation-price-measurement",
-      "name": "MENA Inflation & Price Measurement Observatory",
-      "purpose": "Measure and compare official price evidence across MENA while preserving basket definitions, base changes, monthly versus annual dynamics, release timing, revisions and structural breaks.",
-      "flagship_infrastructure": ["price-observatory", "release-001"],
-      "recurring_outputs": ["MENA Evidence Note", "Same Label, Different Statistic", "One Chart, Five Caveats"],
-      "status": "active"
+      "id": "real-time-macroeconomic-measurement",
+      "name": "Real-Time Macroeconomic Measurement",
+      "purpose": "Reconstruct what could actually have been known at historical dates, preserve official vintages and revisions, measure release latency, and evaluate nowcasts without revised-data leakage.",
+      "flagship_infrastructure": ["mena-rtd", "revision-vintage-archive", "release-clock", "pseudo-real-time-validation"],
+      "recurring_outputs": ["Statistical Asynchrony", "What Was Knowable?", "Revision Risk", "real-time nowcast evaluation"],
+      "subprojects": ["Official Statistics Revision & Vintage Archive", "MENA Economic Release Calendar", "MENA-RTD"],
+      "status": "active-build"
     },
     {
-      "id": "labour-market-comparability",
-      "name": "MENA Labour Market Comparability Project",
-      "purpose": "Audit the population perimeter, age framework, nationality treatment, denominator and classification architecture behind headline labour-market indicators.",
-      "flagship_infrastructure": ["unemployment-comparability-matrix", "indicator-definition-dictionary"],
-      "recurring_outputs": ["Same Label, Different Statistic", "Method Change", "MENA Evidence Note"],
-      "status": "active"
+      "id": "alternative-economic-measurement",
+      "name": "Alternative Economic Measurement",
+      "purpose": "Measure economic activity with physical and high-frequency signals while treating divergence from official statistics as a research question rather than automatic evidence of official error.",
+      "flagship_infrastructure": ["latent-activity-state", "official-physical-divergence", "satellite-and-port-signal-layer"],
+      "recurring_outputs": ["MENA Activity State", "Official–Physical Divergence", "signal validation notes"],
+      "subprojects": ["nighttime lights", "NO2 and environmental signals", "PortWatch/AIS", "electricity and mobility signals"],
+      "status": "design"
     },
     {
-      "id": "firm-ai-labour-adjustment",
-      "name": "Firm AI Adoption & Labour Adjustment",
-      "purpose": "Separate corporate AI language from verifiable operational adoption and measure how documented adoption relates to employment, workforce composition and labour adjustment.",
-      "flagship_infrastructure": ["ai-labor", "ai-adoption-evidence-ledger"],
-      "recurring_outputs": ["firm dataset", "sector analysis", "AI Adoption Without Measurement"],
+      "id": "firm-dynamics",
+      "name": "Firm Dynamics",
+      "purpose": "Build source-bounded observable firm panels and probabilistic activity states to study entry, exit, hiring, procurement, technology adoption and survival without claiming census coverage.",
+      "flagship_infrastructure": ["mena-open-firm-panel", "firm-activity-state", "ai-labor"],
+      "recurring_outputs": ["firm panel releases", "survival analysis", "labor-demand research", "technology-adoption research"],
+      "subprojects": ["Firm AI Adoption & Labour Adjustment", "open firm panel", "job-demand linkage"],
       "status": "active-collection"
     },
     {
-      "id": "revision-vintage-archive",
-      "name": "Official Statistics Revision & Vintage Archive",
-      "purpose": "Preserve first releases, later revisions and methodological breaks so researchers can reconstruct what an official series looked like at a historical date.",
-      "flagship_infrastructure": ["vintage-archive", "revision-tracker", "methodology-change-timeline"],
-      "recurring_outputs": ["Release Forensics", "What Was Knowable?", "Method Change"],
-      "status": "build-phase"
+      "id": "state-and-markets",
+      "name": "State and Markets",
+      "purpose": "Map and identify the effects of state capital, SOEs, sovereign wealth funds, procurement and industrial-policy interventions on firms, sectors and market structure.",
+      "flagship_infrastructure": ["mena-state-capital-graph", "procurement-intelligence", "industrial-policy-event-registry"],
+      "recurring_outputs": ["event studies", "difference-in-differences research", "procurement concentration analysis", "state-capital network releases"],
+      "subprojects": ["MENA Funding & Procurement Intelligence", "SOE/SWF graph", "industrial-policy identification"],
+      "status": "active-foundation"
     },
     {
-      "id": "funding-procurement-intelligence",
-      "name": "MENA Funding & Procurement Intelligence",
-      "purpose": "Normalize official procurement, award and development-finance records into auditable buyer, opportunity and supplier intelligence.",
-      "flagship_infrastructure": ["procurement-intelligence"],
-      "recurring_outputs": ["funding intelligence", "buyer map", "procurement evidence note"],
-      "status": "live"
-    },
-    {
-      "id": "economic-release-calendar",
-      "name": "MENA Economic Release Calendar",
-      "purpose": "Track verified official economic release dates and, where directly supplied, publication times without inferring dates or times from secondary sources.",
-      "flagship_infrastructure": ["release-calendar", "release-lag-database"],
-      "recurring_outputs": ["MENA Data Radar", "release timeliness benchmark", "Release Forensics"],
-      "status": "active-source-verification"
-    },
-    {
-      "id": "evidence-lineage",
-      "name": "MENA Evidence Lineage Project",
-      "purpose": "Make claims auditable from source through observation and transformation to published conclusion, retaining language, vintage, retrieval time, file identity and validation state.",
-      "flagship_infrastructure": ["evidence-terminal", "provenance-graph", "source-registry"],
-      "recurring_outputs": ["Claim Audit", "Source Failure", "downloadable provenance record"],
+      "id": "statistical-integrity",
+      "name": "Statistical Integrity",
+      "purpose": "Test comparability, preserve methodological changes, expose source lineage, quantify uncertainty and stress-test public economic claims before they are repeated as settled facts.",
+      "flagship_infrastructure": ["evidence-terminal", "claim-stress-test", "comparability-matrices", "source-preservation"],
+      "recurring_outputs": ["Same Label, Different Statistic", "Claim Audit", "Method Change", "Source Failure"],
+      "subprojects": ["Inflation & Price Measurement Observatory", "Labour Market Comparability", "Evidence Lineage"],
       "status": "active"
     }
   ],
@@ -64,9 +53,13 @@
     {
       "id": "evidence-terminal",
       "name": "MENA Evidence Terminal",
-      "status": "specification",
+      "status": "active-specification",
       "role": "Machine-readable provenance backbone across all research programmes.",
-      "required_fields": ["indicator", "entity", "value", "unit", "reference_period", "release_date", "source", "publisher", "language", "source_file", "vintage", "retrieval_timestamp", "transformation", "source_hash", "code_commit", "revision_status", "license", "validation_status"]
+      "required_fields": ["indicator", "entity", "value", "unit", "reference_period", "release_date", "release_type", "source", "publisher", "language", "source_file", "vintage", "retrieval_timestamp", "transformation", "source_hash", "code_commit", "revision_status", "license", "validation_status"]
     }
-  ]
+  ],
+  "research_standard": {
+    "rule": "Every material empirical conclusion must survive at least one deliberately hostile but defensible specification.",
+    "required": ["frozen raw data", "hashes", "versioned transformations", "codebook", "provenance", "missingness analysis", "sensitivity analysis", "out-of-sample validation where appropriate", "effect sizes", "uncertainty intervals", "negative results", "replication package"]
+  }
 }
