@@ -1,10 +1,10 @@
 {
-  "schema_version":"1.1",
+  "schema_version":"1.0",
   "canonical":true,
   "last_updated":"2026-08-21",
   "records":[
-    {"id":"mena-rtd","program_id":"real-time-macroeconomic-measurement","title":"MENA-RTD — Real-Time Data and Vintages Database","status":"seed-build","latest_release":"0.1.0","evidence_registry_id":"mena-rtd"},
-    {"id":"statistical-asynchrony-001","program_id":"real-time-macroeconomic-measurement","title":"The Economy Exists Before the Statistic Does — Statistical Asynchrony 001","status":"published","latest_release":"1.0","evidence_registry_id":"statistical-asynchrony-001"},
+    {"id":"mena-rtd","program_id":"real-time-macroeconomic-measurement","title":"MENA-RTD — Real-Time Data and Vintages Database","status":"seed-build","latest_release":"0.1.0","evidence_registry_id":null},
+    {"id":"statistical-asynchrony-001","program_id":"real-time-macroeconomic-measurement","title":"The Economy Exists Before the Statistic Does — Statistical Asynchrony 001","status":"published","latest_release":"1.0","evidence_registry_id":null},
     {"id":"research-release-002","program_id":"statistical-integrity","title":"Research Release 002 — CPI measurement, decision-time information sets and statistical transparency","status":"published","latest_release":"1.0","evidence_registry_id":"research-release-002"},
     {"id":"research-release-001","program_id":"statistical-integrity","title":"Research Release 001 — Official-statistics forensics, comparability and evidence lineage","status":"published","latest_release":"1.1","evidence_registry_id":"research-release-001"},
     {"id":"price-observatory","program_id":"statistical-integrity","title":"Official Price Release Observatory","status":"release-candidate","latest_release":"v0.3.0-rc1","evidence_registry_id":"price-observatory"},
