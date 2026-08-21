@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "canonical": true,
+  "registry": "MENA Methodology Shock Registry",
+  "last_updated": "2026-08-21",
+  "records": [
+    {
+      "id": "MSR-SAU-GDP-CR-2023",
+      "country": "Saudi Arabia",
+      "country_code": "SAU",
+      "statistical_authority": "General Authority for Statistics (GASTAT)",
+      "indicator_family": "national_accounts",
+      "event_type": "comprehensive_revision",
+      "reference_scope": "2023 GDP and associated national-accounts series",
+      "method_changes": ["new surveys", "administrative data", "point-of-sale transactions", "digital-platform information", "methodological improvements"],
+      "known_measurement_effects": [
+        "Measured 2023 nominal GDP increased 14.1%",
+        "Measured 2023 nominal GDP increased by SAR 566 billion",
+        "Measured non-oil share increased 5.7 percentage points",
+        "Measured construction activity level increased 61% relative to previous estimates"
+      ],
+      "source_url": "https://stats.gov.sa/en/w/frequently-asked-questions-gdp-comprehensive-revision",
+      "validation_state": "OFFICIAL SOURCE / EFFECTS DOCUMENTED",
+      "claim_boundary": "Recorded changes describe statistical measurement effects reported by GASTAT, not overnight changes in underlying economic activity."
+    },
+    {
+      "id": "MSR-MAR-NA-BASE2014",
+      "country": "Morocco",
+      "country_code": "MAR",
+      "statistical_authority": "Haut-Commissariat au Plan",
+      "indicator_family": "national_accounts",
+      "event_type": "base_year_change",
+      "reference_scope": "National accounts rebasing from base 2007 to base 2014",
+      "method_changes": ["base year changed from 2007 to 2014"],
+      "known_measurement_effects": ["Measured 2014 GDP increased 8.2% relative to the previous accounting base"],
+      "source_url": "https://www.hcp.ma/Changement-de-l-annee-de-base-des-comptes-nationaux-2014-au-lieu-de-2007_a3106.html",
+      "validation_state": "OFFICIAL SOURCE / HEADLINE EFFECT DOCUMENTED",
+      "claim_boundary": "The registry currently records the documented headline level effect. Sector-by-sector reconstruction remains a Vintage Vault build target."
+    },
+    {
+      "id": "MSR-TUN-NA-BASE2015",
+      "country": "Tunisia",
+      "country_code": "TUN",
+      "statistical_authority": "Institut National de la Statistique",
+      "indicator_family": "national_accounts",
+      "event_type": "base_year_change",
+      "reference_scope": "National accounts base 2015",
+      "method_changes": ["national-accounts rebasing"],
+      "known_measurement_effects": ["GDP-level changes alter derived ratios mechanically, including GDP per capita, investment/GDP, debt/GDP and fiscal ratios"],
+      "source_url": "https://www.ins.tn/sites/default/files/publication/pdf/15082021%20SCNT%20Base%202015%20Document%20synthese_0.pdf",
+      "validation_state": "OFFICIAL SOURCE / RATIO CONSEQUENCE DOCUMENTED",
+      "claim_boundary": "The registry records the methodological event and its ratio implications. Exact pre/post ratio reconstructions are not yet published as completed Lab estimates."
+    },
+    {
+      "id": "MSR-JOR-GDP-COMPREHENSIVE",
+      "country": "Jordan",
+      "country_code": "JOR",
+      "statistical_authority": "Department of Statistics",
+      "indicator_family": "national_accounts",
+      "event_type": "comprehensive_revision",
+      "reference_scope": "Annual GDP 2008-2024 and quarterly national accounts through 2025 Q2",
+      "method_changes": ["comprehensive national-accounts revision", "ISIC Rev.4 adoption", "expanded quarterly activity detail"],
+      "known_measurement_effects": ["Quarterly sector detail expanded from 14 to 20 economic activities"],
+      "source_url": "https://dosweb.dos.gov.jo/nationalaccount/annual-accounts/",
+      "secondary_source_url": "https://dosweb.dos.gov.jo/ar/nationalaccount/quarterly-estimates/",
+      "validation_state": "OFFICIAL SOURCE / SCOPE DOCUMENTED",
+      "claim_boundary": "The revision scope and classification changes are documented. Pre/post GDP revision magnitudes remain to be reconstructed and are not asserted here."
+    }
+  ],
+  "research_use": [
+    "time-series break detection",
+    "comparability warnings",
+    "vintage reconstruction",
+    "methodology-aware econometrics",
+    "forecast evaluation",
+    "derived-ratio revision analysis"
+  ]
+}
