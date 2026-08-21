@@ -1,0 +1,185 @@
+name: Reconcile live MENA Evidence Lab site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-reconcile
+  cancel-in-progress: true
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://menaevidencelab.org
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - name: Verify current site files exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f CNAME
+          grep -Fxq 'menaevidencelab.org' CNAME
+          test -f evidence/saudi-gdp-revision-2023.html
+          grep -Fq 'Saudi Arabia’s 2023 GDP changed sign.' evidence/saudi-gdp-revision-2023.html
+          test -f measurement-economics.html
+          test -f vintage-vault.html
+          test -f mena-rtd.html
+          test -f data/saudi-gdp-2023-vintage-pair.csv
+          test -f data/saudi-gdp-2023-revision-evidence.json
+          test -f data/narrative-reversals.json
+          echo "Current main: $(git rev-parse HEAD)"
+
+      - name: Inspect GitHub Pages publishing mode
+        id: pages_state
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp)"
+          code="$(curl --silent --show-error --location -o "$tmp" -w '%{http_code}' \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H 'X-GitHub-Api-Version: 2026-03-10' \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages")"
+          echo "Pages API status: ${code}"
+          cat "$tmp"
+          test "$code" = '200'
+          python - "$tmp" >> "$GITHUB_OUTPUT" <<'PY'
+          import json,sys
+          d=json.load(open(sys.argv[1]))
+          print('build_type='+str(d.get('build_type') or 'legacy'))
+          print('cname='+str(d.get('cname') or ''))
+          src=d.get('source') or {}
+          print('source_branch='+str(src.get('branch') or ''))
+          print('source_path='+str(src.get('path') or ''))
+          print('html_url='+str(d.get('html_url') or ''))
+          print('status='+str(d.get('status') or ''))
+          PY
+
+      - name: Configure workflow Pages
+        if: steps.pages_state.outputs.build_type == 'workflow'
+        uses: actions/configure-pages@v5
+
+      - name: Upload current main as Pages artifact
+        if: steps.pages_state.outputs.build_type == 'workflow'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy current main through workflow Pages
+        if: steps.pages_state.outputs.build_type == 'workflow'
+        id: workflow_deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Request branch-backed Pages rebuild
+        if: steps.pages_state.outputs.build_type != 'workflow'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp)"
+          code="$(curl --silent --show-error --location -o "$tmp" -w '%{http_code}' -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H 'X-GitHub-Api-Version: 2026-03-10' \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds")"
+          echo "Pages rebuild request status: ${code}"
+          cat "$tmp"
+          if [[ "$code" != '201' && "$code" != '202' ]]; then
+            echo 'GitHub rejected the branch-backed Pages rebuild request.' >&2
+            exit 1
+          fi
+
+      - name: Wait for branch-backed build to reach current main
+        if: steps.pages_state.outputs.build_type != 'workflow'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          expected="$(git rev-parse HEAD)"
+          for attempt in $(seq 1 24); do
+            tmp="$(mktemp)"
+            code="$(curl --silent --show-error --location -o "$tmp" -w '%{http_code}' \
+              -H 'Accept: application/vnd.github+json' \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H 'X-GitHub-Api-Version: 2026-03-10' \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds/latest")"
+            if [[ "$code" == '200' ]]; then
+              read -r status commit < <(python - "$tmp" <<'PY'
+          import json,sys
+          d=json.load(open(sys.argv[1]))
+          print(d.get('status',''), d.get('commit',''))
+          PY
+              )
+              echo "Attempt ${attempt}: status=${status} commit=${commit} expected=${expected}"
+              if [[ "$status" == 'built' && "$commit" == "$expected" ]]; then
+                exit 0
+              fi
+              if [[ "$status" == 'errored' ]]; then
+                cat "$tmp"
+                exit 1
+              fi
+            else
+              echo "Latest build API returned HTTP ${code}"
+              cat "$tmp"
+            fi
+            sleep 10
+          done
+          echo 'Timed out before GitHub reported current main as the completed Pages build.' >&2
+          exit 1
+
+      - name: Verify custom domain serves current release
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://menaevidencelab.org'
+          check() {
+            path="$1" expected="$2"
+            body="$(mktemp)"
+            headers="$(mktemp)"
+            code="$(curl --silent --show-error --location --connect-timeout 10 --max-time 30 \
+              -H 'Cache-Control: no-cache, no-store, max-age=0' \
+              -D "$headers" -o "$body" -w '%{http_code}' \
+              "${base}${path}?release=$(git rev-parse HEAD)")"
+            echo "${path} -> HTTP ${code}"
+            grep -Ei '^(server:|last-modified:|etag:|age:|x-github-request-id:|x-cache:)' "$headers" || true
+            test "$code" = '200'
+            grep -Fq "$expected" "$body"
+          }
+          for attempt in $(seq 1 18); do
+            echo "Live-site verification attempt ${attempt}"
+            if check '/' 'The economy changes. So does the machinery used to measure it.' \
+              && check '/evidence/saudi-gdp-revision-2023.html' 'Saudi Arabia’s 2023 GDP changed sign.' \
+              && check '/data/saudi-gdp-2023-vintage-pair.csv' 'SAU-GDP-2023-REAL-PRE'; then
+              echo 'CUSTOM DOMAIN IS SERVING CURRENT MAIN.'
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'GitHub reports the build path completed, but the custom domain still serves stale content.' >&2
+          exit 1
+
+      - name: Record result
+        if: always()
+        shell: bash
+        run: |
+          echo '### Live-site reconciliation' >> "$GITHUB_STEP_SUMMARY"
+          echo "- Pages build type: \`${{ steps.pages_state.outputs.build_type }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Pages source: \`${{ steps.pages_state.outputs.source_branch }}${{ steps.pages_state.outputs.source_path }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Pages CNAME: \`${{ steps.pages_state.outputs.cname }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Repository main commit: \`$(git rev-parse HEAD)\`" >> "$GITHUB_STEP_SUMMARY"
+          echo '- Target: https://menaevidencelab.org/evidence/saudi-gdp-revision-2023.html' >> "$GITHUB_STEP_SUMMARY"
