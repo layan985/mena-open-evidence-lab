@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1",
+  "id": "MENALAB-MA-001",
+  "title": "Saudi Arabia 2023 GDP narrative reversal",
+  "country": "Saudi Arabia",
+  "country_code": "SAU",
+  "indicator_family": "national_accounts",
+  "reference_period": "2023",
+  "finding": {
+    "pre_revision_real_gdp_growth_pct": -0.8,
+    "revised_real_gdp_growth_pct": 0.5,
+    "revision_percentage_points": 1.3,
+    "qualitative_change": "contraction_to_growth",
+    "official_nominal_revision_pct": 14.1,
+    "official_nominal_revision_sar_bn": 566,
+    "revised_non_oil_share_pct": 53.2,
+    "non_oil_share_change_pp": 5.7,
+    "reported_sector_revision_effects_pct": {
+      "construction": 61.0,
+      "wholesale_retail_restaurants_hotels": 29.8,
+      "transport_storage_communications": 25.6
+    }
+  },
+  "sources": [
+    {
+      "role": "pre_revision_real_growth",
+      "url": "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014"
+    },
+    {
+      "role": "revised_annual_accounts",
+      "url": "https://www.stats.gov.sa/documents/d/guest/annual-national-accounts-publication-2023-en-28-4-2025-pdf"
+    },
+    {
+      "role": "pre_revision_nominal_total",
+      "url": "https://www.stats.gov.sa/sites/default/files/GDP%20FQ42023E_0.pdf"
+    },
+    {
+      "role": "official_revision_headline_and_sector_effects",
+      "url": "https://www.stats.gov.sa/en/w/news/38"
+    },
+    {
+      "role": "comprehensive_revision_methodology",
+      "url": "https://www.stats.gov.sa/documents/20117/2435133/Statistical%2BMethodology%2BCR%2BGDP%2B2023.pdf/c73816b4-b307-41f7-f6b2-5d10c8ddc078?t=1746013194599"
+    }
+  ],
+  "methodology_changes": [
+    "new surveys",
+    "administrative data",
+    "point-of-sale transactions",
+    "digital-platform information",
+    "improved informal-sector measurement",
+    "supply-use balancing",
+    "historical back-casting"
+  ],
+  "rounding_note": "Rounded nominal totals of SAR 4,003bn and SAR 4,570bn differ by SAR 567bn. GASTAT reports the underlying revision as SAR 566bn; the Lab uses the official underlying revision amount.",
+  "claim_boundary": "This record describes a change in official statistical measurement across published vintages. It does not imply that underlying 2023 economic activity changed after the reference year ended.",
+  "validation_state": [
+    "OFFICIAL SOURCES",
+    "FOUNDER PRODUCED",
+    "SOURCE-LINKED",
+    "PENDING INDEPENDENT REPRODUCTION"
+  ],
+  "published_at": "2026-08-21"
+}
