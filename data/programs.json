@@ -1,5 +1,5 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "2.0",
   "canonical": true,
   "last_updated": "2026-08-21",
   "records": [
@@ -10,7 +10,7 @@
       "flagship_infrastructure": ["mena-rtd", "revision-vintage-archive", "release-clock", "pseudo-real-time-validation"],
       "recurring_outputs": ["Statistical Asynchrony", "What Was Knowable?", "Revision Risk", "real-time nowcast evaluation"],
       "subprojects": ["Official Statistics Revision & Vintage Archive", "MENA Economic Release Calendar", "MENA-RTD"],
-      "status": "active-build"
+      "status": "build-phase"
     },
     {
       "id": "alternative-economic-measurement",
@@ -19,7 +19,7 @@
       "flagship_infrastructure": ["latent-activity-state", "official-physical-divergence", "satellite-and-port-signal-layer"],
       "recurring_outputs": ["MENA Activity State", "Official–Physical Divergence", "signal validation notes"],
       "subprojects": ["nighttime lights", "NO2 and environmental signals", "PortWatch/AIS", "electricity and mobility signals"],
-      "status": "design"
+      "status": "build-phase"
     },
     {
       "id": "firm-dynamics",
@@ -37,7 +37,7 @@
       "flagship_infrastructure": ["mena-state-capital-graph", "procurement-intelligence", "industrial-policy-event-registry"],
       "recurring_outputs": ["event studies", "difference-in-differences research", "procurement concentration analysis", "state-capital network releases"],
       "subprojects": ["MENA Funding & Procurement Intelligence", "SOE/SWF graph", "industrial-policy identification"],
-      "status": "active-foundation"
+      "status": "build-phase"
     },
     {
       "id": "statistical-integrity",
