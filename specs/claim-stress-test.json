@@ -1,0 +1,21 @@
+{
+  "id": "mena-claim-stress-test",
+  "version": "0.1.0",
+  "status": "design",
+  "program": "statistical-integrity",
+  "input": "a quantitative economic claim plus its stated or inferred comparison universe",
+  "checks": [
+    "definition",
+    "reference_period",
+    "vintage",
+    "release_timing",
+    "revision_uncertainty",
+    "coverage",
+    "comparison_universe",
+    "methodology_breaks"
+  ],
+  "statuses": ["supported","supported_with_qualification","statistically_unresolved","definition_dependent","unsupported"],
+  "ranking_rule": "when historical revision risk is available, ordinal claims should report P(A > B | I_t) rather than treating small point-estimate differences as certain",
+  "implementation_rule": "classification must be produced from explicit data/rules/probability; an LLM may explain the result but may not invent the underlying verdict",
+  "audit_output": ["claim_text","status","qualification","source_set","information_cutoff","vintage_set","comparison_definition","uncertainty_method","machine_readable_reason_codes"]
+}
