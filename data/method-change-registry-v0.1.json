@@ -11,17 +11,9 @@
       "effective_period": "2023 comprehensive revision; chain-linking introduced for real GDP in 2024",
       "producer": "General Authority for Statistics (GASTAT)",
       "change_type": ["comprehensive_revision", "method_regime_change", "source_expansion"],
-      "documented_changes": [
-        "2023 selected as the comprehensive revision year",
-        "expanded and updated data sources and coverage",
-        "updated classifications and methodological treatments",
-        "chain-linking methodology introduced for real GDP in 2024"
-      ],
+      "documented_changes": ["2023 selected as the comprehensive revision year", "expanded and updated data sources and coverage", "updated classifications and methodological treatments", "chain-linking methodology introduced for real GDP in 2024"],
       "user_action": "Preserve vintage identity. Do not assume pre- and post-revision releases are interchangeable for real-time analysis.",
-      "source_urls": [
-        "https://www.stats.gov.sa/documents/20117/2435133/FAQ-En-28-4-2025.pdf/bf3e5233-d95e-553e-f48b-a185b786a393?t=1746012576136",
-        "https://www.stats.gov.sa/en/w/revisions-and-revision-policy"
-      ],
+      "source_urls": ["https://www.stats.gov.sa/documents/20117/2435133/FAQ-En-28-4-2025.pdf/bf3e5233-d95e-553e-f48b-a185b786a393?t=1746012576136", "https://www.stats.gov.sa/en/w/revisions-and-revision-policy"],
       "review_status": "source-verified"
     },
     {
@@ -31,16 +23,9 @@
       "effective_period": "quarterly series from 2008 through Q2 2025",
       "producer": "Department of Statistics",
       "change_type": ["comprehensive_revision", "classification_change", "historical_series_revision"],
-      "documented_changes": [
-        "new comprehensive revision applied to quarterly GDP estimates from 2008 through Q2 2025",
-        "ISIC Rev.4 adopted",
-        "economic-sector detail expanded from 14 to 20 sectors"
-      ],
+      "documented_changes": ["new comprehensive revision applied to quarterly GDP estimates from 2008 through Q2 2025", "ISIC Rev.4 adopted", "economic-sector detail expanded from 14 to 20 sectors"],
       "user_action": "Record method version when using historical quarterly GDP. Avoid mixing archived pre-revision sector series with the revised series without an explicit bridge.",
-      "source_urls": [
-        "https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/",
-        "https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/tables_quarterly/"
-      ],
+      "source_urls": ["https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/", "https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/tables_quarterly/"],
       "review_status": "source-verified"
     },
     {
@@ -50,20 +35,36 @@
       "effective_period": "Q1 2026 onward",
       "producer": "Haut-Commissariat au Plan (HCP)",
       "change_type": ["survey_replacement", "concept_change", "sample_redesign", "sampling_frame_update", "rotation_design_change"],
-      "documented_changes": [
-        "EMO2026 replaced the former ENE labour survey",
-        "employment is restricted to work for pay or profit",
-        "strict unemployment replaces the previous broader unemployment concept",
-        "labour underutilization is expanded into a multidimensional indicator system",
-        "annual household sample increased from 90,000 to 135,000",
-        "sampling frame updated using the 2024 population and housing census",
-        "new quarterly and annual household rotation design introduced"
-      ],
+      "documented_changes": ["EMO2026 replaced the former ENE labour survey", "employment is restricted to work for pay or profit", "strict unemployment replaces the previous broader unemployment concept", "labour underutilization is expanded into a multidimensional indicator system", "annual household sample increased from 90,000 to 135,000", "sampling frame updated using the 2024 population and housing census", "new quarterly and annual household rotation design introduced"],
       "comparability_note": "HCP states that EMO2026 results are not directly comparable with previously published ENE results. HCP is publishing provisional backcast indicators for 2017-2025 under the new concepts; comparison with those backcast indicators is methodologically valid.",
       "user_action": "For 2026 comparisons, use the EMO-compatible backcast series where available rather than splicing 2026 values directly onto the old ENE series.",
-      "source_urls": [
-        "https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-deuxieme-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4342.html"
-      ],
+      "source_urls": ["https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-deuxieme-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4342.html"],
+      "review_status": "source-verified"
+    },
+    {
+      "id": "TUN-REAL-ESTATE-PRICE-2024-METHOD-REVISION",
+      "country": "Tunisia",
+      "domain": "prices_real_estate",
+      "effective_period": "publication interrupted during 2022-2023; publication resumed Q1 2024",
+      "producer": "Institut National de la Statistique (INS)",
+      "change_type": ["publication_interruption", "methodological_revision", "historical_series_reissue"],
+      "documented_changes": ["quarterly real-estate price index publication was interrupted during 2022 and 2023", "INS states the interruption was required by methodological revisions to index calculation procedures", "publication resumed for Q1 2024 with base 2015 and historical series shown through the interruption period"],
+      "comparability_note": "The resumed publication follows methodological revision work. Archived pre-interruption outputs should not be assumed identical to the revised historical series without checking the producer's revised values and methodology.",
+      "user_action": "Use the currently reissued INS series for current historical analysis. Preserve archived pre-revision releases when reproducing analysis made before the methodological revision.",
+      "source_urls": ["https://www.ins.tn/sites/default/files-ftp3/files/publication/pdf/IPIM%20T1_2024_fr.pdf"],
+      "review_status": "source-verified"
+    },
+    {
+      "id": "EGY-CPI-2019-TENTH-SERIES",
+      "country": "Egypt",
+      "domain": "consumer_prices",
+      "effective_period": "October 2019 onward",
+      "producer": "Central Agency for Public Mobilization and Statistics (CAPMAS)",
+      "change_type": ["base_year_change", "new_index_series"],
+      "documented_changes": ["CAPMAS introduced the tenth CPI series in October 2019", "the tenth series uses fiscal year 2018/2019 as the base year", "the preceding ninth series used January 2010 as the base period"],
+      "comparability_note": "A change in index base and series identity means raw index levels from different base systems are not directly comparable. Long-run component analysis may also require attention to revised weights and classifications.",
+      "user_action": "Use a producer-linked long series or rebase consistently before comparing index levels across the 2019 series change; record the CPI series/base used in reproducible work.",
+      "source_urls": ["https://censusinfo.capmas.gov.eg/metadata-en-v4.2/index.php/catalog/447/download/965"],
       "review_status": "source-verified"
     }
   ]
