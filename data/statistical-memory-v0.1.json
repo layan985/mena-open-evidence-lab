@@ -1,0 +1,41 @@
+{
+  "project": "MENA Statistical Memory",
+  "version": "0.1.0",
+  "released": "2026-08-22",
+  "claim_boundary": "This ledger preserves changes in the official information set. Revision size is not interpreted as institutional competence or data quality.",
+  "events": [
+    {
+      "event_id": "SAU-GDP-2023-REAL-GROWTH-VINTAGE-001",
+      "country": "Saudi Arabia",
+      "indicator_id": "real_gdp_growth_annual",
+      "indicator_label": "Annual real GDP growth",
+      "reference_period": "2023",
+      "old_value": -0.8,
+      "new_value": 0.5,
+      "unit": "percent",
+      "absolute_delta": 1.3,
+      "delta_unit": "percentage_points",
+      "event_class": ["sign_reversal", "method_regime_change"],
+      "from_vintage": {
+        "release_context": "GDP Q4 2023",
+        "status": "earlier official vintage",
+        "source_url": "https://www.stats.gov.sa/documents/20117/2066979/GDP%2BFQ42023E_0.pdf/145eeef3-ea98-4826-5ad8-7a882d486564"
+      },
+      "to_vintage": {
+        "release_context": "Annual National Accounts 2023 after comprehensive revision",
+        "status": "comprehensive_revision",
+        "source_url": "https://www.stats.gov.sa/documents/20117/2435267/Annual%2BNational%2BAccounts%2BPublication%2B2023%2BEN%2B28-4-2025.pdf/fe77080e-dd5a-bf4b-820c-da362b4b1bbe"
+      },
+      "documented_reason_summary": "GASTAT documents a comprehensive national-accounts revision using richer survey and administrative sources, supply-and-use work, updated classifications and historical backcasting.",
+      "revision_policy_url": "https://www.stats.gov.sa/en/w/revisions-and-revision-policy",
+      "comprehensive_revision_faq_url": "https://stats.gov.sa/en/w/frequently-asked-questions-gdp-comprehensive-revision",
+      "comparability_action": [
+        "replace_old_with_new_for_current_analysis",
+        "preserve_old_for_real_time_analysis",
+        "method_review_required"
+      ],
+      "interpretation": "The official historical interpretation of 2023 changed from contraction to growth. Real-time analysis should preserve both vintages.",
+      "review_status": "seed_event_verified_primary_sources"
+    }
+  ]
+}
