@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use MENA Open Data & Evidence Lab research infrastructure, datasets, methods notes, or registries, please cite the specific release and version used."
+title: "MENA Open Data & Evidence Lab Research Infrastructure"
+type: dataset
+authors:
+  - family-names: "Aloreidi"
+    given-names: "Layan"
+version: 0.1.0
+date-released: 2026-08-22
+url: "https://menaevidencelab.org"
+repository-code: "https://github.com/layan985/mena-open-evidence-lab"
+keywords:
+  - MENA
+  - official statistics
+  - reproducible research
+  - statistical comparability
+  - data provenance
+  - statistical revisions
+  - methodology changes
+abstract: "Open research infrastructure for traceable, versioned and reproducible economic and public-interest evidence in the Middle East and North Africa. Specific datasets and research notes carry their own version, source register, limitations and suggested citation."
