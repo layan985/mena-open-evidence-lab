@@ -1,0 +1,106 @@
+{
+  "title": "MENA Statistical Comparability Graph",
+  "version": "0.1.0",
+  "release_date": "2026-08-22",
+  "status": "pilot",
+  "claim_boundary": "This pilot does not rank labour-market performance. It records why similarly named official statistics may or may not be directly comparable.",
+  "schema": ["id","country","period","indicator_label","value","unit","population","concept","method_regime","release_date","source_url"],
+  "nodes": [
+    {
+      "id": "SAU-LMS-2026Q1-SAUDI-UNEMP",
+      "country": "Saudi Arabia",
+      "period": "2026-Q1",
+      "indicator_label": "Unemployment rate — Saudi population",
+      "value": 6.4,
+      "unit": "percent",
+      "population": "Saudi population",
+      "concept": "unemployment rate",
+      "method_regime": "GASTAT Labour Market Statistics Q1 2026",
+      "release_date": "2026-06-30",
+      "source_url": "https://www.stats.gov.sa/en/search-publication?category=publication&delta=40&q=Labor+Market"
+    },
+    {
+      "id": "JOR-LFS-2026Q1-TOTAL-UNEMP",
+      "country": "Jordan",
+      "period": "2026-Q1",
+      "indicator_label": "Unemployment rate — total population",
+      "value": 16.1,
+      "unit": "percent",
+      "population": "Jordanians and non-Jordanians in Jordan",
+      "concept": "unemployment rate",
+      "method_regime": "Jordan Department of Statistics quarterly labour market report",
+      "release_date": "2026-05-31",
+      "source_url": "https://dosweb.dos.gov.jo/ar/emp_unemp_q12026/"
+    },
+    {
+      "id": "JOR-LFS-2026Q1-JOR-UNEMP",
+      "country": "Jordan",
+      "period": "2026-Q1",
+      "indicator_label": "Unemployment rate — Jordanians aged 15+",
+      "value": 21.1,
+      "unit": "percent",
+      "population": "Jordanians aged 15 years and older",
+      "concept": "unemployment rate",
+      "method_regime": "Jordan Department of Statistics quarterly labour market report",
+      "release_date": "2026-05-31",
+      "source_url": "https://petra.gov.jo/analytics/index.php/en/news/unemployment-rate-falls-to-161-in-first-quarter-of-2026"
+    },
+    {
+      "id": "MAR-EMO2026-2026Q1-STRICT-UNEMP",
+      "country": "Morocco",
+      "period": "2026-Q1",
+      "indicator_label": "Strict unemployment rate",
+      "value": 10.8,
+      "unit": "percent",
+      "population": "working-age population under EMO 2026 definitions",
+      "concept": "strict unemployment",
+      "method_regime": "EMO 2026",
+      "release_date": "2026",
+      "source_url": "https://www.hcp.ma/attachment/2872905/"
+    },
+    {
+      "id": "MAR-EMO2026-2026Q1-COMPOSITE-UNDERUTIL",
+      "country": "Morocco",
+      "period": "2026-Q1",
+      "indicator_label": "Composite labour underutilization rate",
+      "value": 22.5,
+      "unit": "percent",
+      "population": "working-age population under EMO 2026 definitions",
+      "concept": "composite labour underutilization: strict unemployment, time-related underemployment and potential labour force",
+      "method_regime": "EMO 2026",
+      "release_date": "2026",
+      "source_url": "https://www.hcp.ma/attachment/2872905/"
+    }
+  ],
+  "edges": [
+    {
+      "from": "JOR-LFS-2026Q1-TOTAL-UNEMP",
+      "to": "JOR-LFS-2026Q1-JOR-UNEMP",
+      "relation": "different_population",
+      "directly_comparable": false,
+      "reason": "Same country and quarter, but one statistic covers the total resident population while the other covers Jordanians aged 15+."
+    },
+    {
+      "from": "MAR-EMO2026-2026Q1-STRICT-UNEMP",
+      "to": "MAR-EMO2026-2026Q1-COMPOSITE-UNDERUTIL",
+      "relation": "different_concept",
+      "directly_comparable": false,
+      "reason": "The composite measure includes forms of unmet labour demand beyond strict unemployment."
+    },
+    {
+      "from": "SAU-LMS-2026Q1-SAUDI-UNEMP",
+      "to": "JOR-LFS-2026Q1-TOTAL-UNEMP",
+      "relation": "different_population",
+      "directly_comparable": false,
+      "reason": "Saudi headline refers to the Saudi population; Jordan's 16.1% headline covers Jordanians and non-Jordanians."
+    },
+    {
+      "from": "SAU-LMS-2026Q1-SAUDI-UNEMP",
+      "to": "JOR-LFS-2026Q1-JOR-UNEMP",
+      "relation": "requires_method_review",
+      "directly_comparable": null,
+      "reason": "Both are nationality-bounded unemployment measures, but direct comparison is withheld until age universe, survey design and labour-force definitions are aligned field by field."
+    }
+  ],
+  "relation_vocabulary": ["exact","comparable_with_adjustment","different_population","different_concept","different_method","historical_break","requires_method_review","not_comparable"]
+}
