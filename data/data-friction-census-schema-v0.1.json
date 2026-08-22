@@ -1,0 +1,34 @@
+{
+  "title": "MENA Data Friction Census",
+  "version": "0.1.0",
+  "release_date": "2026-08-22",
+  "status": "rubric-released-audit-pending",
+  "claim_boundary": "Measures public reproducibility infrastructure, not statistical quality, competence or independence.",
+  "unit_of_audit": "institution x statistical product family x audit date",
+  "score_values": [0,1,2,"NA"],
+  "maximum_sum_when_complete": 18,
+  "dimensions": [
+    "machine_readable_access",
+    "stable_addressing",
+    "definition_metadata",
+    "methodology_history",
+    "historical_archive",
+    "rights_license_clarity",
+    "release_calendar",
+    "revision_transparency",
+    "programmatic_interface"
+  ],
+  "required_evidence_fields": [
+    "institution",
+    "country",
+    "product_family",
+    "audit_date",
+    "dimension",
+    "score",
+    "evidence_url",
+    "retrieved_at",
+    "coder",
+    "notes"
+  ],
+  "records": []
+}
