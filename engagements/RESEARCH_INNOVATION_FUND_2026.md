@@ -1,20 +1,20 @@
-# Research Innovation Fund 2026 — Submission Pack
+# Research Innovation Fund 2026 — Final Submission Pack
 
 ## Proposed title
 
-The Arab Rental Data Gap: What Can We Actually Know About Housing Affordability?
+**Who Gets Counted as a Renter? Data Blind Spots, Housing Affordability and Rental Governance in Amman**
 
 ## Applicant
 
-Layan Oraidi — Founder and Research Director, MENA Open Data & Evidence Lab
+Layan Aloreidi — Founder and Research Director, MENA Open Data & Evidence Lab
 
 ## Application type
 
 Individual
 
-## Suggested current status
+## Current status
 
-Other — independent researcher / founder and university student
+Other — independent researcher / founder and current undergraduate student
 
 ## Institution / organization
 
@@ -23,74 +23,77 @@ MENA Open Data & Evidence Lab
 ## Selected themes
 
 - Rental housing
-- Land and housing markets and financing
-- Monitoring land governance
 - Youth and land
+- Monitoring land governance
 
 ## Geographical scope
 
-Jordan as the primary case, with a structured comparative evidence audit of selected official and public rental-market measures from Lebanon, Egypt, Morocco and Tunisia where source availability supports defensible comparison.
+Amman, Jordan.
 
 ## Area of expertise and background — max 150 words
 
-I am the founder and research director of MENA Open Data & Evidence Lab, an independent research initiative focused on source-linked economic data, statistical comparability, revisions and reproducibility in the Arab region. My current work builds versioned datasets and evidence systems that preserve definitions, population denominators, methodology changes and release histories rather than treating published indicators as automatically comparable. I have also built empirical research software and received the CMT Association's Charles H. Dow Award for research work. For this project I would apply that measurement discipline to rental housing: reconstructing what public data can actually tell us about affordability, who and what each measure covers, and where gaps in official evidence prevent defensible conclusions about tenants and rental markets.
+I am the founder and research director of MENA Open Data & Evidence Lab and a current undergraduate student at Corvinus University of Budapest. My work focuses on public economic evidence, statistical comparability, source reconstruction and reproducible research in the Arab region. I build source-linked datasets and research notes that preserve definitions, population coverage, methodology changes and revisions rather than treating published indicators as automatically comparable. My quantitative research software MarketMind received the 2026 CMT Association Charles H. Dow Award, and I previously won the CEU Undergraduate Essay Competition. For this project, I will apply the same evidence discipline to rental housing in Amman while grounding the analysis in renter experience, public policy and the question of which housing pressures become visible to institutions.
 
-## Abstract — max 500 words
+## Abstract — 419 words
 
-Housing-affordability debates in Arab cities frequently rely on numbers that appear comparable but measure different objects: advertised rents rather than contracted rents, consumer-price rent components rather than household rent burdens, household expenditure for different populations, or national indices used to describe city-level markets. Informal rental arrangements, shared housing, displacement, rent controls, old and new contract regimes, and unequal survey coverage can further separate the lived rental market from the statistic used to describe it.
+Rental housing is central to housing access in Amman, especially for young people, lower-income households, migrants and displaced populations. Yet the rental market that appears in public statistics is not necessarily the rental market people experience. Official surveys can record tenure and rent expenditure; price statistics track a rent component; municipalities register some lease contracts; and the 2026 Population and Housing Census is rebuilding the housing evidence base. These systems are valuable, but they observe different populations, contracts and concepts. Informal arrangements, shared housing, unregistered leases, frequent moves and households with insecure status may be weakly represented or visible only in fragments.
 
-This research asks a prior question to the usual affordability ranking: **what can existing public evidence actually support about rental affordability, for whom, and under which definitions?**
+This research asks: **who gets counted as a renter in Amman, what forms of housing pressure become visible to public institutions, and what remains statistically or administratively invisible?**
 
-Jordan will serve as the primary case. The study will reconstruct the public measurement system around rental housing using official statistics, household expenditure and income material, rent components in price indices, housing and population sources, relevant rental-law and policy documents, and other public administrative or market evidence where provenance can be established. A smaller structured comparison with Lebanon, Egypt, Morocco and Tunisia will test whether commonly used rental and affordability indicators preserve the same population, unit, geographic scope, contract universe and housing concept across countries.
+The study will combine a reconstruction of Amman’s public rental-housing evidence system with approximately 20–30 semi-structured renter interviews and a small number of key-informant interviews with housing practitioners, researchers or relevant institutional actors. The quantitative and administrative component will map Department of Statistics household expenditure, income and housing sources; rent measures in price statistics where applicable; the 2026 census framework; Greater Amman Municipality rental-contract services; and relevant housing and tenancy rules. Each source will be examined for population coverage, geography, contract universe, rent concept, timing, exclusions and policy use.
 
-Each material indicator will be coded for source, population and denominator, geographic coverage, tenure and contract universe, reference period, price concept, methodology, release date, revision state and known exclusions. Rather than forcing incompatible observations into one regional ranking, the research will map where direct comparison is valid, where adjustment is possible and where the evidence does not support a numerical comparison.
+The interviews will not be used to estimate population prevalence. Instead, they will identify rental practices and forms of insecurity that may not align with the categories through which public institutions observe the market: informal contracts, shared housing, irregular payment arrangements, dependence on family networks, displacement-related mobility, or the trade-offs renters make between rent, location and basic needs.
 
-The paper will then connect these measurement gaps to governance. If informal tenants, young renters, displaced households or particular contract regimes are weakly observed, that is not only a technical problem: it shapes which housing pressures become visible to institutions and therefore which groups can enter policy debate through official evidence. The study will identify concrete improvements in publication, survey metadata, rental-market monitoring and evidence preservation that could make housing policy more responsive without requiring a wholly new statistical system.
+The central argument is that a housing data gap is also a governance gap. If particular renters or contract arrangements are poorly observed, their affordability pressures are less likely to enter policy debate in a form institutions can act on. The paper will therefore connect measurement directly to public policy: which evidence is currently actionable, which claims about affordability are not defensible, and what feasible changes in rental monitoring, survey metadata and administrative coordination could improve tenant visibility.
 
-The final output will include a source-linked rental evidence map, a comparability matrix, a documented limitations register and policy recommendations for improving the public measurement of rental affordability. The aim is not to manufacture a single Arab affordability index. It is to establish which claims the available evidence can bear and make the missing evidence visible enough to act on.
+The final paper will produce a source-linked map of Amman’s rental evidence system, a grounded account of blind spots from renter experience, and practical recommendations for more inclusive rental-market monitoring. The aim is not to build another affordability ranking. It is to show how the state sees the rental market, where that view breaks down, and what a better evidence system would make possible.
 
 ## Research outline / table of contents
 
 1. Executive Summary
-2. Why Rental Affordability Is a Measurement Problem
-3. Research Questions and Claim Boundaries
-4. Jordan's Rental Housing Evidence System
-   4.1 Official price statistics
-   4.2 Household income/expenditure evidence
-   4.3 Housing, tenure and population sources
-   4.4 Rental law and contract regimes
-   4.5 Informality, displacement and missing populations
-5. Comparability Framework
-   5.1 Population and denominator
-   5.2 Rent concept and contract universe
-   5.3 Geography and time
-   5.4 Methodology and revisions
-6. Comparative Audit: Lebanon, Egypt, Morocco and Tunisia
-7. Where the Evidence Breaks
-8. Governance Consequences of Statistical Blind Spots
-9. Recommendations for Rental-Market Monitoring and Publication
-10. Limitations
-11. Source Register and Reproducibility Appendix
+2. Amman as a Rental City: Why the Rental Market Matters
+3. What the State Can See: Jordan’s Rental-Housing Evidence System
+   3.1 Household expenditure, income and tenure data
+   3.2 Price statistics and the meaning of “rent”
+   3.3 Rental-contract registration and administrative evidence
+   3.4 The 2026 Population and Housing Census
+4. What the Data Misses: Informal Arrangements, Shared Housing and Unequal Visibility
+5. Renters’ Accounts: Affordability, Security and Negotiation in Practice
+6. From Statistical Blind Spot to Governance Blind Spot
+7. Policy Options for Better Rental-Market Monitoring and Tenant Visibility
+8. Limitations, Ethics and Research Boundaries
+9. Source Register and Reproducibility Appendix
 
 ## Method
 
-- Primary-source reconstruction before secondary interpretation.
-- Indicator-level provenance register.
-- Explicit comparability edge classification: exact, comparable with adjustment, different population, different concept, different method, historical break, not comparable, or method review required.
-- No regional ranking where the common statistical object cannot be established.
-- Interviews or expert clarification may be used to interpret institutional practice, but quantitative claims remain bound to documented evidence.
-- Correction log retained through the project.
+- Primary-source reconstruction of the public rental-housing evidence system.
+- Source-by-source coding of population, geography, contract universe, rent concept, reference period, exclusions and policy use.
+- Approximately 20–30 semi-structured renter interviews, subject to informed consent and research ethics.
+- A small number of key-informant interviews with housing practitioners, researchers or relevant institutional actors.
+- Interviews used to identify mechanisms and missing categories, not to estimate population prevalence.
+- Explicit separation between documented quantitative evidence and qualitative interpretation.
+- Limitations and correction register maintained through the project.
 
 ## Expected contribution
 
-The project will produce a policy-relevant map of what rental statistics make visible and invisible. It will distinguish genuine housing-market differences from differences created by definitions and observation systems, identify populations poorly represented by existing evidence, and propose feasible improvements to rental-market monitoring in Jordan and comparable Arab contexts.
+The project will produce a grounded account of how rental affordability becomes legible — or fails to become legible — to public institutions in Amman. Its contribution is both empirical and practical: a source-linked map of the rental evidence system, a documented account of missing renter experiences, and feasible recommendations for improving rental-market monitoring and tenant visibility.
 
-## Documents still required by the application form
+## Feasibility
 
-- proof of Arab-country nationality or residence
-- current CV or publication list
-- optional phone number
-- declaration checkboxes in the official online form
+The project is intentionally limited to Amman and can be completed within the Fund period. Desk research can begin immediately; interviews are bounded; and the final 6,000–8,000 word paper can be completed by 28 March 2027.
+
+## Application files prepared
+
+- `Layan_Aloreidi_RIF_2026_CV.docx`
+- `RIF_2026_Research_Outline_Amman_Rental_Governance.docx`
+
+## Still required at submission
+
+- nationality / residence proof: ID card, passport and/or proof of Arab-country residence as applicable
+- applicant age
+- applicant gender selection (or “Prefer not to say”)
+- declaration checkboxes
+- optional phone number may be left blank
 
 Official application form: https://publicworksstudio.com/en/application-form-research-innovation-fund/
 Deadline: 30 August 2026, 12:00 a.m. Beirut time.
