@@ -2,25 +2,27 @@
 
 ## Purpose
 
-Working Paper 001 — *When Does a Statistical Time Series Stop Being the Same Series?* — is currently a source-verified pilot. Version 0.2 will not promote the pilot into a descriptive regional result until at least one non-author reviewer and one independent reproducer have completed the checks below.
+Working Paper 001 — *When Does a Statistical Time Series Stop Being the Same Series?* — is a source-verified release candidate. Promotion beyond v0.2.0-rc1 requires external review and non-author reproduction.
+
+## Release under review
+
+- `WORKING_PAPER_001_METHOD_DISCONTINUITIES.md`
+- `data/method-change-registry-v0.2.json`
+- `data/series-compatibility-table-v0.2.csv`
+
+The current registry contains 15 purposively selected, source-verified discontinuities across 11 countries. It is not a representative sample of MENA official statistics.
 
 ## Reviewer task
 
-The reviewer receives:
+For a minimum of 10 records, independently answer:
 
-- `data/method-change-registry-v0.1.json`
-- `data/series-compatibility-table-v0.1.csv`
-- `WORKING_PAPER_001_METHOD_DISCONTINUITIES.md`
-- the first-party source URLs listed in each record
-
-For a minimum of 10 records, the reviewer independently answers:
-
-1. Does the first-party source actually document the stated method change?
-2. Is the affected period correctly represented?
-3. Is the old/new statistical object described accurately?
-4. Is the bridge/backcast status supported by the source?
-5. Is the recommended user action defensible?
-6. Is any claim stronger than the source permits?
+1. Does the first-party source document the stated method change?
+2. Is the affected period represented correctly?
+3. Are the earlier and later statistical regimes described accurately?
+4. Is the normalized bridge class supported?
+5. Is the direct-comparability decision defensible?
+6. Is the recommended user action defensible?
+7. Is any claim stronger than the source permits?
 
 Allowed decisions:
 
@@ -31,66 +33,65 @@ Allowed decisions:
 - `disagree_user_action`
 - `insufficient_source_evidence`
 
-Every disagreement must include a reason and, where possible, a replacement wording or source.
+Every disagreement should include a reason and, where possible, a replacement source or wording.
 
 ## Independent reproduction task
 
-The reproducer must work from the published release files rather than private notes.
+The reproducer works only from the published release files and cited first-party sources.
 
-For each assigned case, reproduce a structured row containing:
+For at least five assigned cases, reconstruct:
 
 - country
 - producer
 - series
 - earlier regime
 - later regime
-- documented change
 - affected period
-- bridge/backcast availability
+- documented change
+- bridge class and bridge status
 - direct-comparability decision
 - recommended user action
-- source URL(s)
+- source URLs
 
-The reproduction succeeds only if the reproducer can reconstruct the substantive record from the public sources without asking the author what the intended answer was.
+The reproduction succeeds only if the substantive record can be reconstructed without asking the author what the intended answer was.
 
 ## Disagreement handling
 
-The Lab will publish a disagreement log containing:
+The Lab will publish material disagreements and corrections with:
 
 - record ID
 - reviewer/reproducer decision
 - original wording
 - proposed correction
-- final resolution
+- final disposition
 - date resolved
-- version in which the change appeared
+- release version containing the change
 
 Disagreement is not treated as failure. A visible correction trail is part of the research object.
 
-## Promotion gate for WP001 v0.2
+## Promotion gate
 
-WP001 may be promoted to v0.2 only when all of the following are true:
+WP001 may move from release candidate to a reviewed release only when:
 
-- at least 10 source-verified records are public;
-- every record has a bridge/backcast status;
-- one non-author methodological review is complete;
-- one independent reproduction is complete;
-- all material disagreements are either resolved or explicitly left open;
-- a public correction/disagreement log exists;
-- aggregate descriptive claims are generated from the frozen reviewed dataset rather than manually counted in prose.
+- all 15 candidate records have a documented bridge class;
+- one non-author methodological review covers at least 10 records;
+- one independent reproduction covers at least 5 records;
+- material disagreements are resolved or explicitly left open;
+- the frozen reviewed registry and compatibility table generate all aggregate descriptive claims;
+- the correction/disagreement record is public.
 
-## Claims still prohibited before the gate is met
+## Claims prohibited before broader sampling
 
-The Lab will not claim:
+Even after reproduction, this pilot will not support claims about:
 
-- a regional prevalence rate for undocumented method breaks;
-- that one statistical agency is more reliable than another;
-- that larger or more frequent revisions imply lower statistical quality;
-- that the ten pilot records are representative of all MENA official statistics;
-- that a methodological break necessarily creates a quantitatively large bias in downstream research.
+- the regional prevalence of undocumented method breaks;
+- rankings of statistical agencies;
+- whether revision frequency or size measures statistical quality;
+- the share of all MENA series with official bridges;
+- causal downstream bias from methodology breaks.
 
-Those claims require separate sampling, validation or identification designs.
+Those questions require separate sampling and identification designs.
 
-## Suggested reviewer acknowledgement
+## Reviewer acknowledgement
 
-Reviewers may choose to be named, anonymous, or acknowledged only by institution/field. Review does not imply endorsement of the paper's broader programme.
+Reviewers may be named, anonymous, or acknowledged only by institution or field. Review does not imply endorsement of the broader research programme.
