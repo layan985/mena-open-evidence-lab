@@ -1,0 +1,1876 @@
+{
+  "schema_version": "0.1.0",
+  "release_version": "0.1.0-alpha",
+  "title": "MENA-STAT-ID: Statistical Identity Benchmark",
+  "subtitle": "The number is not the statistic.",
+  "released": "2026-08-22",
+  "status": "public alpha; external methodological review pending",
+  "case_count": 42,
+  "prompt_variant_count": 84,
+  "languages": [
+    "ar",
+    "en"
+  ],
+  "unique_source_url_count": 45,
+  "task_family_counts": {
+    "bilingual_archive": 6,
+    "comparison_validity": 3,
+    "decision_time_retrieval": 1,
+    "method_regime": 15,
+    "revision_interpretation": 1,
+    "revision_pair": 10,
+    "statistical_identity": 4,
+    "vintage_retrieval": 2
+  },
+  "primary_metric": "Statistical Identity Exact Match",
+  "identity_contract": [
+    "value",
+    "concept",
+    "population",
+    "geography",
+    "reference_period",
+    "unit",
+    "adjustment",
+    "method_version",
+    "vintage",
+    "source"
+  ],
+  "claim_boundary": "This public alpha tests the benchmark schema and scoring protocol on cases derived from existing source-verified Lab records. It is not a representative sample of MENA official statistics, not an assessment of statistical-office competence, not a blind leaderboard, and has not yet received independent methodological review.",
+  "evidence_badges": [
+    "OFFICIAL SOURCE",
+    "REAL PUBLIC DATA",
+    "PENDING VALIDATION"
+  ],
+  "reviewers": 0,
+  "cases": [
+    {
+      "id": "MSID-IDENTITY-001",
+      "task_family": "statistical_identity",
+      "error_class": "population_scope",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "According to the official Labor Market Statistics - Q1 2026, what was the Unemployment rate among Saudis in Saudi Arabia? Return the value, unit, population scope, nationality scope, age scope, denominator, reference period, vintage and source URL.",
+        "ar": "وفقاً للإصدار الرسمي «Labor Market Statistics - Q1 2026»، ما قيمة معدل البطالة بين السعوديين في السعودية؟ أعد القيمة والوحدة ونطاق السكان ونطاق الجنسية والفئة العمرية والمقام والفترة المرجعية ونسخة الإصدار ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": 6.4,
+          "unit": "percent",
+          "concept": "unemployment_rate",
+          "population_scope": "LFS resident population subset",
+          "nationality_scope": "Saudi nationals",
+          "age_scope": "15+",
+          "denominator": "unemployed persons / labour force",
+          "geography": "Saudi Arabia",
+          "reference_period": "2026 Q1",
+          "vintage": "2026-06-30 release",
+          "source_url": "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "population_scope",
+          "nationality_scope",
+          "age_scope",
+          "denominator",
+          "geography",
+          "reference_period",
+          "vintage",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The answer identifies one observation. It does not establish cross-country comparability.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-IDENTITY-002",
+      "task_family": "statistical_identity",
+      "error_class": "population_scope",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "According to the official Labor Market Statistics - Q1 2026, what was the Overall unemployment rate in Saudi Arabia? Return the value, unit, population scope, nationality scope, age scope, denominator, reference period, vintage and source URL.",
+        "ar": "وفقاً للإصدار الرسمي «Labor Market Statistics - Q1 2026»، ما قيمة معدل البطالة لإجمالي السكان في السعودية؟ أعد القيمة والوحدة ونطاق السكان ونطاق الجنسية والفئة العمرية والمقام والفترة المرجعية ونسخة الإصدار ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": 3.1,
+          "unit": "percent",
+          "concept": "unemployment_rate",
+          "population_scope": "Total resident population covered by LFS",
+          "nationality_scope": "Saudis and non-Saudis",
+          "age_scope": "15+",
+          "denominator": "unemployed persons / labour force",
+          "geography": "Saudi Arabia",
+          "reference_period": "2026 Q1",
+          "vintage": "2026-06-30 release",
+          "source_url": "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "population_scope",
+          "nationality_scope",
+          "age_scope",
+          "denominator",
+          "geography",
+          "reference_period",
+          "vintage",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The answer identifies one observation. It does not establish cross-country comparability.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-IDENTITY-003",
+      "task_family": "statistical_identity",
+      "error_class": "population_scope",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "According to the official Unemployment Rate Decreased to 16.1% in Q1 2026, what was the Unemployment rate for the total population in Jordan? Return the value, unit, population scope, nationality scope, age scope, denominator, reference period, vintage and source URL.",
+        "ar": "وفقاً للإصدار الرسمي «Unemployment Rate Decreased to 16.1% in Q1 2026»، ما قيمة معدل البطالة لإجمالي السكان في الأردن؟ أعد القيمة والوحدة ونطاق السكان ونطاق الجنسية والفئة العمرية والمقام والفترة المرجعية ونسخة الإصدار ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": 16.1,
+          "unit": "percent",
+          "concept": "unemployment_rate",
+          "population_scope": "All residents covered by LFS",
+          "nationality_scope": "Jordanians and non-Jordanians",
+          "age_scope": "15+ framework",
+          "denominator": "unemployed persons / labour force",
+          "geography": "Jordan",
+          "reference_period": "2026 Q1",
+          "vintage": "2026-06-17 release",
+          "source_url": "https://dosweb.dos.gov.jo/unemp_062026/"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "population_scope",
+          "nationality_scope",
+          "age_scope",
+          "denominator",
+          "geography",
+          "reference_period",
+          "vintage",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/unemp_062026/"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The answer identifies one observation. It does not establish cross-country comparability.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-IDENTITY-004",
+      "task_family": "statistical_identity",
+      "error_class": "population_scope",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "According to the official Q1 2026 unemployment press release, what was the Unemployment rate among Jordanians in Jordan? Return the value, unit, population scope, nationality scope, age scope, denominator, reference period, vintage and source URL.",
+        "ar": "وفقاً للإصدار الرسمي «Q1 2026 unemployment press release»، ما قيمة معدل البطالة بين الأردنيين في الأردن؟ أعد القيمة والوحدة ونطاق السكان ونطاق الجنسية والفئة العمرية والمقام والفترة المرجعية ونسخة الإصدار ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": 21.1,
+          "unit": "percent",
+          "concept": "unemployment_rate",
+          "population_scope": "Jordanian labour-force population covered by LFS",
+          "nationality_scope": "Jordanian nationals",
+          "age_scope": "15+",
+          "denominator": "unemployed persons / labour force",
+          "geography": "Jordan",
+          "reference_period": "2026 Q1",
+          "vintage": "2026-06-17 release",
+          "source_url": "https://dosweb.dos.gov.jo/databank/News/Unemployment/2026/unemp_Q1_2026_en.pdf"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "population_scope",
+          "nationality_scope",
+          "age_scope",
+          "denominator",
+          "geography",
+          "reference_period",
+          "vintage",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/databank/News/Unemployment/2026/unemp_Q1_2026_en.pdf"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The answer identifies one observation. It does not establish cross-country comparability.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-COMP-001",
+      "task_family": "comparison_validity",
+      "error_class": "false_comparability",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "Audit this comparison using population and nationality scope: Saudi Arabia 6.4% among Saudis and Jordan 16.1% total population. Return verdict as PASS, CAUTION, FAIL or UNKNOWN and a controlled reason code.",
+        "ar": "هل تصلح المقارنة المباشرة بين بطالة السعوديين 6.4% في السعودية وبطالة إجمالي السكان 16.1% في الأردن من حيث نطاق السكان؟ أعد الحكم PASS أو CAUTION أو FAIL أو UNKNOWN، مع رمز السبب المعتمد."
+      },
+      "gold": {
+        "answer": {
+          "verdict": "FAIL",
+          "reason_code": "national_only_vs_all_residents"
+        },
+        "required_fields": [
+          "verdict",
+          "reason_code"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1",
+          "https://dosweb.dos.gov.jo/unemp_062026/",
+          "https://dosweb.dos.gov.jo/databank/News/Unemployment/2026/unemp_Q1_2026_en.pdf"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The verdict covers population/nationality scope only. CAUTION retains unresolved cross-country method checks.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-COMP-002",
+      "task_family": "comparison_validity",
+      "error_class": "false_comparability",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "Audit this comparison using population and nationality scope: Saudi Arabia 3.1% total population and Jordan 16.1% total population. Return verdict as PASS, CAUTION, FAIL or UNKNOWN and a controlled reason code.",
+        "ar": "هل تصلح المقارنة المباشرة بين بطالة إجمالي السكان 3.1% في السعودية و16.1% في الأردن؟ أعد الحكم PASS أو CAUTION أو FAIL أو UNKNOWN، مع رمز السبب المعتمد."
+      },
+      "gold": {
+        "answer": {
+          "verdict": "CAUTION",
+          "reason_code": "nationality_scope_aligned_further_method_checks_pending"
+        },
+        "required_fields": [
+          "verdict",
+          "reason_code"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1",
+          "https://dosweb.dos.gov.jo/unemp_062026/",
+          "https://dosweb.dos.gov.jo/databank/News/Unemployment/2026/unemp_Q1_2026_en.pdf"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The verdict covers population/nationality scope only. CAUTION retains unresolved cross-country method checks.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-COMP-003",
+      "task_family": "comparison_validity",
+      "error_class": "false_comparability",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "Audit this comparison using population and nationality scope: Saudi Arabia 6.4% among Saudis and Jordan 21.1% among Jordanians. Return verdict as PASS, CAUTION, FAIL or UNKNOWN and a controlled reason code.",
+        "ar": "هل تصلح المقارنة المباشرة بين بطالة السعوديين 6.4% وبطالة الأردنيين 21.1%؟ أعد الحكم PASS أو CAUTION أو FAIL أو UNKNOWN، مع رمز السبب المعتمد."
+      },
+      "gold": {
+        "answer": {
+          "verdict": "CAUTION",
+          "reason_code": "nationality_scope_aligned_further_method_checks_pending"
+        },
+        "required_fields": [
+          "verdict",
+          "reason_code"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/labor-market-statistics-q1-2026-1",
+          "https://dosweb.dos.gov.jo/unemp_062026/",
+          "https://dosweb.dos.gov.jo/databank/News/Unemployment/2026/unemp_Q1_2026_en.pdf"
+        ],
+        "derived_from": [
+          "data/menalab-ev-001-comparability-record.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The verdict covers population/nationality scope only. CAUTION retains unresolved cross-country method checks.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-VINTAGE-001",
+      "task_family": "vintage_retrieval",
+      "error_class": "vintage_leakage",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "What value for Real GDP growth in 2023 is reported by the official pre-comprehensive-revision vintage dated 2025-03-09? Return the value, unit, vintage state, release date, geography, reference period and source URL.",
+        "ar": "ما القيمة التي أوردتها النسخة الرسمية المؤرخة 2025-03-09 لمؤشر Real GDP growth عن 2023؟ أعد القيمة والوحدة وحالة النسخة وتاريخ الإصدار والجغرافيا والفترة المرجعية ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": -0.8,
+          "unit": "percent",
+          "concept": "Real GDP growth",
+          "geography": "Saudi Arabia",
+          "reference_period": "2023",
+          "vintage_state": "pre-comprehensive-revision",
+          "release_date": "2025-03-09",
+          "source_url": "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "geography",
+          "reference_period",
+          "vintage_state",
+          "release_date",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014"
+        ],
+        "derived_from": [
+          "data/saudi-gdp-2023-vintage-pair.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The requested value is tied to the named vintage; substituting the later official value is time leakage.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-VINTAGE-002",
+      "task_family": "vintage_retrieval",
+      "error_class": "vintage_leakage",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "What value for Real GDP growth in 2023 is reported by the official comprehensive-revision vintage dated 2025-05-01? Return the value, unit, vintage state, release date, geography, reference period and source URL.",
+        "ar": "ما القيمة التي أوردتها النسخة الرسمية المؤرخة 2025-05-01 لمؤشر Real GDP growth عن 2023؟ أعد القيمة والوحدة وحالة النسخة وتاريخ الإصدار والجغرافيا والفترة المرجعية ورابط المصدر."
+      },
+      "gold": {
+        "answer": {
+          "value": 0.5,
+          "unit": "percent",
+          "concept": "Real GDP growth",
+          "geography": "Saudi Arabia",
+          "reference_period": "2023",
+          "vintage_state": "comprehensive-revision",
+          "release_date": "2025-05-01",
+          "source_url": "https://www.stats.gov.sa/documents/d/guest/annual-national-accounts-publication-2023-en-28-4-2025-pdf"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "geography",
+          "reference_period",
+          "vintage_state",
+          "release_date",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/documents/d/guest/annual-national-accounts-publication-2023-en-28-4-2025-pdf"
+        ],
+        "derived_from": [
+          "data/saudi-gdp-2023-vintage-pair.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The requested value is tied to the named vintage; substituting the later official value is time leakage.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-VINTAGE-003",
+      "task_family": "decision_time_retrieval",
+      "error_class": "vintage_leakage",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "As of 10 March 2025, what official value was available for Saudi Arabia's 2023 real GDP growth? Do not use later revisions.",
+        "ar": "في 10 مارس/آذار 2025، ما القيمة الرسمية المتاحة لنمو الناتج المحلي الإجمالي الحقيقي للسعودية في 2023؟ لا تستخدم مراجعات لاحقة."
+      },
+      "gold": {
+        "answer": {
+          "value": -0.8,
+          "unit": "percent",
+          "concept": "Real GDP growth",
+          "geography": "Saudi Arabia",
+          "reference_period": "2023",
+          "vintage_state": "pre-comprehensive-revision",
+          "available_by_cutoff": true,
+          "source_url": "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014"
+        },
+        "required_fields": [
+          "value",
+          "unit",
+          "concept",
+          "geography",
+          "reference_period",
+          "vintage_state",
+          "available_by_cutoff",
+          "source_url"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014",
+          "https://www.stats.gov.sa/documents/d/guest/annual-national-accounts-publication-2023-en-28-4-2025-pdf"
+        ],
+        "derived_from": [
+          "data/saudi-gdp-2023-vintage-pair.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "The cutoff precedes the 1 May 2025 comprehensive revision.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-VINTAGE-004",
+      "task_family": "revision_interpretation",
+      "error_class": "narrative_flip",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "Did Saudi Arabia's official description of 2023 real GDP growth change sign across the preserved vintages? Return both values, the revision in percentage points and the direction change.",
+        "ar": "هل تغيرت إشارة نمو الناتج المحلي الإجمالي الحقيقي الرسمي للسعودية في 2023 بين النسختين المحفوظتين؟ أعد القيمتين وحجم المراجعة بالنقاط المئوية واتجاه التغير."
+      },
+      "gold": {
+        "answer": {
+          "first_value": -0.8,
+          "later_value": 0.5,
+          "revision_pp": 1.3,
+          "unit": "percentage_points",
+          "direction_change": "contraction_to_growth"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "unit",
+          "direction_change"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/documents/20117/2435267/GDP%2BFQ42024E_v2%2B%281%29.pdf/b20a6cf0-a825-f230-d6d1-f504fed15014",
+          "https://www.stats.gov.sa/documents/d/guest/annual-national-accounts-publication-2023-en-28-4-2025-pdf"
+        ],
+        "derived_from": [
+          "data/saudi-gdp-2023-vintage-pair.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a statistical-vintage event; it does not mean underlying 2023 activity changed retroactively.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-001",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco Real GDP growth (Q1 2024, year_on_year_percent), compare the first vintage dated 2024-07-01 with the later vintage dated 2025-06-30. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى المغرب، Real GDP growth (Q1 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-07-01 بالنسخة اللاحقة المؤرخة 2025-06-30. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 2.5,
+          "later_value": 3.0,
+          "revision_pp": 0.5,
+          "old_vintage_still_public": true,
+          "reference_period": "Q1 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/La-situation-economique-nationale-au-premier-trimestre-2024_a3904.html",
+          "https://www.hcp.ma/La-situation-economique-nationale-au-premier-trimestre-2025_a4133.html"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-002",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco Real GDP growth (Q2 2024, year_on_year_percent), compare the first vintage dated 2024-09-30 with the later vintage dated 2025-09-30. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى المغرب، Real GDP growth (Q2 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-09-30 بالنسخة اللاحقة المؤرخة 2025-09-30. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 2.4,
+          "later_value": 3.0,
+          "revision_pp": 0.6,
+          "old_vintage_still_public": true,
+          "reference_period": "Q2 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/La-situation-economique-nationale-au-deuxieme-trimestre-2024",
+          "https://www.hcp.ma/La-situation-economique-nationale-au-deuxieme-trimestre-2025_a4179.html"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-003",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco Real GDP growth (Q3 2024, year_on_year_percent), compare the first vintage dated 2024-12-31 with the later vintage dated 2025-12-31. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى المغرب، Real GDP growth (Q3 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-12-31 بالنسخة اللاحقة المؤرخة 2025-12-31. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 4.3,
+          "later_value": 5.0,
+          "revision_pp": 0.7,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/La-situation-economique-nationale-au-troisieme-trimestre-2024_a4042.html",
+          "https://www.hcp.ma/La-situation-economique-nationale-au-troisieme-trimestre-2025"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-004",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco Real GDP growth (Q4 2024, year_on_year_percent), compare the first vintage dated 2025-03-31 with the later vintage dated 2026-03-31. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى المغرب، Real GDP growth (Q4 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2025-03-31 بالنسخة اللاحقة المؤرخة 2026-03-31. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 3.7,
+          "later_value": 4.2,
+          "revision_pp": 0.5,
+          "old_vintage_still_public": true,
+          "reference_period": "Q4 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/La-situation-economique-nationale-au-quatrieme-trimestre-2024_a4085.html",
+          "https://www.hcp.ma/La-situation-economique-nationale-au-quatrieme-trimestre-2025"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-005",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco Real GDP growth (2024, annual_percent), compare the first vintage dated 2025-06-06 with the later vintage dated 2026-06-08. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى المغرب، Real GDP growth (2024، annual_percent): قارن النسخة الأولى المؤرخة 2025-06-06 بالنسخة اللاحقة المؤرخة 2026-06-08. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 3.8,
+          "later_value": 4.4,
+          "revision_pp": 0.6,
+          "old_vintage_still_public": true,
+          "reference_period": "2024",
+          "metric": "annual_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/Situation-economique-nationale-en-2024_a4119.html",
+          "https://www.hcp.ma/Situation-economique-nationale-en-2025"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-006",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan Real GDP growth (Q3 2024, year_on_year_percent), compare the first vintage dated 2025-01-02 with the later vintage dated 2026-01-07. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى الأردن، Real GDP growth (Q3 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2025-01-02 بالنسخة اللاحقة المؤرخة 2026-01-07. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 2.6,
+          "later_value": 2.5,
+          "revision_pp": -0.1,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/gdp-q32024/",
+          "https://dosweb.dos.gov.jo/gdp_012026/"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-007",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia Real GDP growth (Q3 2024, year_on_year_percent), compare the first vintage dated 2024-11-03 with the later vintage dated 2024-12-08. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى السعودية، Real GDP growth (Q3 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-11-03 بالنسخة اللاحقة المؤرخة 2024-12-08. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 2.8,
+          "later_value": 2.8,
+          "revision_pp": 0.0,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/news"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-008",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia Oil activities real growth (Q3 2024, year_on_year_percent), compare the first vintage dated 2024-11-03 with the later vintage dated 2024-12-08. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى السعودية، Oil activities real growth (Q3 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-11-03 بالنسخة اللاحقة المؤرخة 2024-12-08. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 0.3,
+          "later_value": 0.05,
+          "revision_pp": -0.25,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/news"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-009",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia Non-oil activities real growth (Q3 2024, year_on_year_percent), compare the first vintage dated 2024-11-03 with the later vintage dated 2024-12-08. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى السعودية، Non-oil activities real growth (Q3 2024، year_on_year_percent): قارن النسخة الأولى المؤرخة 2024-11-03 بالنسخة اللاحقة المؤرخة 2024-12-08. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 4.2,
+          "later_value": 4.3,
+          "revision_pp": 0.1,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "year_on_year_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/news"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-REVISION-010",
+      "task_family": "revision_pair",
+      "error_class": "revision_omission",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia Seasonally adjusted real GDP growth (Q3 2024, quarter_on_quarter_percent), compare the first vintage dated 2024-11-03 with the later vintage dated 2024-12-08. Return first value, later value, revision in percentage points and whether the old vintage remains public.",
+        "ar": "بالنسبة إلى السعودية، Seasonally adjusted real GDP growth (Q3 2024، quarter_on_quarter_percent): قارن النسخة الأولى المؤرخة 2024-11-03 بالنسخة اللاحقة المؤرخة 2024-12-08. أعد القيمة الأولى والقيمة اللاحقة والمراجعة بالنقاط المئوية وهل بقيت النسخة القديمة متاحة."
+      },
+      "gold": {
+        "answer": {
+          "first_value": 0.8,
+          "later_value": 0.9,
+          "revision_pp": 0.1,
+          "old_vintage_still_public": true,
+          "reference_period": "Q3 2024",
+          "metric": "quarter_on_quarter_percent"
+        },
+        "required_fields": [
+          "first_value",
+          "later_value",
+          "revision_pp",
+          "old_vintage_still_public",
+          "reference_period",
+          "metric"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/news"
+        ],
+        "derived_from": [
+          "data/release-003-revision-pairs.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Revision equals later minus first vintage. The case is descriptive and does not assign a cause beyond the documented release type.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-001",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-CPI-FEB-2026, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-CPI-FEB-2026، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 6,
+          "arabic_file": "CPI_Feb.pdf",
+          "english_file": "CPI_Feb_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Inflation/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-002",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-CPI-MAR-2026, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-CPI-MAR-2026، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 3,
+          "arabic_file": "CPI_Mar.pdf",
+          "english_file": "CPI_Mar_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Inflation/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-003",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-CPI-MAY-2026, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-CPI-MAY-2026، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 10,
+          "arabic_file": "CPI_May.pdf",
+          "english_file": "CPI_May_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Inflation/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-004",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-CPI-JUN-2026, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-CPI-JUN-2026، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 1,
+          "arabic_file": "CPI_Jun.pdf",
+          "english_file": "CPI_Jun_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Inflation/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-005",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-LFS-Q4-2025, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-LFS-Q4-2025، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 13,
+          "arabic_file": "unemp_Q4_2025.pdf",
+          "english_file": "unemp_Q4_2025_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Unemployment/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-LANGUAGE-006",
+      "task_family": "bilingual_archive",
+      "error_class": "language_asymmetry",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan archive pair JOR-LFS-Q1-2026, what is the calendar-day gap between the Arabic and English public file timestamps? Return the gap, both filenames and the exact measurement boundary.",
+        "ar": "بالنسبة إلى زوج الأرشيف الأردني JOR-LFS-Q1-2026، ما الفارق بالأيام التقويمية بين الطابعين الزمنيين للملفين العربي والإنجليزي؟ أعد الفارق واسمي الملفين وحد القياس."
+      },
+      "gold": {
+        "answer": {
+          "calendar_day_gap": 16,
+          "arabic_file": "unemp_Q1_2026.pdf",
+          "english_file": "unemp_Q1_2026_en.pdf",
+          "measurement_boundary": "public_directory_file_timestamps_not_first_dissemination"
+        },
+        "required_fields": [
+          "calendar_day_gap",
+          "arabic_file",
+          "english_file",
+          "measurement_boundary"
+        ],
+        "manual_review_fields": []
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/DataBank/News/Unemployment/2026/"
+        ],
+        "derived_from": [
+          "data/release-001-jordan-language-timing.csv"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "Gap is between public directory file timestamps; it is not asserted to equal first dissemination time in every official channel",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-001",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia — National accounts / GDP — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى السعودية — National accounts / GDP — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "method_version_required",
+          "effective_period": "2023 comprehensive revision; chain-linking introduced for real GDP in 2024",
+          "user_action": "Use the revised series for current analysis; preserve archived pre-revision vintages for real-time or historical-information-set analysis."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/frequently-asked-questions-gdp-comprehensive-revision",
+          "https://www.stats.gov.sa/en/w/revisions-and-revision-policy"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-002",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan — Quarterly GDP — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى الأردن — Quarterly GDP — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "method_version_required",
+          "effective_period": "quarterly series from 2008 through Q2 2025",
+          "user_action": "Use the revised historical series for current trend analysis. Preserve and label archived pre-revision releases when reproducing older forecasts, reports or decisions."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/",
+          "https://dosweb.dos.gov.jo/nationalaccount/quarterly-estimates/tables_quarterly/"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-003",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Morocco — Labour-force survey / unemployment — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى المغرب — Labour-force survey / unemployment — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "partial_or_provisional_bridge",
+          "direct_comparability": "no_with_old_ENE; yes_with_official_backcast_where_available",
+          "effective_period": "Q1 2026 onward",
+          "user_action": "For comparisons with 2026, use the EMO-compatible 2017–2025 backcast indicators where available. Do not splice 2026 EMO values directly onto the previously published ENE series."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.hcp.ma/Situation-du-marche-du-travail-au-Maroc-au-deuxieme-trimestre-de-2026-a-partir-de-la-nouvelle-enquete-sur-la-main-d_a4342.html"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-004",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Tunisia — Residential real-estate price index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى تونس — Residential real-estate price index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "use_current_revised_series",
+          "effective_period": "publication interrupted during 2022-2023; publication resumed with Q1 2024 release",
+          "user_action": "Use the currently published revised series for 2022-2024 trend analysis. Preserve older pre-revision vintages if reproducing analysis made before the methodological revision."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://ins.tn/publication/indice-des-prix-de-limmobilier-premier-trimestre-2024",
+          "https://ins.tn/methode/fiche-technique-de-lindice-des-prix-de-limmobilier-ipim-0"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-005",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Egypt — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى مصر — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "no_verified_bridge",
+          "direct_comparability": "growth_rates_may_be_comparable; index_levels_require_base_alignment",
+          "effective_period": "October 2019 onward",
+          "user_action": "For long historical CPI work, identify the CPI series/base regime explicitly. Do not compare index levels across base regimes without rebasing or using an official linked series; prefer inflation rates when the producer supports continuity."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://censusinfo.capmas.gov.eg/Metadata-Ar-v4.2/index.php/catalog/1618/overview"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-006",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Saudi Arabia — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى السعودية — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "yes_with_reconstructed_series",
+          "effective_period": "updated methodology documented 2025; reconstructed series from 2013; reference year 2023=100",
+          "user_action": "Use GASTAT's reconstructed 2013-present CPI series for current historical analysis. Preserve earlier fixed-base vintages only when reconstructing the information available at the time."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.stats.gov.sa/en/w/methodology-and-quality-report-of-consumer-price-index"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-007",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Jordan — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى الأردن — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "yes_after_base_alignment",
+          "effective_period": "January 2020 publication onward; historical tables include 2018=100 and 2010=100 series",
+          "user_action": "Use one consistent base regime when comparing index levels. DoS provides historical 2018=100 values, so prefer those for a continuous current series rather than manually splicing 2010=100 and 2018=100 levels."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://dosweb.dos.gov.jo/cpi_02_2020/",
+          "https://dosweb.dos.gov.jo/economic/price-indices/table-price-indices/"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-008",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Tunisia — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى تونس — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "partial_or_provisional_bridge",
+          "direct_comparability": "yes_after_base_alignment",
+          "effective_period": "2015-base CPI replacing 2010-base CPI",
+          "user_action": "For index-level comparisons, use a single INS-published base series. Treat the 2015 reform as more than a mechanical rescaling because weights, product coverage, outlets and collection procedures also changed."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.ins.tn/methode/methodologie-de-lindice-des-prix-la-consommation-familiale-base-100-en-2015",
+          "https://www.ins.tn/statistiques/90"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-009",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Oman — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى عُمان — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "no_verified_bridge",
+          "direct_comparability": "growth_rates_preferred_across_unbridged_base_regimes",
+          "effective_period": "current CPI base updated to 2018 from 2012",
+          "user_action": "Use the official 2018-base series for current analysis. Do not splice raw index levels from the archived 2012-base series without an official link or explicit rebasing."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://api.ncsi.gov.om/uploads/pdfs/statistical_year_book_2026___issue_54_1777963604.pdf",
+          "https://api.ncsi.gov.om/uploads/keyindicators/inflation_1768902203.pdf"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-010",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Qatar — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى قطر — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "yes_with_official_2018_base_history",
+          "effective_period": "January 2020 onward",
+          "user_action": "Use the PSA's 2018-base history for trend work spanning the 2020 change. Preserve the former 2013-base releases when reproducing contemporaneous pre-2020 analysis."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.psa.gov.qa/en/knowledge/Doc/QEO/Qatar-Economic-Outlook-2020-2022-En.pdf",
+          "https://www.psa.gov.qa/en/statistics/Statistical%20Releases/General/QIF/Qatar_in_Figures_36_2021_EN.pdf"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-011",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For United Arab Emirates — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى الإمارات العربية المتحدة — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "no_verified_bridge",
+          "direct_comparability": "inflation_rates_require_method_version; raw_index_levels_require_base_alignment",
+          "effective_period": "weights updated from the 2007 regime to weights derived from the 2014-2015 Household Income and Expenditure Survey",
+          "user_action": "Record the weighting regime when using UAE CPI historically. Do not assume a fixed consumer basket across the 2007-to-2014 weight update; use producer-published current history where available and preserve old vintages for real-time reconstruction."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://fcsc.gov.ae/wp-content/uploads/2025/04/%D8%A7%D9%84%D8%A3%D8%B1%D9%82%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9-2010-1.pdf",
+          "https://fcsc.gov.ae/wp-content/uploads/2025/06/CPI-methodology-2025-En.pdf"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-012",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Bahrain — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى البحرين — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "no_verified_bridge",
+          "direct_comparability": "method_version_required",
+          "effective_period": "current methodology uses HIES 2014/2015 weights; exact transition release date requires producer confirmation",
+          "user_action": "Do not describe Bahrain CPI over this transition as a single fixed-weight basket. Record the weight regime and seek the producer's linked/current historical series before comparing index levels across regimes."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.iga.gov.bh/en/article/increase-of-november-2018-consumer-price-index-by-0-7",
+          "https://www.iga.gov.bh/Media/Others/Statistical%20Publications/Economic%20Statistics/CPI/CPI_%D9%90%20%D9%90Sep%202023.pdf"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-013",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Lebanon — Consumer Price Index — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى لبنان — Consumer Price Index — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "partial_or_provisional_bridge",
+          "direct_comparability": "yes_after_base_alignment_and_weight_regime_review",
+          "effective_period": "new CPI base December 2007=100 introduced for 2008 reporting, replacing the December 1998=100 regime",
+          "user_action": "Do not compare raw index levels from the December 1998 and December 2007 bases. Use one CAS-published base regime or an explicit rebasing/linking procedure, and record the weight regime."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://cas.gov.lb/images/PDFs/National%20Accounts/pcm/2008%20EN.pdf",
+          "https://cas.gov.lb/images/PDFs/CPI_JULY_2012.pdf"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-014",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Lebanon — Annual national accounts — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى لبنان — Annual national accounts — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "official_bridge",
+          "direct_comparability": "method_version_required_for_real_time_analysis",
+          "effective_period": "2022-2023 release with revisions to previous years' estimates",
+          "user_action": "Use the current revised series for current historical analysis; preserve the earlier vintage when reproducing forecasts, policy analysis or publications created before the 2022-2023 revision."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://cas.gov.lb/index.php/economic-statistics-en/cpi-en/83-english/publications-en"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    },
+    {
+      "id": "MSID-METHOD-015",
+      "task_family": "method_regime",
+      "error_class": "method_version_loss",
+      "difficulty": "adversarial",
+      "prompts": {
+        "en": "For Kuwait — Annual establishment survey — non-financial services — identify the producer-documented bridge class and direct-comparability decision in the MENA Statistical Method Change Registry. Return the controlled fields bridge_class and direct_comparability.",
+        "ar": "بالنسبة إلى الكويت — Annual establishment survey — non-financial services — حدّد فئة الجسر الموثقة وقرار المقارنة المباشرة في سجل تغير المناهج الإحصائية. أعد الحقلين المضبوطين bridge_class وdirect_comparability كما يردان في السجل."
+      },
+      "gold": {
+        "answer": {
+          "bridge_class": "no_verified_bridge",
+          "direct_comparability": "classification_bridge_required_for_detailed_activity_series",
+          "effective_period": "2002 survey redesign onward",
+          "user_action": "Mark 2002 as a survey/classification regime boundary when constructing long establishment-service series. Do not merge detailed pre-2002 and post-2002 activity categories without a documented classification bridge."
+        },
+        "required_fields": [
+          "bridge_class",
+          "direct_comparability",
+          "effective_period"
+        ],
+        "manual_review_fields": [
+          "user_action"
+        ]
+      },
+      "evidence": {
+        "source_urls": [
+          "https://www.csb.gov.kw/Pages/Statistics?ID=31&ParentCatID=3"
+        ],
+        "derived_from": [
+          "data/method-change-registry-v0.2.json"
+        ],
+        "evidence_badges": [
+          "OFFICIAL SOURCE",
+          "REAL PUBLIC DATA",
+          "PENDING VALIDATION"
+        ]
+      },
+      "claim_boundary": "This is a purposive, source-verified pilot of documented statistical method and series breaks. It is not representative of all MENA official statistics, is not a ranking of statistical agencies, and does not treat methodological change as evidence of poor quality.",
+      "review_status": "founder-produced; independent review pending"
+    }
+  ]
+}

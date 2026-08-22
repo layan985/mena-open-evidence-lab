@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MENA-STAT-ID is a bilingual, vintage-aware benchmark for identity-preserving retrieval of official MENA statistics.">
+  <title>MENA-STAT-ID — MENA Evidence Lab</title>
+  <link rel="stylesheet" href="institutional.css">
+  <style>
+    .identity{font:600 clamp(13px,2vw,20px)/1.8 'IBM Plex Mono',monospace;background:#111;color:#fff;padding:28px;margin:28px 0;overflow:auto}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .stat{background:var(--panel);padding:22px}.stat strong{display:block;font-size:42px;letter-spacing:-.055em}.stat span{font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--muted)}
+    .contract{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.contract div{background:var(--panel);padding:16px;font:600 10px 'IBM Plex Mono',monospace}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.filters button{border:1px solid var(--line);background:var(--panel);padding:9px 11px;font:600 9px 'IBM Plex Mono',monospace;text-transform:uppercase;cursor:pointer}.filters button.active{background:#111;color:#fff}
+    .case{border-top:1px solid var(--line);padding:20px 0}.case h3{font-size:23px;margin:8px 0}.case p{color:var(--muted)}.case-meta{display:flex;flex-wrap:wrap;gap:8px;font:600 8px 'IBM Plex Mono',monospace;text-transform:uppercase}.case-meta span{border:1px solid var(--line);padding:5px 7px}
+    .alpha{background:#111;color:#fff;padding:36px}.alpha p{color:#cbc6bc}.alpha a{color:#fff}
+    @media(max-width:850px){.stats{grid-template-columns:1fr 1fr}.contract{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.stats,.contract{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="top"><a href="index.html"><b>MENA Open Data & Evidence Lab</b></a><nav><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="data.html">Data</a><a href="methods.html">Standards</a><a href="validation.html">Validation</a></nav></header>
+<main>
+  <section class="wrap hero">
+    <div class="k">Public alpha · v0.1.0-alpha · 22 Aug 2026</div>
+    <h1 class="display">The number is not the statistic.</h1>
+    <p class="lede">MENA-STAT-ID tests whether a system can retrieve, compare and summarise official MENA statistics while preserving the population, period, unit, method, vintage and source that make each observation identifiable.</p>
+    <div class="linkrow"><a href="data/mena-stat-id-alpha.json">Benchmark JSON →</a><a href="data/mena-stat-id-prompts.csv">Prompt CSV →</a><a href="data/mena-stat-id-schema.json">Schema →</a><a href="scripts/score_mena_stat_id.py">Scorer →</a><a href="research/mena-stat-id/METHODOLOGY.md">Methodology →</a><a href="research/mena-stat-id/REVIEW_PROTOCOL.md">Review protocol →</a></div>
+    <div class="identity">S = (value, concept, population, geography, period, unit, adjustment, method, vintage, source)</div>
+  </section>
+  <section class="wrap">
+    <div class="stats"><div class="stat"><span>Source-derived cases</span><strong>42</strong></div><div class="stat"><span>Arabic-English prompts</span><strong>84</strong></div><div class="stat"><span>Task families</span><strong>8</strong></div><div class="stat"><span>External reviewers</span><strong>0</strong></div></div>
+    <div class="callout"><strong>Claim boundary.</strong> This alpha tests construction and scoring on purposively selected Lab records. It is not a representative sample, a blind model leaderboard or a ranking of statistical agencies. <b>OFFICIAL SOURCE · REAL PUBLIC DATA · PENDING VALIDATION</b></div>
+  </section>
+  <section class="wrap">
+    <div class="section-head"><h2>What counts as correct</h2><p>Only fields declared by the case enter the exact-match score. One wrong required field makes the observation incorrect.</p></div>
+    <div class="contract"><div>Value</div><div>Concept</div><div>Population</div><div>Geography</div><div>Period</div><div>Unit</div><div>Adjustment</div><div>Method</div><div>Vintage</div><div>Source</div></div>
+    <div class="grid two" style="margin-top:18px"><article class="card"><div class="k">Primary metric</div><h2>Statistical Identity Exact Match</h2><p>A correct scalar with a wrong denominator, population, method regime or vintage receives zero exact-match credit.</p></article><article class="card"><div class="k">Secondary diagnostics</div><h2>Field accuracy · coverage · confidently wrong</h2><p>Results are split by language and task family. Self-reported confidence is diagnostic rather than calibrated probability.</p></article></div>
+  </section>
+  <section class="wrap">
+    <div class="section-head"><h2>Public seed cases</h2><p>The table is generated from the canonical benchmark JSON. Gold answers remain downloadable because this is the construction alpha; a stable evaluation requires a hidden or rotating test set.</p></div>
+    <div class="filters" id="filters"><button class="active" data-family="all">All cases</button></div>
+    <div id="cases"><p>Loading benchmark records…</p></div>
+    <noscript><p>JavaScript is disabled. Download the benchmark JSON to inspect all 42 cases.</p></noscript>
+  </section>
+  <section class="wrap alpha">
+    <div class="k" style="color:#cbc6bc">Hostile review wanted</div>
+    <h2 class="display">Find the field that should make a case fail.</h2>
+    <p>Reviewers are asked to verify sources, gold identities, Arabic-English equivalence, scoring sufficiency and claim boundaries. The release remains alpha while any material error is unresolved.</p>
+    <p><a href="research/mena-stat-id/REVIEW_PROTOCOL.md">Open the review contract →</a> · <a href="corrections.html">Corrections →</a></p>
+  </section>
+</main>
+<footer class="footer">MENA Open Data & Evidence Lab · MENA-STAT-ID v0.1.0-alpha · external review pending</footer>
+<script>
+(async()=>{
+  const root=document.getElementById('cases');
+  const filters=document.getElementById('filters');
+  try{
+    const response=await fetch('data/mena-stat-id-alpha.json');
+    if(!response.ok) throw new Error(response.status);
+    const data=await response.json();
+    const families=[...new Set(data.cases.map(c=>c.task_family))].sort();
+    families.forEach(f=>{
+      const button=document.createElement('button');
+      button.dataset.family=f;
+      button.textContent=f.replaceAll('_',' ');
+      filters.appendChild(button);
+    });
+    const escapeHtml=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const render=family=>{
+      const rows=data.cases.filter(c=>family==='all'||c.task_family===family);
+      root.innerHTML=rows.map(c=>'<article class="case"><div class="case-meta"><span>'+escapeHtml(c.id)+'</span><span>'+escapeHtml(c.task_family.replaceAll('_',' '))+'</span><span>'+escapeHtml(c.error_class.replaceAll('_',' '))+'</span></div><h3>'+escapeHtml(c.prompts.en)+'</h3><p lang="ar" dir="rtl">'+escapeHtml(c.prompts.ar)+'</p><p><b>Claim boundary:</b> '+escapeHtml(c.claim_boundary)+'</p></article>').join('');
+    };
+    filters.addEventListener('click',event=>{
+      if(event.target.tagName!=='BUTTON') return;
+      filters.querySelectorAll('button').forEach(button=>button.classList.toggle('active',button===event.target));
+      render(event.target.dataset.family);
+    });
+    render('all');
+  }catch(error){
+    root.innerHTML='<p>Benchmark table could not be loaded. Use the JSON download above.</p>';
+  }
+})();
+</script>
+</body>
+</html>

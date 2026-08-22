@@ -1,12 +1,55 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-22",
   "records": [
-    {"id":"research-release-002","internal_qa":"documented","source_audit":"official-source pilot across five statistical systems","independent_reproduction":"pending","external_use":"unrecorded"},
-    {"id":"research-release-001","internal_qa":"documented","source_audit":"official-source archive and comparability checks","independent_reproduction":"pending","external_use":"unrecorded"},
-    {"id":"procurement-intelligence","internal_qa":"documented","source_audit":"internal-source checks","independent_reproduction":"pending","external_use":"unrecorded"},
-    {"id":"price-observatory","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
-    {"id":"ai-labor","internal_qa":"documented","source_audit":"in progress","independent_reproduction":"pending","external_use":"unrecorded"},
-    {"id":"workshop-001","internal_qa":"materials prepared","source_audit":"not applicable","independent_reproduction":"pending after delivery","external_use":"unrecorded"}
+    {
+      "id": "mena-stat-id-alpha",
+      "internal_qa": "automated schema, count, scoring and claim-boundary tests passed",
+      "source_audit": "42 cases derived from 45 official-source URLs in published Lab records",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "research-release-002",
+      "internal_qa": "documented",
+      "source_audit": "official-source pilot across five statistical systems",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "research-release-001",
+      "internal_qa": "documented",
+      "source_audit": "official-source archive and comparability checks",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "procurement-intelligence",
+      "internal_qa": "documented",
+      "source_audit": "internal-source checks",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "price-observatory",
+      "internal_qa": "documented",
+      "source_audit": "in progress",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "ai-labor",
+      "internal_qa": "documented",
+      "source_audit": "in progress",
+      "independent_reproduction": "pending",
+      "external_use": "unrecorded"
+    },
+    {
+      "id": "workshop-001",
+      "internal_qa": "materials prepared",
+      "source_audit": "not applicable",
+      "independent_reproduction": "pending after delivery",
+      "external_use": "unrecorded"
+    }
   ]
 }

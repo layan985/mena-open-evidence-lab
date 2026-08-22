@@ -10,6 +10,7 @@ The Lab is an independent project founded and maintained by [Layan Oraidi](https
 
 | Project | What is available | Evidence status | Next step |
 | --- | --- | --- | --- |
+| [MENA-STAT-ID](mena-stat-id.html) | Public alpha with 42 source-derived cases, 84 Arabic-English prompt variants, a frozen schema, deterministic builder and dependency-free scorer | `OFFICIAL SOURCE` `REAL PUBLIC DATA` `PENDING VALIDATION` | Independent audit of at least 20 cases, native-speaker prompt review and hidden-test design |
 | [MENA Funding & Procurement Intelligence](intelligence.html) | 32 open opportunities, 38 pipeline notices, 140 recent procurement plans and 11,799 normalized MENA contract-award records from official World Bank sources | `OFFICIAL SOURCE` `REAL PUBLIC DATA` | Add independently normalized UNGM, EU and GIZ coverage without mixing it into current World Bank counts |
 | [Official Price Release Observatory](https://github.com/layan985/mena-economic-narrative-stress-observatory) | January–June 2026 release candidate: 48 geography-month rows, 195 numeric observations and 30 official release links | `OFFICIAL SOURCE` `REAL PUBLIC DATA` `PENDING VALIDATION` | Independent source audit, source-file hashes and DOI |
 | [MENA Firm AI Adoption and Labor Adjustment](https://github.com/layan985/mena-firm-ai-labor-adjustment) | Collection alpha for a 50-firm, 2018–2025 panel: 176 numeric employment firm-years, 168 linked to a saved source hash | `REAL PUBLIC DATA` `PENDING VALIDATION` | Finish collection and complete independent second-coding |

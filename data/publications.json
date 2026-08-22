@@ -1,22 +1,66 @@
 {
   "schema_version": "1.0",
   "canonical": true,
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-22",
   "records": [
+    {
+      "id": "mena-stat-id-alpha",
+      "type": "Benchmark",
+      "title": "MENA-STAT-ID: Statistical Identity Benchmark",
+      "authors": [
+        "Layan Oraidi",
+        "MENA Open Data & Evidence Lab"
+      ],
+      "abstract": "A bilingual, vintage-aware public alpha testing whether systems preserve population, period, unit, method, vintage and source when retrieving or comparing official MENA statistics. The deterministic seed contains 42 source-derived cases and 84 Arabic-English prompt variants.",
+      "publication_date": "2026-08-22",
+      "version": "0.1.0-alpha",
+      "status": "public-alpha",
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "PENDING VALIDATION"
+      ],
+      "geography": "MENA purposive seed; source cases across 11 countries",
+      "doi": null,
+      "suggested_citation": "Aloreidi, L. (2026). MENA-STAT-ID: Statistical Identity Benchmark, v0.1.0-alpha. MENA Open Data & Evidence Lab.",
+      "data": [
+        "/data/mena-stat-id-alpha.json",
+        "/data/mena-stat-id-prompts.csv",
+        "/data/mena-stat-id-schema.json"
+      ],
+      "code": "/scripts/score_mena_stat_id.py",
+      "replication_package": null,
+      "methodology": "/research/mena-stat-id/METHODOLOGY.md",
+      "review_status": "Founder-produced public alpha; Arabic prompt review, hidden-test design and independent methodological review pending; 0 external reviewers",
+      "corrections": "/corrections.html",
+      "license": "Lab-authored benchmark metadata and code; underlying official data and documents remain subject to source terms",
+      "bibtex": null,
+      "ris": null
+    },
     {
       "id": "menalab-ev-001",
       "type": "Evidence Note",
       "title": "Same Label, Different Statistic #001: Which Saudi unemployment rate are you comparing?",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked Saudi Arabia–Jordan unemployment comparability audit showing why Saudi Arabia's 6.4% Q1 2026 unemployment rate among Saudis cannot be directly compared with Jordan's 16.1% total-population rate, and introducing the MENA Lab Comparability Record.",
       "publication_date": "2026-08-18",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Saudi Arabia; Jordan",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Same Label, Different Statistic #001: Which Saudi unemployment rate are you comparing? MENALAB-EV-001, version 1.0.",
-      "data": ["/data/menalab-ev-001-comparability-record.csv", "/data/menalab-ev-001-source-ledger.csv", "/data/menalab-ev-001-comparability-record.json"],
+      "data": [
+        "/data/menalab-ev-001-comparability-record.csv",
+        "/data/menalab-ev-001-source-ledger.csv",
+        "/data/menalab-ev-001-comparability-record.json"
+      ],
       "code": null,
       "replication_package": null,
       "methodology": "/evidence/same-label-different-statistic-001.html",
@@ -30,16 +74,25 @@
       "id": "menalab-rf-001",
       "type": "Release Forensics",
       "title": "Saudi Arabia Didn't Become 14% Larger Overnight",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked forensic case on GASTAT's comprehensive revision of Saudi Arabia's 2023 GDP at current prices, documenting the 14.1% revision, the changed non-oil share and sector estimates, and the research distinction between official source and statistical vintage.",
       "publication_date": "2026-08-18",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Saudi Arabia",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Saudi Arabia Didn't Become 14% Larger Overnight: Release Forensics MENALAB-RF-001. Version 1.0.",
-      "data": ["/data/menalab-rf-001.json", "/data/mena-official-statistics-revision-archive.csv"],
+      "data": [
+        "/data/menalab-rf-001.json",
+        "/data/mena-official-statistics-revision-archive.csv"
+      ],
       "code": null,
       "replication_package": null,
       "methodology": "/release-forensics-001.html",
@@ -53,16 +106,25 @@
       "id": "research-release-004",
       "type": "Research Release",
       "title": "Research Release 004: Statistical Memory Loss",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked survivability audit of historical official-statistics releases across Jordan, Morocco, Saudi Arabia and Egypt, examining whether original release pages, files, bilingual pairs, archive paths and machine-retrievable provenance remain recoverable over time.",
       "publication_date": "2026-08-17",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Jordan; Morocco; Saudi Arabia; Egypt",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Research Release 004: Statistical Memory Loss. Version 1.0.",
-      "data": ["/data/release-004-survivability-audit.csv", "/data/release-004-statistical-memory-score.csv"],
+      "data": [
+        "/data/release-004-survivability-audit.csv",
+        "/data/release-004-statistical-memory-score.csv"
+      ],
       "code": null,
       "replication_package": null,
       "methodology": "/release-004.html",
@@ -76,16 +138,25 @@
       "id": "research-release-003",
       "type": "Research Release",
       "title": "Research Release 003: The Revision Economy",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked vintage study comparing first-release and later official GDP estimates across Morocco, Jordan and Saudi Arabia, measuring revision magnitudes and auditing whether superseded releases remain recoverable.",
       "publication_date": "2026-08-17",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Morocco; Jordan; Saudi Arabia",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Research Release 003: The Revision Economy. Version 1.0.",
-      "data": ["/data/release-003-revision-pairs.csv", "/data/release-003-vintage-availability.csv"],
+      "data": [
+        "/data/release-003-revision-pairs.csv",
+        "/data/release-003-vintage-availability.csv"
+      ],
       "code": null,
       "replication_package": null,
       "methodology": "/release-003.html",
@@ -99,16 +170,26 @@
       "id": "research-release-002",
       "type": "Research Release",
       "title": "Research Release 002: CPI measurement, decision-time information sets and statistical transparency",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A three-object official-source release comparing CPI measurement architecture across Jordan, Egypt, Morocco, Saudi Arabia and the UAE; reconstructing the information set around Jordan's 18 June 2026 monetary-policy decision; and publishing a six-dimension statistical-transparency benchmark pilot.",
       "publication_date": "2026-08-17",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Jordan; Egypt; Morocco; Saudi Arabia; United Arab Emirates",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Research Release 002: CPI measurement, decision-time information sets and statistical transparency. Version 1.0.",
-      "data": ["/data/cpi-comparability-five-country-2026.csv", "/data/what-was-knowable-jordan-2026-06-18.csv", "/data/statistical-transparency-benchmark-five-country-2026.csv"],
+      "data": [
+        "/data/cpi-comparability-five-country-2026.csv",
+        "/data/what-was-knowable-jordan-2026-06-18.csv",
+        "/data/statistical-transparency-benchmark-five-country-2026.csv"
+      ],
       "code": null,
       "replication_package": null,
       "methodology": "/release-002.html",
@@ -122,12 +203,18 @@
       "id": "research-release-001",
       "type": "Research Release",
       "title": "Research Release 001: Official-statistics forensics, comparability and evidence lineage",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A cross-program research release documenting language-dependent public-file timestamps in Jordan's official statistical archive and formalizing seven flagship programmes for prices, labour comparability, AI adoption, vintages, procurement, release timing and evidence lineage.",
       "publication_date": "2026-08-17",
       "version": "1.1",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "MENA; Jordan pilot",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Research Release 001: Official-statistics forensics, comparability and evidence lineage. Version 1.1.",
@@ -145,12 +232,17 @@
       "id": "jordan-cpi-h1-2026",
       "type": "Evidence Brief",
       "title": "Jordan CPI, January–June 2026",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked descriptive note showing that Jordan's official annual headline CPI rate rose from 1.06% in January to 2.83% in May 2026 before easing to 2.79% in June, while month-on-month inflation cooled to 0.14% by June.",
       "publication_date": "2026-08-17",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA"
+      ],
       "geography": "Jordan",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). Jordan CPI, January–June 2026: Evidence Brief. Version 1.0.",
@@ -168,12 +260,18 @@
       "id": "unemployment-comparability-jordan-egypt-morocco",
       "type": "Data Note",
       "title": "When does the same unemployment rate stop meaning the same thing? Jordan, Egypt and Morocco",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A source-linked comparison of labour-force measurement perimeters showing that Jordan, Egypt and Morocco all center unemployment measurement on a 15+ framework while differing materially in population scope and classification architecture.",
       "publication_date": "2026-08-17",
       "version": "1.0",
       "status": "published",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "FOUNDER PRODUCED"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "FOUNDER PRODUCED"
+      ],
       "geography": "Jordan; Egypt; Morocco",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). When does the same unemployment rate stop meaning the same thing? Jordan, Egypt and Morocco. Data Note, version 1.0.",
@@ -191,12 +289,17 @@
       "id": "procurement-intelligence",
       "type": "Data Product",
       "title": "MENA Funding & Procurement Intelligence",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A normalized official-source procurement evidence product covering open opportunities, pipeline notices, procurement plans and disclosed contract awards across MENA.",
       "publication_date": "2026-08-13",
       "version": "public-preview",
       "status": "live",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA"
+      ],
       "geography": "Middle East and North Africa",
       "doi": null,
       "suggested_citation": "MENA Open Data & Evidence Lab (2026). MENA Funding & Procurement Intelligence, public preview.",
@@ -214,12 +317,18 @@
       "id": "price-observatory",
       "type": "Dataset",
       "title": "Official Price Release Observatory",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A release-candidate dataset linking official price observations to geography, month, source release and provenance records.",
       "publication_date": null,
       "version": "v0.3.0-rc1",
       "status": "release-candidate",
-      "evidence": ["OFFICIAL SOURCE", "REAL PUBLIC DATA", "PENDING VALIDATION"],
+      "evidence": [
+        "OFFICIAL SOURCE",
+        "REAL PUBLIC DATA",
+        "PENDING VALIDATION"
+      ],
       "geography": "MENA pilot coverage",
       "doi": null,
       "suggested_citation": null,
@@ -237,12 +346,17 @@
       "id": "ai-labor",
       "type": "Dataset",
       "title": "MENA Firm AI Adoption and Labor Adjustment",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A developing firm-level panel linking employment observations to saved source evidence for research on AI adoption and labor adjustment in MENA firms.",
       "publication_date": null,
       "version": "v0.2.0a2",
       "status": "collection-in-progress",
-      "evidence": ["REAL PUBLIC DATA", "PENDING VALIDATION"],
+      "evidence": [
+        "REAL PUBLIC DATA",
+        "PENDING VALIDATION"
+      ],
       "geography": "MENA firm sample",
       "doi": null,
       "suggested_citation": null,
@@ -260,13 +374,17 @@
       "id": "workshop-001",
       "type": "Teaching",
       "title": "Workshop 001 — Reproducing an Economics Paper from Raw Data",
-      "authors": ["MENA Open Data & Evidence Lab"],
+      "authors": [
+        "MENA Open Data & Evidence Lab"
+      ],
       "abstract": "A 90-minute reproducibility workshop with slides, notebook, exercise and answer key.",
       "publication_date": null,
       "scheduled_date": "2026-08-23",
       "version": "001",
       "status": "scheduled",
-      "evidence": ["PENDING VALIDATION"],
+      "evidence": [
+        "PENDING VALIDATION"
+      ],
       "geography": "Regional / online",
       "doi": null,
       "suggested_citation": null,
