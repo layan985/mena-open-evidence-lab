@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://menaevidencelab.org/data/mena-stat-id-schema.json",
+  "title": "MENA-STAT-ID public alpha",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "release_version",
+    "status",
+    "case_count",
+    "prompt_variant_count",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "release_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "case_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "prompt_variant_count": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "task_family",
+          "error_class",
+          "prompts",
+          "gold",
+          "evidence",
+          "claim_boundary",
+          "review_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^MSID-[A-Z]+-[0-9]{3}$"
+          },
+          "prompts": {
+            "type": "object",
+            "required": [
+              "en",
+              "ar"
+            ],
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 20
+              },
+              "ar": {
+                "type": "string",
+                "minLength": 20
+              }
+            },
+            "additionalProperties": false
+          },
+          "gold": {
+            "type": "object",
+            "required": [
+              "answer",
+              "required_fields",
+              "manual_review_fields"
+            ]
+          },
+          "evidence": {
+            "type": "object",
+            "required": [
+              "source_urls",
+              "derived_from",
+              "evidence_badges"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
